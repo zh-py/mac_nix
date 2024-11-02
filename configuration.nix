@@ -216,7 +216,7 @@ in
     #''}"
 
     #displayManager.sessionCommands = "${pkgs.xorg.xkbcomp}/bin/xkbcomp ${customKeyboardLayout} $DISPLAY && /etc/profiles/per-user/py/bin/fusuma -d"; #use which to find out the path.
-    displayManager.sessionCommands = "/etc/profiles/per-user/py/bin/fusuma -d"; # use which to find out the path.
+    displayManager.sessionCommands = "/etc/profiles/per-user/py/bin/fusuma -d && iwctl adapter phy0 set-property Powered on && iwctl device eth0 set-property Powered on"; # use which to find out the path.
   };
 
   environment.variables =
