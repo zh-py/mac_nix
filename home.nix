@@ -227,19 +227,31 @@
             threshold = 0.2;
           };
         };
+        #"3" = {
+          #begin = {
+            #command = "ydotool click 40";
+            #interval = 0.0;
+          #};
+          #update = {
+            #command = "ydotool mousemove -- $move_x, $move_y";
+            #accel = 2;
+            #interval = 0.1;
+          #};
+          #end = {
+            #command = "ydotool click 80";
+            #interval = 0.0;
+          #};
         "3" = {
           begin = {
-            command = "ydotool click 40";
-            interval = 0.0;
+            command = "xdotool mousedown 1";
           };
           update = {
-            command = "ydotool mousemove -- $move_x, $move_y";
+            command = "xdotool mousemove_relative -- $move_x, $move_y";
             accel = 2;
-            interval = 0.1;
+            interval = 0.001;
           };
           end = {
-            command = "ydotool click 80";
-            interval = 0.0;
+            command = "xdotool mouseup 1";
           };
         };
         #"3" = {
