@@ -516,36 +516,68 @@ in
       };
 
 
-    #mbpfan = {
-      #enable = true;
-      #settings = {
-        #general = {
-          #low_temp = 50;
-          #high_temp = 60;
-          #max_temp = 75;
-          #polling_interval = 7;
-        #};
-      #};
-    #};
+    mbpfan = {
+      enable = true;
+      settings = {
+        general = {
+          min_fan1_speed = 2000;
+          max_fan1_speed = 6200;
+          low_temp = 63;
+          high_temp = 66;
+          max_temp = 85;
+          polling_interval = 7;
+        };
+      };
+    };
 
   };
 
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      intel-ocl
+      intel-vaapi-driver
+    ];
+  };
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      # your Open GL, Vulkan and VAAPI drivers
+
+      vpl-gpu-rt # or intel-media-sdk for QSV
+    ];
+  };
   #hardware.facetimehd.enable = true;
   #hardware.facetimehd.withCalibration = true;
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true;
+      };
+    };
+  };
+  #systemd.user.services.mpris-proxy = {
+    #description = "Mpris proxy";
+    #after = [ "network.target" "sound.target" ];
+    #wantedBy = [ "default.target" ];
+    #serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
+  #};
   #hardware.system76.power-daemon.enable = true;
   #hardware.system76.enableAll = true;
   services.blueman.enable = true;
   hardware.pulseaudio.enable = false;
-  hardware.graphics.enable = true;
+  hardware.pulseaudio.support32Bit = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     audio.enable = true;
     pulse.enable = true;
     alsa = {
-      enable = false;
+      enable = true;
       support32Bit = false;
     };
     jack.enable = false;
@@ -582,17 +614,6 @@ in
           ];
         };
       };
-      #wireplumber = {
-      #enable = true;
-      #configPackages = [
-      #(pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/bluez.conf" ''
-      #monitor.bluez.properties = {
-      #bluez5.default.rate = 44100
-      #bluez5.enable-sbc-xq = true
-      #bluez5.enable-hw-volume = true
-      #}
-      #'')
-      #];
     };
   };
 

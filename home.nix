@@ -33,10 +33,10 @@
     firefox
     google-chrome
     tor-browser
-    rustdesk-flutter
+    #rustdesk-flutter
+    #peazip
     nomacs
     gimp
-    peazip
     libsForQt5.kio-extras
     libsForQt5.konsole
     libreoffice-qt6
@@ -97,9 +97,8 @@
     #unar
     graphviz
     gh
-    mpv
     yt-dlp
-    bitcomet
+    #bitcomet
     wordnet
     btop
     htop
@@ -122,13 +121,13 @@
     pyright
     ruff
     ruff-lsp
-    #luajitPackages.luacheck
+    luajitPackages.luacheck
     lua-language-server
     marksman
     tree-sitter
     tree-sitter-grammars.tree-sitter-python
     texlab
-    #obsidian
+    obsidian
     spotify
     #spotube
     vlc
@@ -355,8 +354,27 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  #programs.sagemath.enable = true;
-
+  programs.sagemath.enable = true;
+  programs.mpv = {
+    enable = true;
+    scripts = with pkgs.mpvScripts; [
+      mpris
+      thumbfast
+    ];
+    #config = {
+      #"script-opts" = "ytdl_hook-ytdl_path=/etc/profiles/per-user/py/bin/yt-dlp";
+      #"ytdl-format" = "bestvideo[height<=?720][fps<=?30][vcodec!=?webm]+bestaudio/best";
+      #"hwdec" = "auto";
+      #osd-fractions;
+      #save-position-on-quit;
+      #"sub-auto" = "fuzzy";
+      #"ytdl-raw-options" = "sub-lang='en',write-sub=,write-auto-sub=";
+      #"sub-font" = "Noto Color Emoji";
+      #"sub-font-size" = 35;
+      #"sub-border-size" = 1.5;
+      #"ao" = "pipewire";
+    #};
+  };
   nixpkgs.config = {
     allowUnfree = true;
     allowUnfreePredicate = _: true;
