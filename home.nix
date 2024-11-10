@@ -958,7 +958,7 @@
         #padding.x = 10;
         #padding.y = 10;
         dynamic_padding = true;
-        opacity = 0.96;
+        opacity = 1;
         decorations = "None";
         startup_mode = "Maximized";
       };

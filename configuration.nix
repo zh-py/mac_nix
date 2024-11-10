@@ -551,6 +551,7 @@ in
     settings = {
       General = {
         Experimental = true;
+        #Enable = "Source,Sink,Media,Socket";
       };
     };
   };
@@ -563,6 +564,11 @@ in
   #hardware.system76.power-daemon.enable = true;
   #hardware.system76.enableAll = true;
   services.blueman.enable = true;
+  #hardware.pulseaudio = {
+    #enable = true;
+    #package = pkgs.pulseaudioFull;
+  #};
+  #services.pipewire.enable = false;
   hardware.pulseaudio.enable = false;
   hardware.pulseaudio.support32Bit = false;
   security.rtkit.enable = true;
@@ -574,7 +580,7 @@ in
       enable = true;
       support32Bit = false;
     };
-    jack.enable = false;
+    jack.enable = true;
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
