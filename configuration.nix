@@ -532,20 +532,14 @@ in
 
   };
 
-  hardware.opengl = {
-    enable = true;
-    extraPackages = with pkgs; [
-      intel-media-driver
-      intel-ocl
-      intel-vaapi-driver
-    ];
-  };
 
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
       # your Open GL, Vulkan and VAAPI drivers
-
+      intel-media-driver
+      intel-ocl
+      intel-vaapi-driver
       vpl-gpu-rt # or intel-media-sdk for QSV
     ];
   };
@@ -807,6 +801,7 @@ in
   services.openssh.enable = true;
   services.hddfancontrol.smartctl = true;
   services.v2raya.enable = true;
+  services.dictd.enable = true;
   services.deluge = {
     enable = true;
     #web = {

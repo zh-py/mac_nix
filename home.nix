@@ -33,8 +33,10 @@
     firefox
     google-chrome
     tor-browser
-    #rustdesk-flutter
-    #peazip
+    rustdesk-flutter
+    wechat-uos
+    calibre
+    peazip
     nomacs
     gimp
     libsForQt5.kio-extras
