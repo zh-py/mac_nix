@@ -577,7 +577,7 @@ in
     audio.enable = true;
     pulse.enable = true;
     alsa = {
-      enable = true;
+      enable = false;
       support32Bit = false;
     };
     jack.enable = true;
