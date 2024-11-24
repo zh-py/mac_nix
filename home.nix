@@ -33,9 +33,9 @@
     firefox
     google-chrome
     tor-browser
-    rustdesk-flutter
     wechat-uos
-    calibre
+    #rustdesk-flutter
+    #calibre
     peazip
     nomacs
     gimp
@@ -86,7 +86,7 @@
     progress
     calcurse
     hunspell
-    cava
+    #cava
     xsel
     libheif
     imagemagick
@@ -122,7 +122,6 @@
     nixfmt-rfc-style
     pyright
     ruff
-    ruff-lsp
     luajitPackages.luacheck
     lua-language-server
     marksman

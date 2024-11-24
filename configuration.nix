@@ -154,26 +154,29 @@ in
     #enable = true;
     #wrapperFeatures.gtk = true;
   #};
-  #programs.hyprland = {
-    #enable = true;
-    #xwayland.enable = true;
-  #};
-  services.displayManager = {
-    autoLogin = {
-      enable = false;
-      user = "py";
-    };
-    ly = {
-      enable = true;
-    };
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
   };
+  #services.displayManager = {
+    #autoLogin = {
+      #enable = true;
+      #user = "py";
+    #};
+    ##sddm = {
+      ##enable = true;
+    ##};
+  #};
 
   services.haveged.enable = true;
 
+  services.getty.autologinUser = "py";
 
   services.xserver = { #47lines
     enable = true;
-    #displayManager = {
+    displayManager = {
+      startx.enable = true;
+    };
     #lightdm = {
     #enable = true;
     #greeters.slick = {
@@ -618,56 +621,56 @@ in
   };
 
   
-  fonts.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "Iosevka"
-        "JetBrainsMono"
-        "Hack"
-      ];
-    })
-    meslo-lgs-nf
-    noto-fonts-cjk-sans
-    noto-fonts-cjk-serif
-    source-han-sans-vf-ttf
-    source-han-serif-vf-ttf
-    source-han-sans
-    source-han-serif
-    #ark-pixel-font
-    #zpix-pixel-font
-    wqy_microhei
-    helvetica-neue-lt-std
-    aileron
-    ubuntu_font_family
-    fira
-    #maple-mono
-    julia-mono
-    jetbrains-mono
-    paratype-pt-sans
-    uw-ttyp0
-    #tamsyn
-    vistafonts
+  #fonts.packages = with pkgs; [
+    #(nerdfonts.override {
+      #fonts = [
+        #"FiraCode"
+        #"Iosevka"
+        #"JetBrainsMono"
+        #"Hack"
+      #];
+    #})
+    #meslo-lgs-nf
+    #noto-fonts-cjk-sans
+    #noto-fonts-cjk-serif
+    #source-han-sans-vf-ttf
+    #source-han-serif-vf-ttf
+    #source-han-sans
+    #source-han-serif
+    ##ark-pixel-font
+    ##zpix-pixel-font
+    #wqy_microhei
+    #helvetica-neue-lt-std
+    #aileron
+    #ubuntu_font_family
+    #fira
+    ##maple-mono
+    #julia-mono
+    #jetbrains-mono
+    #paratype-pt-sans
+    #uw-ttyp0
+    ##tamsyn
+    #vistafonts
+    ##unscii
+    #gohufont
+    #xorg.xbitmaps
+    ##ucs-fonts
+    ##profont
+    #cozette
+    #terminus_font
+    #terminus_font_ttf
+    #roboto
+    #dina-font
     #unscii
-    gohufont
-    xorg.xbitmaps
+    #tamzen
+    #envypn-font
+    #efont-unicode
+    #spleen
     #ucs-fonts
-    #profont
-    cozette
-    terminus_font
-    terminus_font_ttf
-    roboto
-    dina-font
-    unscii
-    tamzen
-    envypn-font
-    efont-unicode
-    spleen
-    ucs-fonts
-    #google-fonts
-    corefonts
-    wineWowPackages.fonts
-  ];
+    ##google-fonts
+    #corefonts
+    #wineWowPackages.fonts
+  #];
 
 
   virtualisation.docker = {
@@ -832,7 +835,7 @@ in
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 
   #services.logind.lidSwitch = "ignore";
 
