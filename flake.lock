@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1731832479,
-        "narHash": "sha256-icDDuYwJ0avTMZTxe1qyU/Baht5JOqw4pb5mWpR+hT0=",
+        "lastModified": 1732482255,
+        "narHash": "sha256-GUffLwzawz5WRVfWaWCg78n/HrBJrOG7QadFY6rtV8A=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "5056a1cf0ce7c2a08ab50713b6c4af77975f6111",
+        "rev": "a9953635d7f34e7358d5189751110f87e3ac17da",
         "type": "github"
       },
       "original": {
@@ -20,13 +20,37 @@
         "type": "github"
       }
     },
+    "kmonad": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "nix",
+        "lastModified": 1730793763,
+        "narHash": "sha256-m9agq+UNNwAovZj+WS5/1Yc1xoExG4A3SqmVP/e0r9Q=",
+        "ref": "refs/heads/master",
+        "rev": "606c488862df6c3be1e4e670f6e1e06008c84732",
+        "revCount": 875,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/kmonad/kmonad?dir=nix"
+      },
+      "original": {
+        "dir": "nix",
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/kmonad/kmonad?dir=nix"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1731676054,
-        "narHash": "sha256-OZiZ3m8SCMfh3B6bfGC/Bm4x3qc1m2SVEAlkV6iY7Yg=",
+        "lastModified": 1732014248,
+        "narHash": "sha256-y/MEyuJ5oBWrWAic/14LaIr/u5E0wRVzyYsouYY3W6w=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5e4fbfb6b3de1aa2872b76d49fafc942626e2add",
+        "rev": "23e89b7da85c3640bbc2173fe04f4bd114342367",
         "type": "github"
       },
       "original": {
@@ -38,11 +62,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1731833032,
-        "narHash": "sha256-kChyPDRgIRWbNXTZRFcGWTxEdKjbLX4fzL9o8leRyqQ=",
+        "lastModified": 1732600445,
+        "narHash": "sha256-BlOxts45mAgQIdfxhN2Y6e2ow4AdTxd7dwHk/nahEEY=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "4faf510c4c0252a803d6d052cf2dd7905daefce0",
+        "rev": "983b755396bd606cfa28f6eaeca37289bdebc929",
         "type": "github"
       },
       "original": {
@@ -53,6 +77,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "kmonad": "kmonad",
         "nixpkgs": "nixpkgs",
         "nur": "nur"
       }

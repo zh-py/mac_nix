@@ -149,28 +149,30 @@ in
   #services.xserver.displayManager.sessionCommands = "${pkgs.xorg.xkbcomp}/bin/xkbcomp ${customKeyboardLayout} $DISPLAY";
 
   services.gnome.gnome-keyring.enable = true;
-  security.pam.services.ly.enableGnomeKeyring = true;
-  #programs.sway = {
-    #enable = true;
-    #wrapperFeatures.gtk = true;
-  #};
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
+  #security.pam.services.ly.enableGnomeKeyring = true;
   #services.displayManager = {
     #autoLogin = {
-      #enable = true;
+      #enable = false;
       #user = "py";
     #};
-    ##sddm = {
-      ##enable = true;
-    ##};
+    #ly = {
+      #enable = true;
+    #};
   #};
 
   services.haveged.enable = true;
 
   services.getty.autologinUser = "py";
+
+  security.polkit.enable = true;
 
   services.xserver = { #47lines
     enable = true;
@@ -219,12 +221,28 @@ in
     #''}"
 
     #displayManager.sessionCommands = "${pkgs.xorg.xkbcomp}/bin/xkbcomp ${customKeyboardLayout} $DISPLAY && /etc/profiles/per-user/py/bin/fusuma -d"; #use which to find out the path.
-    displayManager.sessionCommands = "iwctl adapter phy0 set-property Powered on && iwctl device eth0 set-property Powered on && /etc/profiles/per-user/py/bin/fusuma -d && /etc/profiles/per-user/py/bin/maestral start -f"; # use which to find out the path.
+    #displayManager.sessionCommands = "iwctl adapter phy0 set-property Powered on && iwctl device eth0 set-property Powered on && /etc/profiles/per-user/py/bin/fusuma -d && /etc/profiles/per-user/py/bin/maestral start -f"; # use which to find out the path.
+    #put to .xinitrc
   };
 
-  environment.variables =
-    {
+  environment.variables = {
+  };
+
+  services.kmonad = {
+    enable = true;
+    keyboards = {
+      myKMonadOutput = {
+        #name = "laptop-internal";
+        #device = "/dev/input/by-id/usb-Apple_Inc._Apple_Internal_Keyboard___Trackpad_D3H5506WVQ1FTV3AT6KF-if01-event-kbd";
+        device = "/dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd";
+        config = builtins.readFile dotfiles/tt.kbd;
+        #defcfg = {
+          #enable = true;
+          #fallthrough = true;
+        #};
+      };
     };
+  };
 
   services.keyd = {
     enable = true;
@@ -256,6 +274,7 @@ in
           v = S-insert
           # Cut
           x = S-delete
+          q = M-q
 
           ## Move cursor to beginning of line
           #left = home
@@ -265,7 +284,6 @@ in
           right=A-right
           up=A-up
           down=A-down
-
           # As soon as tab is pressed (but not yet released), we switch to the
           # "app_switch_state" overlay where we can handle Meta-Backtick differently.
           # Also, send a 'M-tab' key tap before entering app_switch_sate.
@@ -621,7 +639,7 @@ in
   };
 
   
-  #fonts.packages = with pkgs; [
+  fonts.packages = with pkgs; [
     #(nerdfonts.override {
       #fonts = [
         #"FiraCode"
@@ -648,17 +666,17 @@ in
     #julia-mono
     #jetbrains-mono
     #paratype-pt-sans
-    #uw-ttyp0
+    uw-ttyp0
     ##tamsyn
     #vistafonts
     ##unscii
-    #gohufont
+    gohufont
     #xorg.xbitmaps
     ##ucs-fonts
     ##profont
     #cozette
     #terminus_font
-    #terminus_font_ttf
+    terminus_font_ttf
     #roboto
     #dina-font
     #unscii
@@ -670,7 +688,7 @@ in
     ##google-fonts
     #corefonts
     #wineWowPackages.fonts
-  #];
+  ];
 
 
   virtualisation.docker = {
@@ -682,6 +700,14 @@ in
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+
+  #users.groups.keyd.members = [ "py" ];
+  #users.groups.media = {};
+  #users.users.plex.extraGroups = [ "media" ];
+  #users.groups.media.members = [ ... ];
+
+
+  #users.groups.keyd = {};
   users.users.py = {
     isNormalUser = true;
     description = "py";
@@ -690,12 +716,11 @@ in
       "networkmanager"
       "wheel"
       "docker"
-      "keyd"
       "ydotool"
       "deluge"
     ];
-    #packages = with pkgs; [
-    #];
+    packages = with pkgs; [
+    ];
   };
 
   # Allow unfree packages
@@ -710,6 +735,14 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # wayland
+    tofi
+    wofi
+    rofi
+    grim # screenshot functionality
+    slurp # screenshot functionality
+    wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
+    mako # notification system developed by swaywm maintainer
     #nur.repos.xddxdd.wine-wechat
     #nur.repos.xddxdd.wechat-uos-without-sandbox
     #grim # screenshot functionality
@@ -743,7 +776,8 @@ in
     inxi
     ##coreboot-utils #ectool
     #xorg.xmodmap
-    #xorg.xev
+    xorg.xev
+    wev
     #xorg.libX11
     #xorg.libxcb
     #xorg.libXrender
@@ -754,7 +788,7 @@ in
     kdePackages.qtbase
     kdePackages.qt6gtk2
     kdePackages.qt6ct
-    #xorg.setxkbmap
+    xorg.setxkbmap
     #xorg.xkbcomp
     #xorg.xhost # for gparted
     #xkeysnail
