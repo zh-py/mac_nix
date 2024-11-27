@@ -185,7 +185,7 @@
 		<keybind key="C-A-BackSpace">
 			<action name="ToggleMaximize"/>
 		</keybind>
-		<keybind key="C-A-k">
+		<keybind key="C-A-f">
 			<action name="Maximize"/>
 		</keybind>
     <keybind key="C-A-j">

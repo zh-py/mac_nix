@@ -1,4 +1,8 @@
 #ln -s ~/Insync/pierrez1984@gmail.com/Dropbox/mac_config/home-manager ~/.config
+#ln -s ~/Dropbox\ \(Maestral\)/mac_config/mac_nix/nixos /etc
+#ln -sf /etc/nixos/dotfiles/hyprland.conf ~/.config/hypr
+#ln -sf /etc/nixos/dotfiles/.xinitrc ~/.config/
+
 {
   config,
   pkgs,
@@ -246,17 +250,17 @@
 
   #};
   #wayland.windowManager.sway = {
-    #enable = true;
-    #wrapperFeatures.gtk = true; # Fixes common issues with GTK 3 apps
-    #config = rec {
-      #modifier = "Mod4";
-      ## Use kitty as default terminal
-      #terminal = "kitty";
-      #startup = [
-        ## Launch Firefox on start
-        #{ command = "kitty"; }
-      #];
-    #};
+  #enable = true;
+  #wrapperFeatures.gtk = true; # Fixes common issues with GTK 3 apps
+  #config = rec {
+  #modifier = "Mod4";
+  ## Use kitty as default terminal
+  #terminal = "kitty";
+  #startup = [
+  ## Launch Firefox on start
+  #{ command = "kitty"; }
+  #];
+  #};
   #};
 
   home.packages = with pkgs; [
@@ -295,6 +299,10 @@
     playerctl
     bluetooth_battery
     texliveFull
+    dmenu
+    tofi
+    wofi
+    rofi-wayland
     bar
     pv
     mediainfo-gui
@@ -332,7 +340,7 @@
     graphviz
     gh
     yt-dlp
-    #bitcomet
+    bitcomet
     wordnet
     btop
     htop
@@ -440,16 +448,16 @@
         "4" = {
           left = {
             #command = "xdotool key ctrl+Right";
-            command = "xte 'keydown Control_L' 'key Right' 'keyup Control_L'";
-            #command = "ydotool key 29:1 106:1 106:0 29:0";
+            #command = "xte 'keydown Control_L' 'key Right' 'keyup Control_L'";
+            command = "ydotool key 29:1 106:1 106:0 29:0";
             threshold = 0.5;
             #interval = 0.75;
             interval = 0.8;
           };
           right = {
             #command = "xdotool key ctrl+Left";
-            command = "xte 'keydown Control_L' 'key Left' 'keyup Control_L'";
-            #command = "ydotool key 29:1 105:1 105:0 29:0";
+            #command = "xte 'keydown Control_L' 'key Left' 'keyup Control_L'";
+            command = "ydotool key 29:1 105:1 105:0 29:0";
             threshold = 0.5;
             #interval = 0.75;
             interval = 0.8;
@@ -459,33 +467,34 @@
             threshold = 0.2;
           };
         };
-        #"3" = {
-        #begin = {
-        #command = "ydotool click 40";
-        #interval = 0.0;
-        #};
-        #update = {
-        #command = "ydotool mousemove -- $move_x, $move_y";
-        #accel = 2;
-        #interval = 0.1;
-        #};
-        #end = {
-        #command = "ydotool click 80";
-        #interval = 0.0;
-        #};
         "3" = {
           begin = {
-            command = "xdotool mousedown 1";
+            command = "ydotool click 40";
+            interval = 0.0;
           };
           update = {
-            command = "xdotool mousemove_relative -- $move_x, $move_y";
+            command = "ydotool mousemove -- $move_x, $move_y";
             accel = 2;
-            interval = 1.0e-3;
+            interval = 0.1;
           };
           end = {
-            command = "xdotool mouseup 1";
+            command = "ydotool click 80";
+            interval = 0.0;
           };
         };
+        #"3" = {
+        #begin = {
+        #command = "xdotool mousedown 1";
+        #};
+        #update = {
+        #command = "xdotool mousemove_relative -- $move_x, $move_y";
+        #accel = 2;
+        #interval = 1.0e-3;
+        #};
+        #end = {
+        #command = "xdotool mouseup 1";
+        #};
+        #};
         #"3" = {
         #begin = {
         #command = "xdotool mousedown 1";

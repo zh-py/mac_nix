@@ -52,6 +52,7 @@ in
     options = "--delete-older-than 30d";
   };
 
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -63,13 +64,17 @@ in
   #options hid_apple fnmode=1
   #'';
 
+  services.logind.extraConfig = ''
+    HandlePowerKey=suspend
+    HandlePowerKeyLongPress=poweroff
+  '';
+  programs.hyprlock.enable = true;
+
   services.connman.enable = true;
   services.connman.wifi.backend = "iwd";
 
   networking = {
-
     hostName = "nixos";
-
     wireless = {
       iwd = {
         enable = true;
@@ -92,7 +97,6 @@ in
       enable = false;
       wifi.backend = "iwd";
     };
-
     #proxy = {
     #default = "http://user:password@proxy:port/";
     #noProxy = "127.0.0.1,localhost,internal.domain";
@@ -117,14 +121,22 @@ in
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-
   i18n.inputMethod = {
+    type = "fcitx5";
     enable = true;
-    type = "ibus";
-    ibus.engines = with pkgs.ibus-engines; [ libpinyin ];
-    #type = "fcitx5";
-    #fcitx5.addons = with pkgs; [ fcitx5-chinese-addons ];
+    fcitx5.addons = with pkgs; [
+      fcitx5-gtk
+      fcitx5-chinese-addons
+      fcitx5-nord
+    ];
   };
+  #i18n.inputMethod = {
+    #enable = true;
+    #type = "ibus";
+    #ibus.engines = with pkgs.ibus-engines; [ libpinyin ];
+    ##type = "fcitx5";
+    ##fcitx5.addons = with pkgs; [ fcitx5-chinese-addons ];
+  #};
 
   #options = {
   #+    services.xserver.windowManager.fvwm3 = {
@@ -150,13 +162,15 @@ in
 
   services.gnome.gnome-keyring.enable = true;
   programs.sway = {
-    enable = true;
+    enable = false;
     wrapperFeatures.gtk = true;
   };
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
+  programs.waybar.enable = true;
+
   #security.pam.services.ly.enableGnomeKeyring = true;
   #services.displayManager = {
     #autoLogin = {
@@ -235,7 +249,7 @@ in
         #name = "laptop-internal";
         #device = "/dev/input/by-id/usb-Apple_Inc._Apple_Internal_Keyboard___Trackpad_D3H5506WVQ1FTV3AT6KF-if01-event-kbd";
         device = "/dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd";
-        config = builtins.readFile dotfiles/tt.kbd;
+        config = builtins.readFile dotfiles/conf.kbd;
         #defcfg = {
           #enable = true;
           #fallthrough = true;
@@ -314,11 +328,24 @@ in
           #left = S-home
           ## Highlight to end of Line
           #right = S-end
+          #[meta_mac+alt:C-A]
+          #1 = M-A-1
+          #2 = M-A-2
+          #3 = M-A-3
           [meta_mac+shift]
           h = M-S-h
           l = M-S-l
           c = C-S-c
           v = C-S-v
+          1 = M-S-1
+          2 = M-S-2
+          3 = M-S-3
+          4 = M-S-4
+          5 = M-S-5
+          6 = M-S-6
+          7 = M-S-7
+          8 = M-S-8
+          9 = M-S-9
         '';
       };
     };
@@ -648,6 +675,7 @@ in
         #"Hack"
       #];
     #})
+    font-awesome
     #meslo-lgs-nf
     #noto-fonts-cjk-sans
     #noto-fonts-cjk-serif
@@ -736,9 +764,6 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # wayland
-    tofi
-    wofi
-    rofi
     grim # screenshot functionality
     slurp # screenshot functionality
     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
