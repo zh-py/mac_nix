@@ -404,6 +404,8 @@
     #extractcode
     #]))
 
+    stack
+
     (python312.withPackages (
       p: with p; [
         py-cpuinfo

@@ -4,4 +4,3 @@ iwctl device eth0 set-property Powered on
 
 exec startlxqt
 
-/etc/profiles/per-user/py/bin/maestral start -f

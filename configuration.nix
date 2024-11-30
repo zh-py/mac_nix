@@ -52,7 +52,6 @@ in
     options = "--delete-older-than 30d";
   };
 
-
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -131,11 +130,11 @@ in
     ];
   };
   #i18n.inputMethod = {
-    #enable = true;
-    #type = "ibus";
-    #ibus.engines = with pkgs.ibus-engines; [ libpinyin ];
-    ##type = "fcitx5";
-    ##fcitx5.addons = with pkgs; [ fcitx5-chinese-addons ];
+  #enable = true;
+  #type = "ibus";
+  #ibus.engines = with pkgs.ibus-engines; [ libpinyin ];
+  ##type = "fcitx5";
+  ##fcitx5.addons = with pkgs; [ fcitx5-chinese-addons ];
   #};
 
   #options = {
@@ -173,13 +172,13 @@ in
 
   #security.pam.services.ly.enableGnomeKeyring = true;
   #services.displayManager = {
-    #autoLogin = {
-      #enable = false;
-      #user = "py";
-    #};
-    #ly = {
-      #enable = true;
-    #};
+  #autoLogin = {
+  #enable = false;
+  #user = "py";
+  #};
+  #ly = {
+  #enable = true;
+  #};
   #};
 
   services.haveged.enable = true;
@@ -188,7 +187,8 @@ in
 
   security.polkit.enable = true;
 
-  services.xserver = { #47lines
+  services.xserver = {
+    # 47lines
     enable = true;
     displayManager = {
       startx.enable = true;
@@ -239,8 +239,9 @@ in
     #put to .xinitrc
   };
 
-  environment.variables = {
-  };
+  environment.variables =
+    {
+    };
 
   services.kmonad = {
     enable = true;
@@ -251,8 +252,8 @@ in
         device = "/dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd";
         config = builtins.readFile dotfiles/conf.kbd;
         #defcfg = {
-          #enable = true;
-          #fallthrough = true;
+        #enable = true;
+        #fallthrough = true;
         #};
       };
     };
@@ -264,8 +265,9 @@ in
       default = {
         ids = [ "*" ];
         settings = {
-          main = {
-          };
+          main =
+            {
+            };
         };
         extraConfig = ''
           leftmeta = layer(meta_mac)
@@ -528,20 +530,20 @@ in
   services = {
 
     #auto-cpufreq = {
-      #enable = true;
-      #settings = {
-        #battery = {
-          #governor = "powersave";
-          #turbo = "never";
-          #enable_thresholds = true;
-          #start_threshold = 20;
-          #stop_threshold = 60;
-        #};
-        #charger = {
-          #governor = "performance";
-          #turbo = "never";
-        #};
-      #};
+    #enable = true;
+    #settings = {
+    #battery = {
+    #governor = "powersave";
+    #turbo = "never";
+    #enable_thresholds = true;
+    #start_threshold = 20;
+    #stop_threshold = 60;
+    #};
+    #charger = {
+    #governor = "performance";
+    #turbo = "never";
+    #};
+    #};
     #};
 
     thermald.enable = true;
@@ -549,20 +551,19 @@ in
 
     tlp = {
       enable = true;
-        settings = {
-          START_CHARGE_THRESH_BAT0 = 60;
-          STOP_CHARGE_THRESH_BAT0 = 80;
-          CPU_ENERGY_PERF_POLICY_ON_AC = "balance_performance";
-          CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
-          CPU_MIN_PERF_ON_AC = 0;
-          CPU_MAX_PERF_ON_AC = 100;
-          PLATFORM_PROFILE_ON_AC = "balanced";
-          PLATFORM_PROFILE_ON_BAT = "low-power";
-          MEM_SLEEP_ON_AC = "s2idle";
-          MEM_SLEEP_ON_BAT = "deep";
-        };
+      settings = {
+        START_CHARGE_THRESH_BAT0 = 60;
+        STOP_CHARGE_THRESH_BAT0 = 80;
+        CPU_ENERGY_PERF_POLICY_ON_AC = "balance_performance";
+        CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
+        CPU_MIN_PERF_ON_AC = 0;
+        CPU_MAX_PERF_ON_AC = 100;
+        PLATFORM_PROFILE_ON_AC = "balanced";
+        PLATFORM_PROFILE_ON_BAT = "low-power";
+        MEM_SLEEP_ON_AC = "s2idle";
+        MEM_SLEEP_ON_BAT = "deep";
       };
-
+    };
 
     mbpfan = {
       enable = true;
@@ -579,7 +580,6 @@ in
     };
 
   };
-
 
   hardware.graphics = {
     enable = true;
@@ -604,17 +604,17 @@ in
     };
   };
   #systemd.user.services.mpris-proxy = {
-    #description = "Mpris proxy";
-    #after = [ "network.target" "sound.target" ];
-    #wantedBy = [ "default.target" ];
-    #serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
+  #description = "Mpris proxy";
+  #after = [ "network.target" "sound.target" ];
+  #wantedBy = [ "default.target" ];
+  #serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
   #};
   #hardware.system76.power-daemon.enable = true;
   #hardware.system76.enableAll = true;
   services.blueman.enable = true;
   #hardware.pulseaudio = {
-    #enable = true;
-    #package = pkgs.pulseaudioFull;
+  #enable = true;
+  #package = pkgs.pulseaudioFull;
   #};
   #services.pipewire.enable = false;
   hardware.pulseaudio.enable = false;
@@ -665,23 +665,36 @@ in
     };
   };
 
-  
   fonts.packages = with pkgs; [
-    #(nerdfonts.override {
-      #fonts = [
-        #"FiraCode"
-        #"Iosevka"
-        #"JetBrainsMono"
-        #"Hack"
-      #];
-    #})
+    # https://wiki.archlinux.org/title/Font_configuration
     font-awesome
-    #meslo-lgs-nf
+    uw-ttyp0
+    gohufont
+    terminus_font_ttf
+    profont
+    efont-unicode
+    noto-fonts-emoji
+    dina-font
+    (nerdfonts.override {
+      fonts = [
+        "FiraCode"
+        "Iosevka"
+        "JetBrainsMono"
+        "Hack"
+      ];
+    })
+
+    # for Chinese
+    source-han-serif
+    #source-han-sans
+
+    #noto-fonts
     #noto-fonts-cjk-sans
+    #google-fonts
+    #meslo-lgs-nf
     #noto-fonts-cjk-serif
     #source-han-sans-vf-ttf
     #source-han-serif-vf-ttf
-    #source-han-sans
     #source-han-serif
     ##ark-pixel-font
     ##zpix-pixel-font
@@ -694,30 +707,22 @@ in
     #julia-mono
     #jetbrains-mono
     #paratype-pt-sans
-    uw-ttyp0
     ##tamsyn
     #vistafonts
     ##unscii
-    gohufont
     #xorg.xbitmaps
     ##ucs-fonts
-    ##profont
     #cozette
     #terminus_font
-    terminus_font_ttf
     #roboto
-    #dina-font
     #unscii
     #tamzen
     #envypn-font
-    #efont-unicode
     #spleen
     #ucs-fonts
-    ##google-fonts
     #corefonts
     #wineWowPackages.fonts
   ];
-
 
   virtualisation.docker = {
     enable = true;
@@ -734,7 +739,6 @@ in
   #users.users.plex.extraGroups = [ "media" ];
   #users.groups.media.members = [ ... ];
 
-
   #users.groups.keyd = {};
   users.users.py = {
     isNormalUser = true;
@@ -747,8 +751,10 @@ in
       "ydotool"
       "deluge"
     ];
-    packages = with pkgs; [
-    ];
+    packages =
+      with pkgs;
+      [
+      ];
   };
 
   # Allow unfree packages
@@ -873,16 +879,22 @@ in
   services.deluge = {
     enable = true;
     #web = {
-      #enable = true;
-      #openFirewall = true;
+    #enable = true;
+    #openFirewall = true;
     #};
     declarative = true;
     user = "py";
     dataDir = "/home/py";
     openFirewall = true;
-    authFile = let deluge_auth_file = (builtins.toFile "auth" ''
-      localclient::10
-      ''); in deluge_auth_file;
+    authFile =
+      let
+        deluge_auth_file = (
+          builtins.toFile "auth" ''
+            localclient::10
+          ''
+        );
+      in
+      deluge_auth_file;
     config = {
       allow_remote = true;
     };
