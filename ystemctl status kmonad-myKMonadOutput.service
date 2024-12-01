@@ -1,0 +1,1848 @@
+Dec 01 07:16:34 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 506.[0m
+Dec 01 07:16:34 nixos kmonad-myKMonadOutput-start[1088]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 07:16:34 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 07:16:34 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 07:16:34 nixos systemd[1]: kmonad-myKMonadOutput.service: Consumed 116ms CPU time, 12.1M memory peak, 4.6M read from disk.
+[0;38;5;245m░░ [0m[0;32mSubject: Resources consumed by unit runtime[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service completed and consumed the indicated resources.[0m
+Dec 01 07:16:35 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 1.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 07:16:35 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 832.[0m
+Dec 01 07:16:35 nixos kmonad-myKMonadOutput-start[1373]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 07:16:35 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 07:16:35 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 07:16:35 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 2.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 07:16:35 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 941.[0m
+Dec 01 07:16:36 nixos kmonad-myKMonadOutput-start[1509]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 07:16:36 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 07:16:36 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 07:16:36 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 3.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 07:16:36 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 1049.[0m
+Dec 01 07:16:36 nixos kmonad-myKMonadOutput-start[1548]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 07:16:36 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 07:16:36 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 07:16:37 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 4.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 07:16:37 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 1157.[0m
+Dec 01 07:16:37 nixos kmonad-myKMonadOutput-start[1745]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 07:16:37 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 07:16:37 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 07:16:37 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 5.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 07:16:37 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Start request repeated too quickly.[0m
+Dec 01 07:16:37 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 07:16:37 nixos systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 1598 and the job result is failed.[0m
+Dec 01 07:35:34 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 3659.[0m
+Dec 01 07:35:34 nixos kmonad-myKMonadOutput-start[9373]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 07:35:35 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 07:35:35 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 07:35:35 nixos systemd[1]: kmonad-myKMonadOutput.service: Consumed 76ms CPU time, 11.9M memory peak, 4.3M read from disk.
+[0;38;5;245m░░ [0m[0;32mSubject: Resources consumed by unit runtime[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service completed and consumed the indicated resources.[0m
+Dec 01 07:35:35 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 1.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 07:35:35 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 3769.[0m
+Dec 01 07:35:35 nixos kmonad-myKMonadOutput-start[9552]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 07:35:35 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 07:35:35 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 07:35:36 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 2.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 07:35:36 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 3877.[0m
+Dec 01 07:35:36 nixos kmonad-myKMonadOutput-start[9607]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 07:35:36 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 07:35:36 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 07:35:36 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 3.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 07:35:36 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 3985.[0m
+Dec 01 07:35:37 nixos kmonad-myKMonadOutput-start[9624]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 07:35:37 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 07:35:37 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 07:35:37 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 4.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 07:35:37 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 4093.[0m
+Dec 01 07:35:37 nixos kmonad-myKMonadOutput-start[9652]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 07:35:37 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 07:35:37 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 07:35:38 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 5.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 07:35:38 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Start request repeated too quickly.[0m
+Dec 01 07:35:38 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 07:35:38 nixos systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 4202 and the job result is failed.[0m
+Dec 01 07:41:17 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 5397.[0m
+Dec 01 07:41:17 nixos kmonad-myKMonadOutput-start[13402]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 07:41:17 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 07:41:17 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 07:41:17 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 1.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 07:41:17 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 5936.[0m
+Dec 01 07:41:18 nixos kmonad-myKMonadOutput-start[13658]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 07:41:18 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 07:41:18 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 07:41:18 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 2.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 07:41:18 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 6044.[0m
+Dec 01 07:41:18 nixos kmonad-myKMonadOutput-start[13717]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 07:41:18 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 07:41:18 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 07:41:19 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 3.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 07:41:19 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 6152.[0m
+Dec 01 07:41:19 nixos kmonad-myKMonadOutput-start[13743]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 07:41:19 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 07:41:19 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 07:41:19 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 4.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 07:41:19 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 6260.[0m
+Dec 01 07:41:20 nixos kmonad-myKMonadOutput-start[13768]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 07:41:20 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 07:41:20 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 07:41:20 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 5.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 07:41:20 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Start request repeated too quickly.[0m
+Dec 01 07:41:20 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 07:41:20 nixos systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 6368 and the job result is failed.[0m
+Dec 01 08:32:44 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 8120.[0m
+Dec 01 08:32:45 nixos kmonad-myKMonadOutput-start[17127]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:32:45 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:32:45 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:32:45 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 1.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:32:45 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 8230.[0m
+Dec 01 08:32:46 nixos kmonad-myKMonadOutput-start[17298]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:32:46 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:32:46 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:32:46 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 2.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:32:46 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 8338.[0m
+Dec 01 08:32:46 nixos kmonad-myKMonadOutput-start[17358]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:32:46 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:32:46 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:32:47 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 3.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:32:47 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 8446.[0m
+Dec 01 08:32:47 nixos kmonad-myKMonadOutput-start[17383]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:32:47 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:32:47 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:32:47 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 4.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:32:47 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 8554.[0m
+Dec 01 08:32:48 nixos kmonad-myKMonadOutput-start[17410]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:32:48 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:32:48 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:32:48 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 5.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:32:48 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Start request repeated too quickly.[0m
+Dec 01 08:32:48 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:32:48 nixos systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 8662 and the job result is failed.[0m
+Dec 01 08:37:04 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 9203.[0m
+Dec 01 08:37:05 nixos kmonad-myKMonadOutput-start[19584]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:37:05 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:37:05 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:37:05 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 1.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:37:05 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 10288.[0m
+Dec 01 08:37:05 nixos kmonad-myKMonadOutput-start[19844]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:37:05 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:37:05 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:37:06 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 2.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:37:06 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 10396.[0m
+Dec 01 08:37:06 nixos kmonad-myKMonadOutput-start[19906]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:37:06 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:37:06 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:37:07 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 3.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:37:07 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 10504.[0m
+Dec 01 08:37:07 nixos kmonad-myKMonadOutput-start[19930]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:37:07 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:37:07 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:37:07 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 4.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:37:07 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 10612.[0m
+Dec 01 08:37:08 nixos kmonad-myKMonadOutput-start[19956]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:37:08 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:37:08 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:37:08 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 5.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:37:08 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Start request repeated too quickly.[0m
+Dec 01 08:37:08 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:37:08 nixos systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 10720 and the job result is failed.[0m
+Dec 01 08:47:30 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 12236.[0m
+Dec 01 08:47:31 nixos kmonad-myKMonadOutput-start[22747]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:47:31 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:47:31 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:47:31 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 1.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:47:31 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 12346.[0m
+Dec 01 08:47:31 nixos kmonad-myKMonadOutput-start[22917]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:47:31 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:47:31 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:47:32 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 2.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:47:32 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 12454.[0m
+Dec 01 08:47:32 nixos kmonad-myKMonadOutput-start[22981]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:47:32 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:47:32 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:47:33 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 3.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:47:33 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 12562.[0m
+Dec 01 08:47:33 nixos kmonad-myKMonadOutput-start[23006]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:47:33 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:47:33 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:47:33 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 4.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:47:33 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 12670.[0m
+Dec 01 08:47:34 nixos kmonad-myKMonadOutput-start[23033]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:47:34 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:47:34 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:47:34 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 5.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:47:34 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Start request repeated too quickly.[0m
+Dec 01 08:47:34 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:47:34 nixos systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 12778 and the job result is failed.[0m
+Dec 01 08:53:04 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 14294.[0m
+Dec 01 08:53:05 nixos kmonad-myKMonadOutput-start[25093]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:53:05 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:53:05 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:53:05 nixos systemd[1]: kmonad-myKMonadOutput.service: Consumed 112ms CPU time, 11.6M memory peak, 3.8M read from disk.
+[0;38;5;245m░░ [0m[0;32mSubject: Resources consumed by unit runtime[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service completed and consumed the indicated resources.[0m
+Dec 01 08:53:05 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 1.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:53:05 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 14403.[0m
+Dec 01 08:53:06 nixos kmonad-myKMonadOutput-start[25259]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:53:06 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:53:06 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:53:06 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 2.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:53:06 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 14512.[0m
+Dec 01 08:53:06 nixos kmonad-myKMonadOutput-start[25315]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:53:06 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:53:06 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:53:07 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 3.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:53:07 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 14620.[0m
+Dec 01 08:53:07 nixos kmonad-myKMonadOutput-start[25351]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:53:07 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:53:07 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:53:07 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 4.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:53:07 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 14728.[0m
+Dec 01 08:53:08 nixos kmonad-myKMonadOutput-start[25376]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:53:08 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:53:08 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:53:08 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 5.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:53:08 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Start request repeated too quickly.[0m
+Dec 01 08:53:08 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:53:08 nixos systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 14836 and the job result is failed.[0m
+Dec 01 08:53:47 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 14944.[0m
+Dec 01 08:53:47 nixos kmonad-myKMonadOutput-start[25453]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:53:47 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:53:47 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:53:48 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 1.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:53:48 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 15053.[0m
+Dec 01 08:53:48 nixos kmonad-myKMonadOutput-start[25472]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:53:48 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:53:48 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:53:48 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 2.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:53:48 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 15161.[0m
+Dec 01 08:53:49 nixos kmonad-myKMonadOutput-start[25517]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:53:49 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:53:49 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:53:49 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 3.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:53:49 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 15269.[0m
+Dec 01 08:53:49 nixos kmonad-myKMonadOutput-start[25554]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:53:49 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:53:49 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:53:50 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 4.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:53:50 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 15377.[0m
+Dec 01 08:53:50 nixos kmonad-myKMonadOutput-start[25595]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:53:50 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:53:50 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:53:50 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 5.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:53:50 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Start request repeated too quickly.[0m
+Dec 01 08:53:50 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:53:50 nixos systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 15485 and the job result is failed.[0m
+Dec 01 08:57:33 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 17001.[0m
+Dec 01 08:57:33 nixos kmonad-myKMonadOutput-start[27562]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:57:33 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:57:33 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:57:33 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 1.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:57:33 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 17111.[0m
+Dec 01 08:57:34 nixos kmonad-myKMonadOutput-start[27705]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:57:34 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:57:34 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:57:34 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 2.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:57:34 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 17219.[0m
+Dec 01 08:57:34 nixos kmonad-myKMonadOutput-start[27735]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:57:34 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:57:34 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:57:35 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 3.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:57:35 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 17327.[0m
+Dec 01 08:57:35 nixos kmonad-myKMonadOutput-start[27759]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:57:35 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:57:35 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:57:36 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 4.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:57:36 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 17435.[0m
+Dec 01 08:57:36 nixos kmonad-myKMonadOutput-start[27784]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:57:36 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:57:36 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:57:36 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 5.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:57:36 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Start request repeated too quickly.[0m
+Dec 01 08:57:36 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:57:36 nixos systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 17543 and the job result is failed.[0m
+Dec 01 08:59:05 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 18510.[0m
+Dec 01 08:59:05 nixos kmonad-myKMonadOutput-start[29499]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:59:05 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:59:05 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:59:06 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 1.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:59:06 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 19169.[0m
+Dec 01 08:59:06 nixos kmonad-myKMonadOutput-start[29756]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:59:06 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:59:06 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:59:06 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 2.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:59:06 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 19277.[0m
+Dec 01 08:59:07 nixos kmonad-myKMonadOutput-start[29807]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:59:07 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:59:07 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:59:07 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 3.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:59:07 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 19385.[0m
+Dec 01 08:59:07 nixos kmonad-myKMonadOutput-start[29843]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:59:07 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:59:07 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:59:08 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 4.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:59:08 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 19493.[0m
+Dec 01 08:59:08 nixos kmonad-myKMonadOutput-start[29867]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 08:59:08 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 08:59:08 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:59:08 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 5.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 08:59:08 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Start request repeated too quickly.[0m
+Dec 01 08:59:08 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 08:59:08 nixos systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 19601 and the job result is failed.[0m
+Dec 01 09:01:45 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 21225.[0m
+Dec 01 09:01:46 nixos kmonad-myKMonadOutput-start[31859]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 09:01:46 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 09:01:46 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 09:01:46 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 1.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 09:01:46 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 21335.[0m
+Dec 01 09:01:46 nixos kmonad-myKMonadOutput-start[31995]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 09:01:46 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 09:01:46 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 09:01:47 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 2.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 09:01:47 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 21443.[0m
+Dec 01 09:01:47 nixos kmonad-myKMonadOutput-start[32034]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 09:01:47 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 09:01:47 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 09:01:47 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 3.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 09:01:47 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 21551.[0m
+Dec 01 09:01:48 nixos kmonad-myKMonadOutput-start[32061]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 09:01:48 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 09:01:48 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 09:01:48 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 4.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 09:01:48 nixos systemd[1]: Started KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 21659.[0m
+Dec 01 09:01:48 nixos kmonad-myKMonadOutput-start[32087]: kmonad: Could not perform IOCTL grab on: /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd
+Dec 01 09:01:49 nixos systemd[1]: [0;1;39m[0;1;31m[0;1;39mkmonad-myKMonadOutput.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit kmonad-myKMonadOutput.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Dec 01 09:01:49 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 09:01:49 nixos systemd[1]: kmonad-myKMonadOutput.service: Scheduled restart job, restart counter is at 5.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit kmonad-myKMonadOutput.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Dec 01 09:01:49 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Start request repeated too quickly.[0m
+Dec 01 09:01:49 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 09:01:49 nixos systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 21767 and the job result is failed.[0m
+Dec 01 09:01:53 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Start request repeated too quickly.[0m
+Dec 01 09:01:53 nixos systemd[1]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mkmonad-myKMonadOutput.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit kmonad-myKMonadOutput.service has entered the 'failed' state with result 'exit-code'.[0m
+Dec 01 09:01:53 nixos systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start KMonad for /dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit kmonad-myKMonadOutput.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://lists.freedesktop.org/mailman/listinfo/systemd-devel[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit kmonad-myKMonadOutput.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 21875 and the job result is failed.[0m

@@ -600,11 +600,22 @@
   programs.home-manager.enable = true;
   programs.sagemath.enable = true;
   programs.mpv = {
+    # mkdir /var/log/mpv && sudo chmod -R u=rwx,g=rwx,o=rwx /var/log/mpv    ### for recent.lua history.log
     enable = true;
-    scripts = with pkgs.mpvScripts; [
-      mpris
-      thumbfast
-    ];
+    package = (
+      pkgs.mpv-unwrapped.wrapper {
+        scripts = with pkgs.mpvScripts; [
+          #uosc
+          sponsorblock
+          mpris
+          thumbfast
+        ];
+        mpv = pkgs.mpv-unwrapped.override {
+          waylandSupport = true;
+          ffmpeg = pkgs.ffmpeg-full;
+        };
+      }
+    );
     #config = {
     #"script-opts" = "ytdl_hook-ytdl_path=/etc/profiles/per-user/py/bin/yt-dlp";
     #"ytdl-format" = "bestvideo[height<=?720][fps<=?30][vcodec!=?webm]+bestaudio/best";

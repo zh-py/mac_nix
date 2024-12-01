@@ -675,14 +675,11 @@ in
     efont-unicode
     noto-fonts-emoji
     dina-font
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "Iosevka"
-        "JetBrainsMono"
-        "Hack"
-      ];
-    })
+
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.iosevka
+    nerd-fonts.hack
 
     # for Chinese
     source-han-serif
