@@ -67,6 +67,14 @@ in
     HandlePowerKey=suspend
     HandlePowerKeyLongPress=poweroff
   '';
+  systemd.sleep.extraConfig = ''
+    AllowSuspend=yes
+    AllowHibernation=yes
+    AllowHybridSleep=yes
+    AllowSuspendThenHibernate=yes
+    HibernateDelaySec=1h
+  '';
+
   programs.hyprlock.enable = true;
 
   services.connman.enable = true;
@@ -243,23 +251,44 @@ in
     {
     };
 
-  services.kmonad = {
-    enable = true;
-    keyboards = {
-      myKMonadOutput = {
-        #name = "laptop-internal";
-        #device = "/dev/input/by-id/usb-Apple_Inc._Apple_Internal_Keyboard___Trackpad_D3H5506WVQ1FTV3AT6KF-if01-event-kbd";
-        device = "/dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd";
-        config = builtins.readFile dotfiles/conf.kbd;
-        #defcfg = {
-        #enable = true;
-        #fallthrough = true;
-        #};
-      };
-    };
-  };
+  # keycode https://www.toptal.com/developers/keycode
+
+  #services.kmonad = {
+  ## https://satler.dev/blog/nixos-kmonad-install/
+  #enable = true;
+  #keyboards = {
+  #myKMonadOutput = {
+  #name = "laptop-internal";
+  ## sudo modprobe uinput line 102 tutorial
+  #device = "/dev/input/by-id/usb-Apple_Inc._Apple_Internal_Keyboard___Trackpad_D3H5506WVQ1FTV3AT6KF-if01-event-kbd";
+  ##device = "/dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd";
+  #defcfg = {
+  #enable = true;
+  #fallthrough = true;
+  #};
+  #config = builtins.readFile dotfiles/conf.kbd;
+  #};
+  #};
+  #};
+
+  #services.kanata = {
+  ## https://satler.dev/blog/nixos-kmonad-install/
+  #enable = true;
+  #keyboards = {
+  #"internal" = {
+  ##devices = [
+  ##"/dev/input/by-id/usb-Apple_Inc._Apple_Internal_Keyboard___Trackpad_D3H5506WVQ1FTV3AT6KF-if01-event-kbd"
+  ##];
+  ##device = "/dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.1-event-kbd";
+  #config = builtins.readFile dotfiles/conf.kbd;
+  #};
+  #};
+  #};
+
+  hardware.uinput.enable = true;
 
   services.keyd = {
+    # 93
     enable = true;
     keyboards = {
       default = {
@@ -289,7 +318,8 @@ in
           # Paste
           v = S-insert
           # Cut
-          x = S-delete
+          #x = S-delete
+
           q = M-q
 
           ## Move cursor to beginning of line
@@ -529,22 +559,22 @@ in
 
   services = {
 
-    #auto-cpufreq = {
-    #enable = true;
-    #settings = {
-    #battery = {
-    #governor = "powersave";
-    #turbo = "never";
-    #enable_thresholds = true;
-    #start_threshold = 20;
-    #stop_threshold = 60;
-    #};
-    #charger = {
-    #governor = "performance";
-    #turbo = "never";
-    #};
-    #};
-    #};
+    auto-cpufreq = {
+      enable = true;
+      settings = {
+        battery = {
+          governor = "powersave";
+          turbo = "never";
+          enable_thresholds = true;
+          start_threshold = 20;
+          stop_threshold = 60;
+        };
+        charger = {
+          governor = "performance";
+          turbo = "never";
+        };
+      };
+    };
 
     thermald.enable = true;
     power-profiles-daemon.enable = false;
@@ -742,6 +772,7 @@ in
     description = "py";
     extraGroups = [
       "input"
+      "uinput"
       "networkmanager"
       "wheel"
       "docker"
@@ -782,7 +813,7 @@ in
     smartmontools
     dmidecode
     acpi
-    auto-cpufreq
+    #auto-cpufreq
     #linuxKernel.packages.linux_6_6.facetimehd
     brightnessctl
     libimobiledevice
@@ -806,6 +837,7 @@ in
     #xorg.xmodmap
     xorg.xev
     wev
+    keymapper
     #xorg.libX11
     #xorg.libxcb
     #xorg.libXrender
