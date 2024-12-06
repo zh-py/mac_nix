@@ -28,6 +28,7 @@
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
+  services.mpris-proxy.enable = true;
   # The home.packages option allows you to install Nix packages into your
   # environment.
   #wayland.windowManager.hyprland = { #188

@@ -247,9 +247,8 @@ in
     #put to .xinitrc
   };
 
-  environment.variables =
-    {
-    };
+  environment.variables = {
+  };
 
   # keycode https://www.toptal.com/developers/keycode
 
@@ -294,9 +293,8 @@ in
       default = {
         ids = [ "*" ];
         settings = {
-          main =
-            {
-            };
+          main = {
+          };
         };
         extraConfig = ''
           leftmeta = layer(meta_mac)
@@ -633,12 +631,18 @@ in
       };
     };
   };
+
   #systemd.user.services.mpris-proxy = {
-  #description = "Mpris proxy";
-  #after = [ "network.target" "sound.target" ];
-  #wantedBy = [ "default.target" ];
-  #serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
+    #description = "Mpris proxy";
+    #after = [
+      #"network.target"
+      #"sound.target"
+    #];
+    #wantedBy = [ "default.target" ];
+    #serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
   #};
+  # in home manager services /mpris-proxy = true; already included the lines above.
+
   #hardware.system76.power-daemon.enable = true;
   #hardware.system76.enableAll = true;
   services.blueman.enable = true;
@@ -647,11 +651,14 @@ in
   #package = pkgs.pulseaudioFull;
   #};
   #services.pipewire.enable = false;
-  hardware.pulseaudio.enable = false;
-  hardware.pulseaudio.support32Bit = false;
+  hardware.pulseaudio = {
+    enable = true;
+    package = pkgs.pulseaudioFull;
+    support32Bit = true;
+  };
   security.rtkit.enable = true;
   services.pipewire = {
-    enable = true;
+    enable = false;
     audio.enable = true;
     pulse.enable = true;
     alsa = {
@@ -778,11 +785,10 @@ in
       "docker"
       "ydotool"
       "deluge"
+      "audio" # for pulseaudio?
     ];
-    packages =
-      with pkgs;
-      [
-      ];
+    packages = with pkgs; [
+    ];
   };
 
   # Allow unfree packages
@@ -808,6 +814,11 @@ in
     #slurp # screenshot functionality
     #wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
     #mako # notification system developed by swaywm maintainer
+    qjackctl
+    libjack2
+    jack2
+    pavucontrol
+    jack_capture
     thermald
     powertop
     smartmontools
