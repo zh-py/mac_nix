@@ -287,6 +287,7 @@
     xxdiff
     okular
     mupdf
+    pdfarranger
     llpp
     zathura
     qpdfview
@@ -860,6 +861,11 @@
     enableCompletion = true;
     shellAliases = {
       ll = "ls -l";
+      y7 = "(){ yt-dlp -f 137+140 --no-mtime $1. ;}";
+      y6 = "(){ yt-dlp -f 136+140 --no-mtime $1. ;}";
+      y67 = "(){ yt-dlp -f '137+140/136+140' --no-mtime $1. ;}";
+      yfm = "(){ yt-dlp --list-formats $1. ;}";
+      yf = "yt-dlp --write-auto-sub --write-sub --sub-lang en --convert-subtitles srt -f '137+140/136+140' --no-mtime $1. ;}";
       #bl = "sudo python3 ~/Downloads/osx_battery_charge_limit/main.py -s 42";
       #bh = "sudo python3 ~/Downloads/osx_battery_charge_limit/main.py -s 77";
     };

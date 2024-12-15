@@ -621,6 +621,7 @@ in
   };
   #hardware.facetimehd.enable = true;
   #hardware.facetimehd.withCalibration = true;
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -647,23 +648,34 @@ in
   #hardware.system76.enableAll = true;
   services.blueman.enable = true;
   #hardware.pulseaudio = {
-  #enable = true;
-  #package = pkgs.pulseaudioFull;
+    #enable = true;
+    ##package = pkgs.pulseaudioFull.override { jackaudioSupport = true; };
+    #package = pkgs.pulseaudioFull;
+    #support32Bit = true;
   #};
-  #services.pipewire.enable = false;
-  hardware.pulseaudio = {
-    enable = true;
-    package = pkgs.pulseaudioFull;
-    support32Bit = true;
-  };
+  #services.jack = {
+    #jackd.enable = true;
+    ## support ALSA only programs via ALSA JACK PCM plugin
+    #alsa.enable = true;
+    ## support ALSA only programs via loopback device (supports programs like Steam)
+    ##loopback = {
+      ##enable = true;
+      ### buffering parameters for dmix device to work with ALSA only semi-professional sound programs
+      ###dmixConfig = ''
+      ###  period_size 2048
+      ###'';
+    ##};
+  #};
   security.rtkit.enable = true;
+  musnix.enable = true;
+
   services.pipewire = {
-    enable = false;
+    enable = true;
     audio.enable = true;
     pulse.enable = true;
     alsa = {
-      enable = false;
-      support32Bit = false;
+      enable = true;
+      support32Bit = true;
     };
     jack.enable = true;
     # use the example session manager (no others are packaged yet so this is enabled by default,
@@ -682,6 +694,7 @@ in
     wireplumber = {
       enable = true;
       extraConfig.bluetoothEnhancements = {
+
         "monitor.bluez.properties" = {
           "bluez5.default.rate" = 44100;
           "bluez5.enable-sbc-xq" = true;
@@ -698,6 +711,23 @@ in
             "hsp_ag"
           ];
         };
+
+        "monitor.bluez.rules" = {
+          matches = [
+            {
+              "node.name" = "~bluez_input.*";
+            }
+            {
+              "node.name" = "~bluez_output.*";
+            }
+          ];
+          actions = {
+            update-props = {
+              "session.suspend-timeout-seconds" = 0;
+            };
+          };
+        };
+
       };
     };
   };
@@ -786,6 +816,7 @@ in
       "ydotool"
       "deluge"
       "audio" # for pulseaudio?
+      "jackaudio"
     ];
     packages = with pkgs; [
     ];
@@ -818,7 +849,11 @@ in
     libjack2
     jack2
     pavucontrol
-    jack_capture
+    bluez-tools
+    #libcamera
+    pulseaudioFull
+    #jack_capture
+
     thermald
     powertop
     smartmontools
@@ -853,13 +888,13 @@ in
     #xorg.libxcb
     #xorg.libXrender
     #xorg.libXi
-    libsForQt5.qt5.qtwayland
-    libsForQt5.qt5.qtbase
-    kdePackages.qtwayland
-    kdePackages.qtbase
-    kdePackages.qt6gtk2
-    kdePackages.qt6ct
-    xorg.setxkbmap
+    #libsForQt5.qt5.qtwayland
+    #libsForQt5.qt5.qtbase
+    #kdePackages.qtwayland
+    #kdePackages.qtbase
+    #kdePackages.qt6gtk2
+    #kdePackages.qt6ct
+    #xorg.setxkbmap
     #xorg.xkbcomp
     #xorg.xhost # for gparted
     #xkeysnail
