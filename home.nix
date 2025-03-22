@@ -271,8 +271,8 @@
     google-chrome
     tor-browser
     wechat-uos
-    #rustdesk-flutter
-    #calibre
+    #rustdesk
+    calibre
     peazip
     nomacs
     gimp
@@ -285,15 +285,14 @@
     viewnior
     krusader
     xxdiff
-    okular
+    kdePackages.okular
     mupdf
     pdfarranger
     llpp
     zathura
     qpdfview
+    gpick
     telegram-desktop
-    skypeforlinux
-    zoom-us
     gparted
     ventoy-full
     galculator
@@ -410,10 +409,10 @@
 
     stack
 
-    (python312.withPackages (
+    (python313.withPackages (
       p: with p; [
         py-cpuinfo
-        extractcode
+        #extractcode
         pip
         numpy
         jupyter
@@ -865,7 +864,7 @@
       y6 = "(){ yt-dlp -f 136+140 --no-mtime $1. ;}";
       y67 = "(){ yt-dlp -f '137+140/136+140' --no-mtime $1. ;}";
       yfm = "(){ yt-dlp --list-formats $1. ;}";
-      yf = "(){ yt-dlp --write-auto-sub --write-sub --sub-lang en --convert-subtitles srt -f '137+140/136+140' --no-mtime $1. ;}";
+      yf = "(){ yt-dlp --write-auto-sub --write-sub --sub-lang en --convert-subtitles srt -f '137+140/136+140/135+140/134+140/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime $1. ;}";
       #bl = "sudo python3 ~/Downloads/osx_battery_charge_limit/main.py -s 42";
       #bh = "sudo python3 ~/Downloads/osx_battery_charge_limit/main.py -s 77";
     };

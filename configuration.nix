@@ -316,7 +316,7 @@ in
           # Paste
           v = S-insert
           # Cut
-          #x = S-delete
+          x = S-delete
 
           q = M-q
 
@@ -871,7 +871,6 @@ in
     nordzy-cursor-theme
     numix-cursor-theme
     openzone-cursors
-    vimix-cursor-theme
     vimix-cursors
     volantes-cursors
     xdotool
@@ -948,7 +947,6 @@ in
   # networking.firewall.enable = false;
 
   services.openssh.enable = true;
-  services.hddfancontrol.smartctl = true;
   services.v2raya.enable = true;
   services.dictd.enable = true;
   services.deluge = {
