@@ -5,15 +5,15 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    kmonad = {
-      url = "git+https://github.com/kmonad/kmonad?submodules=1&dir=nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #kmonad = {
+      #url = "git+https://github.com/kmonad/kmonad?submodules=1&dir=nix";
+      #inputs.nixpkgs.follows = "nixpkgs";
+    #};
     musnix  = { url = "github:musnix/musnix"; };
     #xremap-flake.url = "github:xremap/nix-flake";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, nur, kmonad, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, nur, ... }: {
     nixosConfigurations = {
       py = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -25,12 +25,14 @@
           #   environment.systemPackages = [ config.nur.repos.mic92.hello-nur ];
           # })
           #inputs.xremap-flake.nixosModules.default
-          kmonad.nixosModules.default
+          
+          #kmonad.nixosModules.default
           inputs.musnix.nixosModules.musnix
+
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
+            home-manager.useGlobalPkgs = false;
             home-manager.useUserPackages = true;
             home-manager.users.py = import ./home.nix;
             # Optionally, use home-manager.extraSpecialArgs to pass
