@@ -250,8 +250,9 @@ in
   environment.sessionVariables = {
     DISPLAY = ":0";
   };
-  environment.variables = {
-  };
+  #environment.variables = {
+    #DISPLAY = ":0";
+  #};
 
   # keycode https://www.toptal.com/developers/keycode
 
