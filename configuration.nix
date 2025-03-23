@@ -134,6 +134,7 @@ in
     fcitx5.addons = with pkgs; [
       fcitx5-gtk
       fcitx5-chinese-addons
+      fcitx5-pinyin-zhwiki
       fcitx5-nord
     ];
   };
@@ -247,12 +248,12 @@ in
     #put to .xinitrc
   };
 
-  environment.sessionVariables = {
-    DISPLAY = ":0";
-  };
-  #environment.variables = {
+  #environment.sessionVariables = {
     #DISPLAY = ":0";
   #};
+  environment.variables = {
+    DISPLAY = ":0";
+  };
 
   # keycode https://www.toptal.com/developers/keycode
 

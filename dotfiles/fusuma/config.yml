@@ -1,45 +1,52 @@
 swipe:
   4:
     left:
-      command: 'xdotool key ctrl+Right'
+      #command: 'xdotool key ctrl+Right'
+      command: 'ydotool key 29:1 106:1 106:0 29:0'
       threshold: 0.5
       interval: 0.75
     right:
-      command: 'xdotool key ctrl+Left'
+      #command: 'xdotool key ctrl+Left'
+      command: 'ydotool key 29:1 105:1 105:0 29:0'
       threshold: 0.5
       interval: 0.75
     up:
-      command: 'xdotool key ctrl+alt+m'
-      threshold: 0.2
+      #command: 'xdotool key ctrl+alt+m'
+      #threshold: 0.2
   3:
     begin:
-      command: xdotool mousedown 1
+      #command: xdotool mousedown 1
+      command: ydotool click 40
+      interval: 0.0
     update:
-      command: xdotool mousemove_relative -- $move_x, $move_y
+      #command: xdotool mousemove_relative -- $move_x, $move_y
+      command: ydotool mousemove -- $move_x, $move_y
       interval: 0.01
-      accel: 4
+      accel: 2
     end:
-      command: xdotool mouseup 1
+      #command: xdotool mouseup 1
+      command: ydotool click 80
+      interval: 0.0
 
 pinch:
   4:
-    in:
-      command: 'xdotool key ctrl+alt+d'
-      threshold: 0.5
-    out:
-      command: 'xdotool key ctrl+alt+d'
-      threshold: 0.5
+    #in:
+      #command: 'xdotool key ctrl+alt+d'
+      #threshold: 0.5
+    #out:
+      #command: 'xdotool key ctrl+alt+d'
+      #threshold: 0.5
   2:
-    out:
-      command: 'xdotool keydown ctrl click 4 keyup ctrl'
-      threshold: 0.02
-    in:
-      command: 'xdotool keydown ctrl click 5 keyup ctrl'
-      threshold: 0.02
+    #out:
+      #command: 'xdotool keydown ctrl click 4 keyup ctrl'
+      #threshold: 0.02
+    #in:
+      #command: 'xdotool keydown ctrl click 5 keyup ctrl'
+      #threshold: 0.02
 
 hold:
   4:
-    command: 'xdotool key super' # Activity
+    #command: 'xdotool key super' # Activity
 
 plugin:
   inputs:

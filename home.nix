@@ -443,7 +443,7 @@
   services.mpris-proxy.enable = true;
 
   services.fusuma = {
-    enable = true;
+    enable = false;
     extraPackages = with pkgs; [ xdotool ];
     #settings = ''
     #${builtins.readFile ./dotfiles/fusuma/settingconfig.yml}
@@ -568,7 +568,7 @@
     # '';
     ".config/mpv".source = dotfiles/mpv;
     #".config/wezterm/wezterm.lua".source = dotfiles/wezterm.lua;
-    #".config/fusuma/config.yml".source = dotfiles/fusuma/config.yml;
+    ".config/fusuma/config.yml".source = dotfiles/fusuma/config.yml;
     ".config/systemd/user/maestral.service".source = dotfiles/maestral.service;
     ".config/lf/lfcd.sh".source = dotfiles/lf-config/lfcd.sh;
     ".config/lf/lf.bash".source = dotfiles/lf-config/lf.bash;
