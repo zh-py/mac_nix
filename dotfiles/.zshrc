@@ -4,5 +4,7 @@ if [ -f "$LFCD" ]; then
 fi
 
 bindkey -s '^o' 'lfcd\n'  # zsh
+#bindkey -viins
+bindkey '^R' fzf-history-widget
 
 source $HOME/.config/lf/lf.bash

@@ -728,6 +728,9 @@
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
+    historyWidgetOptions = [
+      "--sort"
+    ];
   };
 
   programs.tmux = {
@@ -860,6 +863,7 @@
     enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
+    defaultKeymap = "emacs";
     shellAliases = {
       ll = "ls -l";
       y7 = "(){ yt-dlp -f 137+140 --no-mtime $1. ;}";

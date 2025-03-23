@@ -247,6 +247,9 @@ in
     #put to .xinitrc
   };
 
+  environment.sessionVariables = {
+    DISPLAY = ":0";
+  };
   environment.variables = {
   };
 
@@ -634,13 +637,13 @@ in
   };
 
   #systemd.user.services.mpris-proxy = {
-    #description = "Mpris proxy";
-    #after = [
-      #"network.target"
-      #"sound.target"
-    #];
-    #wantedBy = [ "default.target" ];
-    #serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
+  #description = "Mpris proxy";
+  #after = [
+  #"network.target"
+  #"sound.target"
+  #];
+  #wantedBy = [ "default.target" ];
+  #serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
   #};
   # in home manager services /mpris-proxy = true; already included the lines above.
 
@@ -648,23 +651,23 @@ in
   #hardware.system76.enableAll = true;
   services.blueman.enable = true;
   #hardware.pulseaudio = {
-    #enable = true;
-    ##package = pkgs.pulseaudioFull.override { jackaudioSupport = true; };
-    #package = pkgs.pulseaudioFull;
-    #support32Bit = true;
+  #enable = true;
+  ##package = pkgs.pulseaudioFull.override { jackaudioSupport = true; };
+  #package = pkgs.pulseaudioFull;
+  #support32Bit = true;
   #};
   #services.jack = {
-    #jackd.enable = true;
-    ## support ALSA only programs via ALSA JACK PCM plugin
-    #alsa.enable = true;
-    ## support ALSA only programs via loopback device (supports programs like Steam)
-    ##loopback = {
-      ##enable = true;
-      ### buffering parameters for dmix device to work with ALSA only semi-professional sound programs
-      ###dmixConfig = ''
-      ###  period_size 2048
-      ###'';
-    ##};
+  #jackd.enable = true;
+  ## support ALSA only programs via ALSA JACK PCM plugin
+  #alsa.enable = true;
+  ## support ALSA only programs via loopback device (supports programs like Steam)
+  ##loopback = {
+  ##enable = true;
+  ### buffering parameters for dmix device to work with ALSA only semi-professional sound programs
+  ###dmixConfig = ''
+  ###  period_size 2048
+  ###'';
+  ##};
   #};
   security.rtkit.enable = true;
   musnix.enable = true;
