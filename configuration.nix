@@ -246,14 +246,15 @@ in
     #displayManager.sessionCommands = "${pkgs.xorg.xkbcomp}/bin/xkbcomp ${customKeyboardLayout} $DISPLAY && /etc/profiles/per-user/py/bin/fusuma -d"; #use which to find out the path.
     #displayManager.sessionCommands = "iwctl adapter phy0 set-property Powered on && iwctl device eth0 set-property Powered on && /etc/profiles/per-user/py/bin/fusuma -d && /etc/profiles/per-user/py/bin/maestral start -f"; # use which to find out the path.
     #put to .xinitrc
+    displayManager.sessionCommands = "export DISPLAY=:0";
   };
 
   #environment.sessionVariables = {
     #DISPLAY = ":0";
   #};
-  environment.variables = {
-    DISPLAY = ":0";
-  };
+  #environment.variables = {
+    #DISPLAY = ":0";
+  #};
 
   # keycode https://www.toptal.com/developers/keycode
 
