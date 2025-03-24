@@ -202,6 +202,11 @@ in
     displayManager = {
       startx.enable = true;
     };
+    videoDrivers = [ "modesetting" ];  # Use modesetting instead of intel
+    desktopManager = {
+      xterm.enable = false;
+    };
+
     #lightdm = {
     #enable = true;
     #greeters.slick = {
@@ -246,14 +251,13 @@ in
     #displayManager.sessionCommands = "${pkgs.xorg.xkbcomp}/bin/xkbcomp ${customKeyboardLayout} $DISPLAY && /etc/profiles/per-user/py/bin/fusuma -d"; #use which to find out the path.
     #displayManager.sessionCommands = "iwctl adapter phy0 set-property Powered on && iwctl device eth0 set-property Powered on && /etc/profiles/per-user/py/bin/fusuma -d && /etc/profiles/per-user/py/bin/maestral start -f"; # use which to find out the path.
     #put to .xinitrc
-    displayManager.sessionCommands = "export DISPLAY=:0";
   };
 
   #environment.sessionVariables = {
-    #DISPLAY = ":0";
+  #DISPLAY = ":0";
   #};
   #environment.variables = {
-    #DISPLAY = ":0";
+  #DISPLAY = ":0";
   #};
 
   # keycode https://www.toptal.com/developers/keycode
@@ -291,6 +295,24 @@ in
   #};
 
   hardware.uinput.enable = true;
+
+  #systemd.user.services.libinput-gestures = {
+    #description = "Libinput Gestures";
+    #wantedBy = [ "graphical-session.target" ];
+    ##partOf = [ "graphical-session.target" ];
+
+    ## Make sure it starts after the graphical session has initialized
+    #after = [ "graphical-session-pre.target" ];
+
+    #serviceConfig = {
+      ##ExecStart = "${pkgs.libinput-gestures}/bin/libinput-gestures";
+      #ExecStart = "libinput-gestures";
+      ##Restart = "always";
+      ##RestartSec = 3;
+      #Restart = "on-failure";
+      #Type = "simple";
+    #};
+  #};
 
   services.keyd = {
     # 93
@@ -564,7 +586,7 @@ in
   services = {
 
     auto-cpufreq = {
-      enable = true;
+      enable = false;
       settings = {
         battery = {
           governor = "powersave";

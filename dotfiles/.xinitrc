@@ -1,7 +1,11 @@
 iwctl adapter phy0 set-property Powered on
 iwctl device eth0 set-property Powered on
 
-systemctl --user start libinput-gestures
 
-exec startlxqt
 
+exec startlxqt &
+
+# (sleep 2 && DISPLAY=:0 systemctl --user start libinput-gestures &) &
+(sleep 2 && systemctl --user start libinput-gestures &) &
+
+wait
