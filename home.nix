@@ -300,8 +300,6 @@
     bluetooth_battery
     texliveFull
     dmenu
-    tofi
-    wofi
     rofi-wayland
     bar
     pv
@@ -470,8 +468,10 @@
             interval = 0.8;
           };
           up = {
-            command = "xdotool key ctrl+alt+m";
-            threshold = 0.2;
+            #command = "xdotool key ctrl+alt+m";
+            command = "ydotool key 29:1 56:1 50:1 50:0 56:0 29:0";
+            threshold = 0.1;
+            interval = 0.5;
           };
         };
         "3" = {
@@ -599,7 +599,22 @@
     EDITOR = "nvim";
     BROWSER = "firefox";
     TERMINAL = "alacritty";
-    XDG_CONFIG_HOME = "$HOME/.config";
+    #XDG_CONFIG_HOME = "$HOME/.config";
+    #XDG_CONFIG_HOME = lib.mkDefault "$HOME/.config";
+  };
+
+  xdg = {
+    enable = false;
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "video/mp4" = "mpv.desktop";
+        "video/mpeg" = "mpv.desktop";
+        "video/quicktime" = "mpv.desktop";
+        "video/x-msvideo" = "mpv.desktop";
+        "video/x-flv" = "mpv.desktop";
+      };
+    };
   };
 
   # Let Home Manager install and manage itself.
@@ -656,6 +671,18 @@
   #enable = true;
   #extraConfig = builtins.readFile ./dotfiles/tint2rc;
   #};
+
+  programs.wofi = {
+    enable = false;
+    settings = {
+    };
+  };
+
+  programs.tofi = {
+    enable = false;
+    settings = {
+    };
+  };
 
   programs.lf = {
     enable = true;
@@ -869,7 +896,8 @@
       y6 = "(){ yt-dlp -f 136+140 --no-mtime $1. ;}";
       y67 = "(){ yt-dlp -f '137+140/136+140' --no-mtime $1. ;}";
       yfm = "(){ yt-dlp --list-formats $1. ;}";
-      yf = "(){ yt-dlp --write-auto-sub --write-sub --sub-lang en --convert-subtitles srt -f '299+140/137+140/136+140/135+140/134+140/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime $1. ;}";
+      y = "(){ yt-dlp --write-auto-sub --write-sub --sub-lang en --convert-subtitles srt -f '299+140/137+140/136+140/135+140/134+140/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime $1. ;}";
+      ys = "(){ yt-dlp -f '299+140/137+140/136+140/135+140/134+140/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime $1. ;}";
       #bl = "sudo python3 ~/Downloads/osx_battery_charge_limit/main.py -s 42";
       #bh = "sudo python3 ~/Downloads/osx_battery_charge_limit/main.py -s 77";
     };

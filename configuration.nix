@@ -6,6 +6,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 #let
@@ -131,12 +132,15 @@ in
   i18n.inputMethod = {
     type = "fcitx5";
     enable = true;
-    fcitx5.addons = with pkgs; [
-      fcitx5-gtk
-      fcitx5-chinese-addons
-      fcitx5-pinyin-zhwiki
-      fcitx5-nord
-    ];
+    fcitx5 = {
+      waylandFrontend = true;
+      addons = with pkgs; [
+        fcitx5-gtk
+        fcitx5-chinese-addons
+        fcitx5-pinyin-zhwiki
+        fcitx5-nord
+      ];
+    };
   };
   #i18n.inputMethod = {
   #enable = true;
@@ -179,6 +183,12 @@ in
   };
   programs.waybar.enable = true;
 
+  #environment.sessionVariables = {
+    #QT_QPA_PLATFORM = "wayland";
+    #SDL_VIDEODRIVER = "wayland";
+    #XDG_SESSION_TYPE = "wayland";
+  #};
+
   #security.pam.services.ly.enableGnomeKeyring = true;
   #services.displayManager = {
   #autoLogin = {
@@ -187,8 +197,27 @@ in
   #};
   #ly = {
   #enable = true;
+  ##sessions = [
+  ##{
+  ##name = "LXQt";
+  ##start = "${pkgs.lxqt.lxqt-session}/bin/lxqt-session";
+  ##}
+  ##{
+  ##name = "Hyprland";
+  ##start = "${pkgs.hyprland}/bin/Hyprland";
+  ##}
+  ##];
   #};
   #};
+  #services.xserver.displayManager.sessionPackages = [
+  #pkgs.lxqt.lxqt-session # Adds LXQt session
+  #pkgs.hyprland # Adds Hyprland session
+  #];
+  #services.displayManager.ly.configFile = pkgs.writeText "ly-config.ini" ''
+  #[main]
+  #wayland_cmd = Hyprland
+  #tty = 2
+  #'';
 
   services.haveged.enable = true;
 
@@ -196,16 +225,50 @@ in
 
   security.polkit.enable = true;
 
-  services.xserver = {
-    # 47lines
-    enable = true;
-    displayManager = {
-      startx.enable = true;
+  #xdg.portal = {
+  #enable = true;
+  #lxqt.enable = true;
+  #extraPortals = with pkgs; [
+  #xdg-desktop-portal-gtk # Fallback GTK portal
+  #];
+  #};
+
+  services.picom = {
+    enable = false;
+    backend = "xrender";
+    #backend = "egl"; # Force GLX backend
+    #vSync = true; # Enable vertical sync to reduce tearing
+
+    #settings = {
+      #glx-no-stencil = true;
+      #glx-no-rebind-pixmap = true;
+      #use-damage = true; # Critical for performance
+      #glx-use-copysubbuffermesa = true;
+      #xrender-sync = true;
+      #xrender-sync-fence = true;
+    #};
+  };
+
+  services = {
+    xserver = {
+      # 47lines
+      enable = true;
+      displayManager = {
+        startx.enable = true;
+      };
+      videoDrivers = [ "modesetting" ]; # Use modesetting instead of intel
+      desktopManager = {
+        lxqt.enable = true;
+        xterm.enable = false;
+      };
     };
-    videoDrivers = [ "modesetting" ];  # Use modesetting instead of intel
-    desktopManager = {
-      xterm.enable = false;
-    };
+
+    #desktopManager = {
+      #plasma6 = {
+        #enable = true;
+        #enableQt5Integration = false;
+      #};
+    #};
 
     #lightdm = {
     #enable = true;
@@ -215,7 +278,6 @@ in
     #};
     #};
     #};
-    desktopManager.lxqt.enable = true;
     #windowManager.icewm.enable = true;
     #windowManager.i3.enable = true;
     #xkb.layout = "us";
@@ -251,6 +313,12 @@ in
     #displayManager.sessionCommands = "${pkgs.xorg.xkbcomp}/bin/xkbcomp ${customKeyboardLayout} $DISPLAY && /etc/profiles/per-user/py/bin/fusuma -d"; #use which to find out the path.
     #displayManager.sessionCommands = "iwctl adapter phy0 set-property Powered on && iwctl device eth0 set-property Powered on && /etc/profiles/per-user/py/bin/fusuma -d && /etc/profiles/per-user/py/bin/maestral start -f"; # use which to find out the path.
     #put to .xinitrc
+  };
+
+  qt = {
+    enable = true;
+    platformTheme = "qt5ct";
+    style = "adwaita";
   };
 
   #environment.sessionVariables = {
@@ -297,21 +365,21 @@ in
   hardware.uinput.enable = true;
 
   #systemd.user.services.libinput-gestures = {
-    #description = "Libinput Gestures";
-    #wantedBy = [ "graphical-session.target" ];
-    ##partOf = [ "graphical-session.target" ];
+  #description = "Libinput Gestures";
+  #wantedBy = [ "graphical-session.target" ];
+  ##partOf = [ "graphical-session.target" ];
 
-    ## Make sure it starts after the graphical session has initialized
-    #after = [ "graphical-session-pre.target" ];
+  ## Make sure it starts after the graphical session has initialized
+  #after = [ "graphical-session-pre.target" ];
 
-    #serviceConfig = {
-      ##ExecStart = "${pkgs.libinput-gestures}/bin/libinput-gestures";
-      #ExecStart = "libinput-gestures";
-      ##Restart = "always";
-      ##RestartSec = 3;
-      #Restart = "on-failure";
-      #Type = "simple";
-    #};
+  #serviceConfig = {
+  ##ExecStart = "${pkgs.libinput-gestures}/bin/libinput-gestures";
+  #ExecStart = "libinput-gestures";
+  ##Restart = "always";
+  ##RestartSec = 3;
+  #Restart = "on-failure";
+  #Type = "simple";
+  #};
   #};
 
   services.keyd = {
@@ -911,6 +979,7 @@ in
     xorg.xev
     wev
     keymapper
+    inputs.hyprswitch.packages.${system}.default
     #xorg.libX11
     #xorg.libxcb
     #xorg.libXrender
@@ -941,8 +1010,11 @@ in
     #fontmatrix
     fontpreview
     keyd
-  ];
 
+    wayfire # Wayland compositor
+    wlroots # Required for wayfire
+    qt5.qtwayland
+  ];
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
 

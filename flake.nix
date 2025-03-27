@@ -5,6 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    hyprswitch.url = "github:h3rmt/hyprswitch/release";
     #kmonad = {
       #url = "git+https://github.com/kmonad/kmonad?submodules=1&dir=nix";
       #inputs.nixpkgs.follows = "nixpkgs";
@@ -14,9 +15,11 @@
   };
 
   outputs = inputs@{ nixpkgs, home-manager, nur, ... }: {
+  #outputs = { nixpkgs, home-manager, nur, ... }@inputs: {
     nixosConfigurations = {
       py = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           nur.modules.nixos.default
           # This adds a nur configuration option.
@@ -25,7 +28,6 @@
           #   environment.systemPackages = [ config.nur.repos.mic92.hello-nur ];
           # })
           #inputs.xremap-flake.nixosModules.default
-          
           #kmonad.nixosModules.default
           inputs.musnix.nixosModules.musnix
 
