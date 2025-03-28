@@ -183,11 +183,17 @@ in
   };
   programs.waybar.enable = true;
 
-  #environment.sessionVariables = {
+  environment.sessionVariables = {
+    QT_QPA_PLATFORMTHEME = "qt5ct";
+    QT_NO_PLASMA_INTEGRATION = "1";
+    QT_STYLE_OVERRIDE = "Fusion";
     #QT_QPA_PLATFORM = "wayland";
     #SDL_VIDEODRIVER = "wayland";
     #XDG_SESSION_TYPE = "wayland";
-  #};
+  };
+  #environment.extraInit = ''
+    #export QT_QPA_PLATFORMTHEME=qt5ct
+  #'';
 
   #security.pam.services.ly.enableGnomeKeyring = true;
   #services.displayManager = {
@@ -240,12 +246,12 @@ in
     #vSync = true; # Enable vertical sync to reduce tearing
 
     #settings = {
-      #glx-no-stencil = true;
-      #glx-no-rebind-pixmap = true;
-      #use-damage = true; # Critical for performance
-      #glx-use-copysubbuffermesa = true;
-      #xrender-sync = true;
-      #xrender-sync-fence = true;
+    #glx-no-stencil = true;
+    #glx-no-rebind-pixmap = true;
+    #use-damage = true; # Critical for performance
+    #glx-use-copysubbuffermesa = true;
+    #xrender-sync = true;
+    #xrender-sync-fence = true;
     #};
   };
 
@@ -264,10 +270,10 @@ in
     };
 
     #desktopManager = {
-      #plasma6 = {
-        #enable = true;
-        #enableQt5Integration = false;
-      #};
+    #plasma6 = {
+    #enable = true;
+    #enableQt5Integration = false;
+    #};
     #};
 
     #lightdm = {
@@ -315,11 +321,6 @@ in
     #put to .xinitrc
   };
 
-  qt = {
-    enable = true;
-    platformTheme = "qt5ct";
-    style = "adwaita";
-  };
 
   #environment.sessionVariables = {
   #DISPLAY = ":0";
@@ -625,6 +626,14 @@ in
     touchpad.tappingDragLock = true;
   };
   programs.ydotool.enable = true;
+
+  programs.wayfire = {
+    enable = false;
+    plugins = with pkgs.wayfirePlugins; [
+      wcm
+      wf-shell
+    ];
+  };
 
   #services.xserver.desktopManager.session =
   #[ { manage = "desktop";
@@ -964,6 +973,15 @@ in
     gsimplecal
     wmctrl
     #xorg.xprop
+
+    kdePackages.qt6ct
+    libsForQt5.qt5ct
+    kdePackages.breeze-icons
+    libsForQt5.breeze-icons
+    gnome-icon-theme
+    shared-mime-info
+    lxqt.lxqt-menu-data
+
     nordzy-cursor-theme
     numix-cursor-theme
     openzone-cursors
@@ -985,9 +1003,18 @@ in
     #xorg.libXrender
     #xorg.libXi
     #libsForQt5.qt5.qtwayland
-    #libsForQt5.qt5.qtbase
+    libsForQt5.qt5.qtbase
     #kdePackages.qtwayland
-    #kdePackages.qtbase
+    kdePackages.qtbase
+    kdePackages.kglobalacceld
+    kdePackages.kglobalaccel
+    libsForQt5.kglobalaccel
+    kdePackages.qttools
+    kdePackages.qtmultimedia
+    libsForQt5.breeze-qt5
+    libsForQt5.ki18n
+    libsForQt5.qt5ct
+    kdePackages.ki18n
     #kdePackages.qt6gtk2
     #kdePackages.qt6ct
     #xorg.setxkbmap
@@ -1003,6 +1030,7 @@ in
     #xfce.xfce4-pulseaudio-plugin
     playerctl
     qpwgraph
+    virtualgl
     #pavucontrol
     #pamixer
     #pw-volume
