@@ -185,6 +185,9 @@ in
     enable = true;
     xwayland.enable = true;
   };
+  programs.labwc = {
+    enable = true;
+  };
   programs.waybar.enable = true;
 
   environment.sessionVariables = {
@@ -196,7 +199,7 @@ in
     #XDG_SESSION_TYPE = "wayland";
   };
   #environment.extraInit = ''
-    #export QT_QPA_PLATFORMTHEME=qt5ct
+  #export QT_QPA_PLATFORMTHEME=qt5ct
   #'';
 
   #security.pam.services.ly.enableGnomeKeyring = true;
@@ -260,6 +263,9 @@ in
   };
 
   services = {
+    displayManager = {
+      defaultSession = "lxqt-wayland";
+    };
     xserver = {
       # 47lines
       enable = true;
@@ -325,7 +331,6 @@ in
     #put to .xinitrc
   };
 
-
   #environment.sessionVariables = {
   #DISPLAY = ":0";
   #};
@@ -387,6 +392,26 @@ in
   #};
   #};
 
+  #systemd.services.keyd = {
+  #serviceConfig = {
+  #CapabilityBoundingSet = [
+  #"CAP_SETGID"
+  #];
+  #Group = "keyd";
+  #User = "keyd";
+  #};
+  #};
+  security.sudo.extraRules = [
+    {
+      users = [ "py" ];
+      commands = [
+        {
+          command = "${pkgs.systemd}/bin/systemctl stop keyd.service";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
   services.keyd = {
     # 93
     enable = true;
@@ -492,136 +517,178 @@ in
   #enable = true;
   #};
 
-  #systemd.user.services.set-xhost = { #114
+  #systemd.user.services.set-xhost = {
+  ## 121
   #description = "Run a one-shot command upon user login";
   #path = [ pkgs.xorg.xhost ];
   #wantedBy = [ "default.target" ];
   #script = "xhost +SI:localuser:root";
   #environment.DISPLAY = ":0.0"; # NOTE: This is hardcoded for this flake
   #};
-  #services.xremap = {
-  #withX11 = true;
-  ##yamlConfig = ''
-  ##keymap:
-  ##- name: Google
-  ##application:
-  ##only: Google-chrome
-  ##remap:
-  ##Super-1: C-1
-  ##Super-2: C-2
-  ##'';
-  #config = {
-  #modmap = [
+  services.xremap = {
+    # NOTE: since this sample configuration does not have any DE, xremap needs to be started manually by systemctl --user start xremap
+    serviceMode = "user";
+    userName = "py";
+  };
+  services.xremap = {
+    withX11 = true;
+    withHypr = false;
+    #yamlConfig = ''
+    #keymap:
+    #- name: Google
+    #application:
+    #only: Google-chrome
+    #remap:
+    #Super-1: C-1
+    #Super-2: C-2
+    #'';
+    config = {
+      #modmap = [
+      #{
+      #name = "Global";
+      #}
+      #{
+      #name = "Chrome";
+      #remap = {
+      ##"Super_L" = "Ctrl_L";
+      #};
+      #application.only = [ "Google-chrome" ];
+      #}
+      #];
+
+      keymap = [
+        {
+          name = "Global";
+          remap = {
+            "Super-Shift-T" = "C-Shift-T";
+            "Super-w" = "C-w";
+            "Super-q" = "C-q";
+            "Super-f" = "C-f";
+            "Super-t" = "C-t";
+            "Super-c" = "C-insert";
+            "Super-v" = "SHIFT-insert";
+            "Super-x" = "SHIFT-delete";
+            "Super-r" = "C-r";
+            "Super-l" = "C-l";
+            "Super-Equal" = "C-Equal";
+            "Super-Minus" = "C-Minus";
+            #"Super-0" = ["C-0" "M-0"];
+            #"Super-1" = ["C-1" "M-1"];
+            #"Super-2" = ["C-2" "M-2"];
+            #"Super-3" = ["C-3" "M-3"];
+            #"Super-4" = ["C-4" "M-4"];
+            #"Super-5" = ["C-5" "M-5"];
+            #"Super-6" = ["C-6" "M-6"];
+            #"Super-7" = ["C-7" "M-7"];
+            #"Super-8" = ["C-8" "M-8"];
+            #"Super-9" = ["C-9" "M-9"];
+            #"Super-1" = "M-1";
+            #"Super-2" = "M-2";
+            #"Super-3" = "M-3";
+            #"Super-4" = "M-4";
+            #"Super-5" = "M-5";
+            #"Super-6" = "M-6";
+            #"Super-7" = "M-7";
+            #"Super-8" = "M-8";
+            #"Super-9" = "M-9";
+            #"Super-BTN_LEFT" = "C-BTN_LEFT";
+          };
+        }
+        {
+          name = "Chrome";
+          remap = {
+            "Super-1" = "C-1";
+            "Super-2" = "C-2";
+            "Super-3" = "C-3";
+            "Super-4" = "C-4";
+            "Super-5" = "C-5";
+            "Super-6" = "C-6";
+            "Super-7" = "C-7";
+            "Super-8" = "C-8";
+            "Super-9" = "C-9";
+            "Super-0" = "C-0";
+          };
+          application.only = [ "Google-chrome" ];
+        }
+        {
+          name = "Kitty";
+          remap = {
+            "Super-1" = "M-1";
+            "Super-2" = "M-2";
+            "Super-3" = "M-3";
+            "Super-4" = "M-4";
+            "Super-5" = "M-5";
+            "Super-6" = "M-6";
+            "Super-7" = "M-7";
+            "Super-8" = "M-8";
+            "Super-9" = "M-9";
+            "Super-0" = "M-0";
+          };
+          application.only = [ "kitty" ];
+        }
+        {
+          name = "Firefox";
+          remap = {
+            "Super-1" = "M-1";
+            "Super-2" = "M-2";
+            "Super-3" = "M-3";
+            "Super-4" = "M-4";
+            "Super-5" = "M-5";
+            "Super-6" = "M-6";
+            "Super-7" = "M-7";
+            "Super-8" = "M-8";
+            "Super-9" = "M-9";
+            "Super-0" = "M-0";
+          };
+          application.only = [ "firefox" ];
+        }
+      ];
+    };
+  };
+
+  ## Modmap for single key rebinds
+  #services.xremap.config.modmap = [
   #{
   #name = "Global";
-  #remap = { "KEY_ENTER" = "KEY_BACKSLASH"; };
-  #remap = { "KEY_BACKSLASH" = "KEY_ENTER"; };
-  ##remap = { "KEY_LSGT" = "KEY_LEFTSHIFT"; };
-  #}
-  #{
-  #name = "Chrome";
-  #remap = { "Super_L" = "Ctrl_L"; };
-  #application.only = [ "Google-chrome" ];
-  #}
-  #];
-
-  #keymap = [
-  #{
-  #name = "Global";
   #remap = {
-  #"Super-Shift-T" = "C-Shift-T";
-  #"Super-w" = "C-w";
-  #"Super-q" = "C-q";
-  #"Super-f" = "C-f";
-  #"Super-t" = "C-t";
-  #"Super-c" = "C-c";
-  #"Super-x" = "C-x";
-  #"Super-v" = "C-v";
-  #"Super-r" = "C-r";
-  #"Super-l" = "C-l";
-  #"Super-Equal" = "C-Equal";
-  #"Super-Minus" = "C-Minus";
-  ##"Super-0" = ["C-0" "M-0"];
-  ##"Super-1" = ["C-1" "M-1"];
-  ##"Super-2" = ["C-2" "M-2"];
-  ##"Super-3" = ["C-3" "M-3"];
-  ##"Super-4" = ["C-4" "M-4"];
-  ##"Super-5" = ["C-5" "M-5"];
-  ##"Super-6" = ["C-6" "M-6"];
-  ##"Super-7" = ["C-7" "M-7"];
-  ##"Super-8" = ["C-8" "M-8"];
-  ##"Super-9" = ["C-9" "M-9"];
-  ##"Super-1" = "M-1";
-  ##"Super-2" = "M-2";
-  ##"Super-3" = "M-3";
-  ##"Super-4" = "M-4";
-  ##"Super-5" = "M-5";
-  ##"Super-6" = "M-6";
-  ##"Super-7" = "M-7";
-  ##"Super-8" = "M-8";
-  ##"Super-9" = "M-9";
-  ##"Super-BTN_LEFT" = "C-BTN_LEFT";
+  #"KEY_ENTER" = "KEY_BACKSLASH";
   #};
-  #}
-  #{
+  #remap = {
+  #"KEY_BACKSLASH" = "KEY_ENTER";
+  #};
   #name = "Chrome";
   #remap = {
-  #"Super-1" = "C-1";
-  #"Super-2" = "C-2";
-  #"Super-3" = "C-3";
-  #"Super-4" = "C-4";
-  #"Super-5" = "C-5";
-  #"Super-6" = "C-6";
-  #"Super-7" = "C-7";
-  #"Super-8" = "C-8";
-  #"Super-9" = "C-9";
-  #"Super-0" = "C-0";
+  #"LEFTMETA" = "LEFTCTRL";
   #};
-  #application.only = [ "Google-chrome" ];
-  #}
-  #{
-  #name = "Firefox";
-  #remap = {
-  #"Super-1" = "M-1";
-  #"Super-2" = "M-2";
-  #"Super-3" = "M-3";
-  #"Super-4" = "M-4";
-  #"Super-5" = "M-5";
-  #"Super-6" = "M-6";
-  #"Super-7" = "M-7";
-  #"Super-8" = "M-8";
-  #"Super-9" = "M-9";
-  #"Super-0" = "M-0";
-  #};
-  #application.only = [ "firefox" ];
-  #}
-  #];
-  #};
-  #};
-
-  ### Modmap for single key rebinds
-  ##services.xremap.config.modmap = [
-  ##{
-  ##name = "Global";
-  ##remap = { "KEY_ENTER" = "KEY_BACKSLASH"; };
-  ##remap = { "KEY_BACKSLASH" = "KEY_ENTER"; };
-  ##name = "Chrome";
-  #remap = { "LEFTMETA" = "LEFTCTRL"; };
   #application.only = [ "Google-chrome" ];
   #}
   #];
 
-  ## Keymap for key combo rebinds
+  ### Keymap for key combo rebinds
   #services.xremap.config.keymap = [
   #{
   #name = "CMD";
-  #remap = { "Super-tab" = "c-tab"; };
-  #remap = { "Super-w" = "c-w"; };
-  #remap = { "Super-q" = "c-q"; };
-  #remap = { "Super-t" = "c-t"; };
-  #remap = { "Super-c" = "c-c"; };
-  #remap = { "Super-x" = "c-x"; };
-  #remap = { "Super-v" = "c-v"; };
+  #remap = {
+  #"Super-tab" = "c-tab";
+  #};
+  #remap = {
+  #"Super-w" = "c-w";
+  #};
+  #remap = {
+  #"Super-q" = "c-q";
+  #};
+  #remap = {
+  #"Super-t" = "c-t";
+  #};
+  #remap = {
+  #"Super-c" = "c-c";
+  #};
+  #remap = {
+  #"Super-x" = "c-x";
+  #};
+  #remap = {
+  #"Super-v" = "c-v";
+  #};
   ## NOTE: no application-specific remaps work without features (see configuration)
   #}
   #];
@@ -919,16 +986,20 @@ in
   #users.groups.media.members = [ ... ];
 
   #users.groups.keyd = {};
+  #users.users.keyd = {
+  #group = "keyd";
+  #isSystemUser = true;
+  #};
   users.users.py = {
     isNormalUser = true;
     description = "py";
     extraGroups = [
       "input"
+      "evdev"
       "uinput"
       "networkmanager"
       "wheel"
       "docker"
-      "keyd"
       "ydotool"
       "deluge"
       "audio" # for pulseaudio?
@@ -989,7 +1060,7 @@ in
     kdePackages.qt6ct
     libsForQt5.qt5ct
     kdePackages.breeze-icons
-    libsForQt5.breeze-icons
+    #libsForQt5.breeze-icons
     gnome-icon-theme
     shared-mime-info
     lxqt.lxqt-menu-data
@@ -1049,8 +1120,8 @@ in
     font-manager
     #fontmatrix
     fontpreview
-    keyd
 
+    lxqt.lxqt-wayland-session
     wayfire # Wayland compositor
     wlroots # Required for wayfire
     qt5.qtwayland

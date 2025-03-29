@@ -15,7 +15,7 @@
       url = "github:sodiboo/niri-flake";
       #inputs.nixpkgs.follows = "nixpkgs";      # Optional: share nixpkgs
     };
-    #xremap-flake.url = "github:xremap/nix-flake";
+    xremap-flake.url = "github:xremap/nix-flake";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, nur, ... }: {
@@ -32,7 +32,7 @@
           # ({ config, ... }: {
           #   environment.systemPackages = [ config.nur.repos.mic92.hello-nur ];
           # })
-          #inputs.xremap-flake.nixosModules.default
+          inputs.xremap-flake.nixosModules.default
           #kmonad.nixosModules.default
           inputs.musnix.nixosModules.musnix
 
