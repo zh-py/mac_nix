@@ -45,7 +45,6 @@ in
 
   #nix.settings.substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" "https://mirrors.ustc.edu.cn/nix-channels/store" "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
   #nix.settings.substituters = lib.mkBefore [ "https://mirror.sjtu.edu.cn/nix-channels/store" "https://mirrors.ustc.edu.cn/nix-channels/store" "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
-
   systemd.extraConfig = "DefaultLimitNOFILE=4096";
   nix.gc = {
     automatic = true;
@@ -171,6 +170,11 @@ in
   #services.xserver.displayManager.defaultSession = "fvwm3";
   #services.xserver.windowManager.fvwm3.enable = true;
   #services.xserver.displayManager.sessionCommands = "${pkgs.xorg.xkbcomp}/bin/xkbcomp ${customKeyboardLayout} $DISPLAY";
+
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  programs.niri.package = pkgs.niri-unstable;
+  programs.niri.enable = true;
+  services.seatd.enable = true;
 
   services.gnome.gnome-keyring.enable = true;
   programs.sway = {
@@ -435,6 +439,10 @@ in
           # - keybinding: `gsettings get org.gnome.desktop.wm.keybindings cycle-group`
           ` = A-f6
 
+          #[meta_mac+control]
+          #H = M-C-H
+          #L = M-C-L
+
           # app_switch_state modifier layer; inherits from 'Meta' modifier layer
           [app_switch_state:M]
 
@@ -462,6 +470,8 @@ in
           [meta_mac+shift]
           h = M-S-h
           l = M-S-l
+          / = M-S-/
+          e = M-S-e
           c = C-S-c
           v = C-S-v
           1 = M-S-1
@@ -918,10 +928,12 @@ in
       "networkmanager"
       "wheel"
       "docker"
+      "keyd"
       "ydotool"
       "deluge"
       "audio" # for pulseaudio?
       "jackaudio"
+      "seat"
     ];
     packages = with pkgs; [
     ];

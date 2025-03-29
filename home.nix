@@ -3,6 +3,13 @@
 #ln -sf /etc/nixos/dotfiles/hyprland.conf ~/.config/hypr
 #ln -sf /etc/nixos/dotfiles/.xinitrc ~/.config/
 
+# in ~/.config/lxqt/session.conf or lxqt session setting
+#GTK_IM_MODULE=fcitx5
+#QT_IM_MODULE=fcitx5
+#QT_PLATFORM_PLUGIN=qt5ct
+#QT_QPA_PLATFORMTHEME=qt5ct
+#XMODIFIERS%3D%40im%3Dfcitx=fcitx5
+
 {
   config,
   pkgs,
