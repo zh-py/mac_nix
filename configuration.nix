@@ -401,6 +401,7 @@ in
   #User = "keyd";
   #};
   #};
+  services.input-remapper.enable = true;
   security.sudo.extraRules = [
     {
       users = [ "py" ];
@@ -543,18 +544,19 @@ in
     #Super-2: C-2
     #'';
     config = {
-      #modmap = [
-      #{
-      #name = "Global";
-      #}
-      #{
-      #name = "Chrome";
-      #remap = {
-      ##"Super_L" = "Ctrl_L";
-      #};
-      #application.only = [ "Google-chrome" ];
-      #}
-      #];
+      modmap = [
+        #{
+          #name = "Global";
+        #}
+        {
+          name = "Chrome";
+          remap = {
+            "Super_L" = "Ctrl_L";
+            "Super_R" = "Ctrl_R";
+          };
+          application.only = [ "Google-chrome" ];
+        }
+      ];
 
       keymap = [
         {
@@ -568,10 +570,13 @@ in
             "Super-c" = "C-insert";
             "Super-v" = "SHIFT-insert";
             "Super-x" = "SHIFT-delete";
+            "Super-backspace" = "delete";
             "Super-r" = "C-r";
             "Super-l" = "C-l";
             "Super-Equal" = "C-Equal";
             "Super-Minus" = "C-Minus";
+            #"Super-BTN_LEFT" = "send_key: KEY_LEFTCTRL && click: BTN_LEFT && send_key: KEY_LEFTCTRL";
+            #"Super-BTN_LEFT" = "C-Minus";
             #"Super-0" = ["C-0" "M-0"];
             #"Super-1" = ["C-1" "M-1"];
             #"Super-2" = ["C-2" "M-2"];
@@ -607,8 +612,25 @@ in
             "Super-8" = "C-8";
             "Super-9" = "C-9";
             "Super-0" = "C-0";
+            "Super-Tab" = "Super-Tab";
           };
           application.only = [ "Google-chrome" ];
+        }
+        {
+          name = "krusader";
+          remap = {
+            "Super-1" = "M-1";
+            "Super-2" = "M-2";
+            "Super-3" = "M-3";
+            "Super-4" = "M-4";
+            "Super-5" = "M-5";
+            "Super-6" = "M-6";
+            "Super-7" = "M-7";
+            "Super-8" = "M-8";
+            "Super-9" = "M-9";
+            "Super-0" = "M-0";
+          };
+          application.only = [ "kitty" ];
         }
         {
           name = "Kitty";
@@ -1071,6 +1093,7 @@ in
     vimix-cursors
     volantes-cursors
     xdotool
+    xbindkeys
     xautomation
     libinput-gestures
     libinput
@@ -1080,6 +1103,7 @@ in
     xorg.xev
     wev
     keymapper
+    sxhkd
     inputs.hyprswitch.packages.${system}.default
     #xorg.libX11
     #xorg.libxcb
