@@ -239,11 +239,12 @@ in
   security.polkit.enable = true;
 
   #xdg.portal = {
-  #enable = true;
-  #lxqt.enable = true;
-  #extraPortals = with pkgs; [
-  #xdg-desktop-portal-gtk # Fallback GTK portal
-  #];
+    #enable = true;
+    #lxqt.enable = true;
+    #extraPortals = with pkgs; [
+      #xdg-desktop-portal-hyprland
+      ##xdg-desktop-portal-gtk # Fallback GTK portal
+    #];
   #};
 
   services.picom = {
@@ -465,9 +466,11 @@ in
           # - keybinding: `gsettings get org.gnome.desktop.wm.keybindings cycle-group`
           ` = A-f6
 
-          #[meta_mac+control]
+          [meta_mac+control]
           #H = M-C-H
           #L = M-C-L
+          3 = M-C-3
+          4 = M-C-4
 
           # app_switch_state modifier layer; inherits from 'Meta' modifier layer
           [app_switch_state:M]
@@ -546,7 +549,7 @@ in
     config = {
       modmap = [
         #{
-          #name = "Global";
+        #name = "Global";
         #}
         {
           name = "Chrome";
@@ -762,7 +765,7 @@ in
   services = {
 
     auto-cpufreq = {
-      enable = false;
+      enable = true;
       settings = {
         battery = {
           governor = "powersave";
@@ -1087,6 +1090,9 @@ in
     shared-mime-info
     lxqt.lxqt-menu-data
 
+    # cd /run/current-system/sw/share/icons  they are stored here!!
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    bibata-cursors
     nordzy-cursor-theme
     numix-cursor-theme
     openzone-cursors
