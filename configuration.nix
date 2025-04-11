@@ -826,6 +826,7 @@ in
       vpl-gpu-rt # or intel-media-sdk for QSV
     ];
   };
+  hardware.intel-gpu-tools.enable = true;
   #hardware.facetimehd.enable = true;
   #hardware.facetimehd.withCalibration = true;
 
