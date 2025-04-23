@@ -448,6 +448,11 @@ in
 
           q = M-q
 
+          p = M-p
+          n = M-n
+          h = M-h
+          b = M-b
+
           ## Move cursor to beginning of line
           #left = home
           ## Move cursor to end of Line
@@ -816,10 +821,14 @@ in
 
   };
 
+
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
-      # your Open GL, Vulkan and VAAPI drivers
+      vaapi-intel-hybrid
+      libva-vdpau-driver
+      libvdpau-va-gl
+      libvdpau
       intel-media-driver
       intel-ocl
       intel-vaapi-driver
@@ -1183,14 +1192,26 @@ in
   programs.bandwhich.enable = true;
   networking.nftables.enable = true;
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 2283 ]; # 2283:immich
-  networking.firewall.allowedUDPPorts = [ 2283 ]; # 2283:immich
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 2283 56789 ];
+    allowedUDPPorts = [ 2283 ]; # 2283:immich
+  };
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
   services.openssh.enable = true;
   services.v2raya.enable = true;
+  services.sing-box.enable = true;
   services.dictd.enable = true;
+
+  services.syncthing = {
+    enable = true;
+    user = "py";
+    dataDir = "/home/py/Sync";
+    openDefaultPorts = true;
+  };
+
   services.deluge = {
     enable = true;
     #web = {
