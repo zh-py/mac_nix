@@ -57,6 +57,7 @@
     #teams-for-linux
     #rustdesk
     calibre
+    koreader
     peazip
     nomacs
     gimp
@@ -74,10 +75,11 @@
     xxdiff
     kdePackages.okular
     mupdf
+    poppler_utils
     pdfarranger
     llpp
-    zathura
     qpdfview
+    poppler
     gpick
     telegram-desktop
     gparted
@@ -100,6 +102,7 @@
     rofi
 
     #share
+    openssl
     mc
     krename
     eza
@@ -416,6 +419,7 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.sagemath.enable = true;
+  programs.zathura.enable = true;
   programs.mpv = {
     # mkdir /var/log/mpv && sudo chmod -R u=rwx,g=rwx,o=rwx /var/log/mpv    ### for recent.lua history.log
     enable = true;
@@ -713,7 +717,7 @@
         file = ".p10k.zsh";
       }
     ];
-    initExtra = builtins.readFile ./dotfiles/.zshrc;
+    initContent = builtins.readFile ./dotfiles/.zshrc;
     #envExtra= builtins.readFile ./dotfiles/.zshenv;
     oh-my-zsh = {
       enable = true;
@@ -921,8 +925,8 @@
         config = # vim
           ''
             "let g:vimtex_view_general_method='qpdfview'
-            let g:vimtex_view_method = 'mupdf'
-            let g:vimtex_view_mupdf_send_keys = 'shift+h'
+            let g:vimtex_view_method = 'zathura'
+            "let g:vimtex_view_mupdf_send_keys = 'shift+h'
             "let g:vimtex_view_general_options = '-reuse-instance u/pdf'
             "let g:vimtex_view_general_viewer = 'okular'
             "let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
@@ -931,6 +935,13 @@
             let g:vimtex_syntax_enabled=0
           '';
       }
+      #{
+        #plugin = vim-latex-live-preview;
+        #config = # vim
+          #''
+            #let g:livepreview_previewer = 'zathura'
+          #'';
+      #}
       markdown-preview-nvim
       {
         plugin = vim-markdown;

@@ -448,10 +448,10 @@ in
 
           q = M-q
 
-          p = M-p
-          n = M-n
-          h = M-h
-          b = M-b
+          #p = M-p
+          #n = M-n
+          #h = M-h
+          #b = M-b
 
           ## Move cursor to beginning of line
           #left = home
@@ -967,7 +967,10 @@ in
 
     # for Chinese
     source-han-serif
-    #source-han-sans
+    source-han-sans
+
+    vistafonts
+    ubuntu_font_family
 
     #noto-fonts
     #noto-fonts-cjk-sans
@@ -982,8 +985,6 @@ in
     #wqy_microhei
     #helvetica-neue-lt-std
     #aileron
-    #ubuntu_font_family
-    #fira
     ##maple-mono
     #julia-mono
     #jetbrains-mono
@@ -1158,8 +1159,8 @@ in
     #pamixer
     #pw-volume
     font-manager
-    #fontmatrix
     fontpreview
+    #fontmatrix
 
     lxqt.lxqt-wayland-session
     wayfire # Wayland compositor
@@ -1202,7 +1203,7 @@ in
 
   services.openssh.enable = true;
   services.v2raya.enable = true;
-  services.sing-box.enable = true;
+  services.sing-box.enable = false;
   services.dictd.enable = true;
 
   services.syncthing = {
