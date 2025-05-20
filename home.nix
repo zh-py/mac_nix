@@ -46,9 +46,23 @@
 
   home.packages = with pkgs; [
     #nixos only
+    #clash-nyanpasu
+    #clash-meta
+    #sing-box
+    #gui-for-singbox
+    #clash-rs
+    #shadowsocks-rust
+    #gui-for-clash
+    #v2rayn
+    #flclash
+    proxychains-ng
+    dig
+    redsocks
+    iptables
+    tun2socks
+
     fusuma
-    sing-box
-    gui-for-singbox
+    cpu-x
     firefox
     google-chrome
     tor-browser
@@ -75,7 +89,6 @@
     xxdiff
     kdePackages.okular
     mupdf
-    poppler_utils
     pdfarranger
     llpp
     qpdfview
@@ -83,7 +96,7 @@
     gpick
     telegram-desktop
     gparted
-    ventoy-full
+    #ventoy
     galculator
     qalculate-gtk
     playerctl
@@ -402,6 +415,9 @@
     mimeApps = {
       enable = true;
       defaultApplications = {
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = "writer.desktop";
+        "application/pdf" = "org.pwmt.zathura-pdf-mupdf.desktop";
+        "text/plain" = "nvim.desktop";
         "video/mp4" = "mpv.desktop";
         "video/mpeg" = "mpv.desktop";
         "video/quicktime" = "mpv.desktop";
@@ -692,6 +708,7 @@
     enableCompletion = true;
     defaultKeymap = "emacs"; # others don't work as good as this
     shellAliases = {
+      proxychains = "proxychains4";
       ll = "ls -l";
       y7 = "(){ yt-dlp -f 137+140 --no-mtime $1. ;}";
       y6 = "(){ yt-dlp -f 136+140 --no-mtime $1. ;}";

@@ -43,13 +43,17 @@ in
     ./hardware-configuration.nix
   ];
 
-  #nix.settings.substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" "https://mirrors.ustc.edu.cn/nix-channels/store" "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
+  nix.settings.substituters = [
+    "https://mirror.sjtu.edu.cn/nix-channels/store"
+    "https://mirrors.ustc.edu.cn/nix-channels/store"
+    "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+  ];
   #nix.settings.substituters = lib.mkBefore [ "https://mirror.sjtu.edu.cn/nix-channels/store" "https://mirrors.ustc.edu.cn/nix-channels/store" "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
   systemd.extraConfig = "DefaultLimitNOFILE=4096";
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 30d";
+    options = "--delete-older-than 50d";
   };
 
   nix.settings.experimental-features = [
@@ -62,6 +66,7 @@ in
   #boot.extraModprobeConfig = ''
   #options hid_apple fnmode=1
   #'';
+  boot.kernelModules = [ "tun" ];
 
   services.logind.extraConfig = ''
     HandlePowerKey=suspend
@@ -105,11 +110,12 @@ in
       wifi.backend = "iwd";
     };
     #proxy = {
-    #default = "http://user:password@proxy:port/";
-    #noProxy = "127.0.0.1,localhost,internal.domain";
+    #default = "http://192.168.124.8:10808/";
+    ##noProxy = "127.0.0.1,localhost,internal.domain";
     #};
 
   };
+  programs.kdeconnect.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
@@ -239,12 +245,12 @@ in
   security.polkit.enable = true;
 
   #xdg.portal = {
-    #enable = true;
-    #lxqt.enable = true;
-    #extraPortals = with pkgs; [
-      #xdg-desktop-portal-hyprland
-      ##xdg-desktop-portal-gtk # Fallback GTK portal
-    #];
+  #enable = true;
+  #lxqt.enable = true;
+  #extraPortals = with pkgs; [
+  #xdg-desktop-portal-hyprland
+  ##xdg-desktop-portal-gtk # Fallback GTK portal
+  #];
   #};
 
   services.picom = {
@@ -821,7 +827,6 @@ in
 
   };
 
-
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
@@ -1166,6 +1171,7 @@ in
     wayfire # Wayland compositor
     wlroots # Required for wayfire
     qt5.qtwayland
+    xray
   ];
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
@@ -1190,20 +1196,80 @@ in
 
   # List services that you want to enable:
 
+  #services.redsocks = {
+  #enable = false;
+
+  #redsocks = [
+  #{
+  #ip = "127.0.0.1"; # Safe bind address
+  #port = 12345; # Any free local port
+  #type = "socks5";
+  #proxy = "192.168.124.8:10808"; # External proxy
+  #disclose_src = "false";
+  #}
+  #];
+  #};
+  #networking.nftables.ruleset = ''
+  #table ip nat {
+  #chain REDSOCKS {
+  #type nat hook output priority filter; policy accept;
+  ## Skip local/LAN traffic
+  #ip daddr { 0.0.0.0/8, 10.0.0.0/8, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.168.0.0/16, 224.0.0.0/4, 240.0.0.0/4 } return
+  ## Redirect all other TCP traffic to redsocks
+  #meta l4proto tcp redirect to :12345
+  #}
+  #}
+  #'';
+
   programs.bandwhich.enable = true;
   networking.nftables.enable = true;
   # Open ports in the firewall.
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 2283 56789 ];
-    allowedUDPPorts = [ 2283 ]; # 2283:immich
+  networking = {
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [
+        2283
+        56789
+      ];
+      allowedUDPPorts = [ 2283 ]; # 2283:immich
+      allowedTCPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        }
+      ];
+      allowedUDPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        }
+      ];
+      trustedInterfaces = [ "tun0" ];
+    };
+    nameservers = [ "127.0.0.1" ];
+    #resolvconf.enable = false;
+    useHostResolvConf = false;
   };
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+
+  services.resolved = {
+    enable = true;
+    fallbackDns = [ "127.0.0.1" ];
+    extraConfig = ''
+      DNS=127.0.0.1
+      DNSStubListener=yes
+    '';
+  };
 
   services.openssh.enable = true;
-  services.v2raya.enable = true;
+  programs.clash-verge.enable = true;
+  services.shadowsocks.enable = false;
+  services.v2raya = {
+    enable = false;
+  };
+  services.v2ray.enable = false;
+  services.xray.enable = false;
   services.sing-box.enable = false;
+
   services.dictd.enable = true;
 
   services.syncthing = {
