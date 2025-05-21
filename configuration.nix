@@ -1246,9 +1246,9 @@ in
       ];
       trustedInterfaces = [ "tun0" ];
     };
-    nameservers = [ "127.0.0.1" ];
-    #resolvconf.enable = false;
+    #nameservers = [ "127.0.0.1" ];
     useHostResolvConf = false;
+    resolvconf.enable = false;
   };
 
   services.resolved = {
@@ -1257,6 +1257,7 @@ in
     extraConfig = ''
       DNS=127.0.0.1
       DNSStubListener=yes
+      Domains=~.
     '';
   };
 
