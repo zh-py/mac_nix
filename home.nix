@@ -59,7 +59,11 @@
     dig
     redsocks
     iptables
+    nmap
     tun2socks
+    wakeonlan
+    cifs-utils
+    samba
 
     fusuma
     cpu-x
@@ -596,6 +600,7 @@
     ];
     extraConfig = ''
       set-option -g mouse on
+      set -g allow-passthrough on
     '';
   };
 
@@ -846,6 +851,7 @@
     #let g:airline_symbols.dirty='⚡'
     plugins = with pkgs.vimPlugins; [
       #copilot-vim
+      nvim-osc52
       vim-visual-multi
       gruvbox
       trouble-nvim
@@ -907,6 +913,11 @@
         config = ''
           require("nvim-web-devicons").setup()
         '';
+      }
+      {
+        plugin = nvim-osc52;
+        type = "lua";
+        config = builtins.readFile (./neovim/osc52.lua);
       }
       {
         plugin = fzf-lua;

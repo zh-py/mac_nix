@@ -12,10 +12,6 @@
       #inputs.nixpkgs.follows = "nixpkgs";
     #};
     musnix  = { url = "github:musnix/musnix"; };
-    niri = {                                   # ← Add this
-      url = "github:sodiboo/niri-flake";
-      #inputs.nixpkgs.follows = "nixpkgs";      # Optional: share nixpkgs
-    };
     xremap-flake.url = "github:xremap/nix-flake";
     rose-pine-hyprcursor = {
       url = "github:ndom91/rose-pine-hyprcursor";
@@ -32,7 +28,6 @@
         specialArgs = { inherit inputs; };
         modules = [
           nur.modules.nixos.default
-          inputs.niri.nixosModules.niri
           # This adds a nur configuration option.
           # Use `config.nur` for packages like this:
           # ({ config, ... }: {

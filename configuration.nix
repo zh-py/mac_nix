@@ -66,7 +66,10 @@ in
   #boot.extraModprobeConfig = ''
   #options hid_apple fnmode=1
   #'';
-  boot.kernelModules = [ "tun" ];
+  boot.kernelModules = [
+    "tun"
+    "cifs"
+  ];
 
   services.logind.extraConfig = ''
     HandlePowerKey=suspend
@@ -82,8 +85,6 @@ in
 
   programs.hyprlock.enable = true;
 
-  services.connman.enable = true;
-  services.connman.wifi.backend = "iwd";
 
   networking = {
     hostName = "nixos";
@@ -95,7 +96,7 @@ in
             EnableNetworkConfiguration = true;
           };
           Network = {
-            EnableIPv6 = false;
+            EnableIPv6 = true;
             RoutePriorityOffset = 300;
           };
           Settings = {
@@ -104,18 +105,18 @@ in
         };
       };
     };
-
     networkmanager = {
-      enable = false;
+      enable = true;
       wifi.backend = "iwd";
+      dns = "systemd-resolved";
     };
+
     #proxy = {
     #default = "http://192.168.124.8:10808/";
     ##noProxy = "127.0.0.1,localhost,internal.domain";
     #};
 
   };
-  programs.kdeconnect.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
@@ -177,9 +178,6 @@ in
   #services.xserver.windowManager.fvwm3.enable = true;
   #services.xserver.displayManager.sessionCommands = "${pkgs.xorg.xkbcomp}/bin/xkbcomp ${customKeyboardLayout} $DISPLAY";
 
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-  programs.niri.package = pkgs.niri-unstable;
-  programs.niri.enable = true;
   services.seatd.enable = true;
 
   services.gnome.gnome-keyring.enable = true;
@@ -1196,19 +1194,19 @@ in
 
   # List services that you want to enable:
 
-  #services.redsocks = {
-  #enable = false;
+  services.redsocks = {
+    enable = false;
 
-  #redsocks = [
-  #{
-  #ip = "127.0.0.1"; # Safe bind address
-  #port = 12345; # Any free local port
-  #type = "socks5";
-  #proxy = "192.168.124.8:10808"; # External proxy
-  #disclose_src = "false";
-  #}
-  #];
-  #};
+    redsocks = [
+      {
+        ip = "127.0.0.1"; # Safe bind address
+        port = 12345; # Any free local port
+        type = "socks5";
+        proxy = "192.168.124.8:10808"; # External proxy
+        disclose_src = "false";
+      }
+    ];
+  };
   #networking.nftables.ruleset = ''
   #table ip nat {
   #chain REDSOCKS {
@@ -1222,14 +1220,22 @@ in
   #'';
 
   programs.bandwhich.enable = true;
-  networking.nftables.enable = true;
   # Open ports in the firewall.
   networking = {
+    interfaces.eth0 = {
+      wakeOnLan.enable = true;
+    };
+
+    nftables.enable = true;
+
     firewall = {
       enable = true;
       allowedTCPPorts = [
         2283
         56789
+        7890
+        7891
+        10808
       ];
       allowedUDPPorts = [ 2283 ]; # 2283:immich
       allowedTCPPortRanges = [
@@ -1244,20 +1250,34 @@ in
           to = 1764;
         }
       ];
-      trustedInterfaces = [ "tun0" ];
+      trustedInterfaces = [
+        "eth0"
+        "tun0"
+      ];
     };
-    #nameservers = [ "127.0.0.1" ];
+    #nameservers = [
+      #"127.0.0.1"
+    #];
     useHostResolvConf = false;
     resolvconf.enable = false;
   };
 
+  #services.connman = {
+    #enable = true;
+    #wifi.backend = "iwd";
+    #extraFlags = [
+      #"--nodnsproxy"
+      ##"--with-dns-backend=systemd-resolved"
+    #];
+  #};
+
+
   services.resolved = {
     enable = true;
-    fallbackDns = [ "127.0.0.1" ];
+    #fallbackDns = [ "127.0.0.1" ];
     extraConfig = ''
-      DNS=127.0.0.1
       DNSStubListener=yes
-      Domains=~.
+      #Domains=~.
     '';
   };
 
@@ -1271,7 +1291,7 @@ in
   services.xray.enable = false;
   services.sing-box.enable = false;
 
-  services.dictd.enable = true;
+  services.dictd.enable = false;
 
   services.syncthing = {
     enable = true;
