@@ -1277,6 +1277,8 @@ in
     resolvconf.enable = false;
   };
 
+  services.tailscale.enable = true;
+
   #services.connman = {
   #enable = true;
   #wifi.backend = "iwd";

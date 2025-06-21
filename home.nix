@@ -437,7 +437,7 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.sagemath.enable = true;
+  programs.sagemath.enable = false;
   programs.zathura = {
     enable = true;
     options = {
