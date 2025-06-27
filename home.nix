@@ -45,15 +45,6 @@
 
   home.packages = with pkgs; [
     #nixos only
-    #clash-nyanpasu
-    #clash-meta
-    #sing-box
-    #gui-for-singbox
-    #clash-rs
-    #shadowsocks-rust
-    #gui-for-clash
-    #v2rayn
-    #flclash
     proxychains-ng
     dig
     redsocks
@@ -105,7 +96,6 @@
     qalculate-gtk
     playerctl
     bluetooth_battery
-    texliveFull
     zotero
     pstree
     bar
@@ -196,6 +186,7 @@
     tcsh
     evtest-qt
     evtest
+    texliveFull
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -437,7 +428,25 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  #programs.texlive = {
+    #enable = true;
+    #packageSet = pkgs.texliveFull;
+    #packageSet = pkgs.texlive.combine {
+      #inherit (pkgs.texlive)
+        #scheme-full
+        #collection-basic
+        #collection-latexrecommended
+        #collection-latexextra
+        #;
+    #};
+    #extraPackages = tpkgs: {
+      #inherit (tpkgs) collection-fontsrecommended winfonts;
+    #};
+  #};
+
   programs.sagemath.enable = false;
+
   programs.zathura = {
     enable = true;
     options = {

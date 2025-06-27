@@ -25,7 +25,7 @@
   outputs = inputs@{ nixpkgs, home-manager, hyprland, hyprshell, nur, ... }: {
   #outputs = { nixpkgs, home-manager, nur, ... }@inputs: {
     nixosConfigurations = {
-      py = nixpkgs.lib.nixosSystem {
+      nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [

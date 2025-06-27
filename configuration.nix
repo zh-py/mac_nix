@@ -69,7 +69,17 @@ in
   boot.kernelModules = [
     "tun"
     "cifs"
+    "wl"
   ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
+  boot.blacklistedKernelModules = [
+    "b43"
+    "ssb"
+    "brcmfmac"
+    "brcmsmac"
+    "bcma"
+  ];
+  #boot.blacklistedKernelModules = [ "b43" "brcmsmac" "bcma" ];
 
   services.logind.extraConfig = ''
     HandlePowerKey=suspend
@@ -98,8 +108,10 @@ in
   networking = {
     hostName = "nixos";
     wireless = {
+      userControlled.enable = true;
+      enable = true; # Whether to enable wpa_supplicant.
       iwd = {
-        enable = true;
+        enable = false;
         settings = {
           General = {
             EnableNetworkConfiguration = true;
@@ -115,9 +127,9 @@ in
       };
     };
     networkmanager = {
-      enable = true;
-      wifi.backend = "iwd";
-      dns = "systemd-resolved";
+      enable = false;
+      #wifi.backend = "iwd";
+      #dns = "systemd-resolved";
     };
 
     #proxy = {
@@ -125,6 +137,15 @@ in
     ##noProxy = "127.0.0.1,localhost,internal.domain";
     #};
 
+  };
+
+  services.connman = {
+    enable = true;
+    wifi.backend = "wpa_supplicant";
+    extraFlags = [
+      "--nodnsproxy"
+      #"--with-dns-backend=systemd-resolved"
+    ];
   };
 
   # Set your time zone.
@@ -1184,7 +1205,22 @@ in
     gparted
     cpu-x
     pciutils
+    libcap
     #mihomo-party
+    #gui-for-singbox
+    #v2rayn
+    #xray
+    #v2ray-geoip
+    #hysteria
+    #clash-meta
+    #mihomo
+    #clash-verge-rev
+    #clashtui
+    #clash-rs
+    #clash-nyanpasu
+    #shadowsocks-rust
+    #hiddify-app
+    #metacubexd
   ];
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
@@ -1248,10 +1284,16 @@ in
         7890
         7891
         10808
+        #7878 # radarr
+        #8989 # sonarr
+        #9696 # prowlarr
       ];
       allowedUDPPorts = [
         2283
         9
+        7890 # mihomo
+        10808
+        53
       ]; # 2283:immich 9 wakeonlan
       allowedTCPPortRanges = [
         {
@@ -1277,16 +1319,7 @@ in
     resolvconf.enable = false;
   };
 
-  services.tailscale.enable = true;
-
-  #services.connman = {
-  #enable = true;
-  #wifi.backend = "iwd";
-  #extraFlags = [
-  #"--nodnsproxy"
-  ##"--with-dns-backend=systemd-resolved"
-  #];
-  #};
+  services.tailscale.enable = false;
 
   services.resolved = {
     enable = true;
@@ -1296,16 +1329,32 @@ in
       #Domains=~.
     '';
   };
+  services.openssh = {
+    enable = true;
+    ports = [ 22 ];
+    settings = {
+    };
+    #knownHosts."NixNAS" = {
+    #hostNames = [ "192.168.124.76" ];
+    #publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINhppLSZ+s+f27ZY7YkDwCQFF5dILpqV9uqj1UmyuPqs";
+    #};
+  };
 
-  services.openssh.enable = true;
-  #services.mihomo = {
-  #enable = true;
-  #tunMode = true;
-  #webui = pkgs.metacubexd;
-  #configFile = "/home/py/Downloads/vpn1.yaml";
+  services.mihomo = {
+    enable = false;
+    tunMode = true;
+    webui = pkgs.metacubexd;
+    configFile = "/home/py/Downloads/mihomo/config.yaml";
+  };
+  #security.wrappers.mihomo = {
+    #source = "${pkgs.mihomo}/bin/mihomo";
+    ##source = "/home/py/.local/share/v2rayN/bin/mihomo";
+    #capabilities = "cap_net_admin,cap_net_bind_service+eip";
+    #owner = "py";
+    #group = "users";
   #};
   programs.clash-verge = {
-    enable = true;
+    enable = false;
     autoStart = true;
     tunMode = true;
     serviceMode = true;
@@ -1314,10 +1363,28 @@ in
     enable = true;
   };
 
+  services.sing-box.enable = true;
+  services.dae.enable = false;
   services.shadowsocks.enable = false;
   services.v2ray.enable = false;
-  services.xray.enable = false;
-  services.sing-box.enable = false;
+  services.xray = {
+    enable = false;
+    settings = {
+      inbounds = [
+        {
+          listen = "127.0.0.1";
+          port = 1080;
+          protocol = "http";
+        }
+      ];
+      outbounds = [
+        {
+          protocol = "freedom";
+        }
+      ];
+    };
+  };
+
 
   services.dictd.enable = false;
 
@@ -1327,6 +1394,16 @@ in
     dataDir = "/home/py/Sync";
     openDefaultPorts = true;
   };
+
+  #services.radarr = {
+  #enable = true;
+  #};
+  #services.sonarr = {
+  #enable = true;
+  #};
+  #services.prowlarr = {
+  #enable = true;
+  #};
 
   services.deluge = {
     enable = true;
