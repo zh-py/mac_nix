@@ -35,6 +35,15 @@
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
+  # https://github.com/H3rmt/hyprshell/blob/hyprshell-release/NIX.md
+  imports = [
+    ./module/hyprshell.nix
+  ];
+  #home-manager = {
+    #extraSpecialArgs = { inherit inputs; };
+    #user.test = import ./user.nix;
+  #};
+
   qt = {
     enable = true;
     platformTheme = {
@@ -70,7 +79,7 @@
     peazip
     nomacs
     gimp
-    ocenaudio
+    #ocenaudio
     libsForQt5.kio-extras
     libsForQt5.konsole
     libreoffice-qt6
@@ -109,6 +118,9 @@
     dmenu
     #rofi-wayland
     rofi
+
+    gemini-cli
+    claude-code
 
     #share
     openssl
@@ -430,19 +442,19 @@
   programs.home-manager.enable = true;
 
   #programs.texlive = {
-    #enable = true;
-    #packageSet = pkgs.texliveFull;
-    #packageSet = pkgs.texlive.combine {
-      #inherit (pkgs.texlive)
-        #scheme-full
-        #collection-basic
-        #collection-latexrecommended
-        #collection-latexextra
-        #;
-    #};
-    #extraPackages = tpkgs: {
-      #inherit (tpkgs) collection-fontsrecommended winfonts;
-    #};
+  #enable = true;
+  #packageSet = pkgs.texliveFull;
+  #packageSet = pkgs.texlive.combine {
+  #inherit (pkgs.texlive)
+  #scheme-full
+  #collection-basic
+  #collection-latexrecommended
+  #collection-latexextra
+  #;
+  #};
+  #extraPackages = tpkgs: {
+  #inherit (tpkgs) collection-fontsrecommended winfonts;
+  #};
   #};
 
   programs.sagemath.enable = false;

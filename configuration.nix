@@ -504,6 +504,8 @@ in
           # - A-f6 is the default binding for 'cycle-group' in gnome
           # - keybinding: `gsettings get org.gnome.desktop.wm.keybindings cycle-group`
           ` = A-f6
+          #tab = M-tab
+          #` = M-S-tab # This makes Super+` cycle backwards, a common Mac-like behavior
 
           [meta_mac+control]
           #H = M-C-H
