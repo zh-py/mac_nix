@@ -40,8 +40,8 @@
     ./module/hyprshell.nix
   ];
   #home-manager = {
-    #extraSpecialArgs = { inherit inputs; };
-    #user.test = import ./user.nix;
+  #extraSpecialArgs = { inherit inputs; };
+  #user.test = import ./user.nix;
   #};
 
   qt = {
@@ -90,7 +90,7 @@
     krusader
     doublecmd
     lxqt.pcmanfm-qt
-    pcmanfm
+    #pcmanfm
     xxdiff
     kdePackages.okular
     mupdf
@@ -101,7 +101,7 @@
     gpick
     telegram-desktop
     #ventoy
-    galculator
+    #galculator
     qalculate-gtk
     playerctl
     bluetooth_battery
@@ -177,6 +177,7 @@
     marksman
     tree-sitter
     tree-sitter-grammars.tree-sitter-python
+    poetry
     texlab
     obsidian
     spotify
@@ -185,7 +186,7 @@
     #spotube
     vlc
     smplayer
-    ffmpeg_7
+    ffmpeg
     conda
     netcdf
     netcdffortran
@@ -196,8 +197,9 @@
     gfortran
     libgcc
     tcsh
-    evtest-qt
-    evtest
+    #evtest-qt
+    #evtest
+    eudic
     texliveFull
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
@@ -213,17 +215,13 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
 
-    #(python311.withPackages (p:
-    #with p; [
-    #extractcode
-    #]))
 
     stack
 
     (python313.withPackages (
       p: with p; [
         py-cpuinfo
-        #extractcode
+        extractcode
         pip
         numpy
         jupyter
@@ -392,6 +390,12 @@
     #".config/lf/icons".source = dotfiles/lf-config/icons;
     #".Xmodmap".source = dotfiles/.Xmodmap;
     #".xkb".source = dotfiles/.xkb;
+    ".pdbrc" = {
+      text = ''
+        import os
+        alias kk os._exit(1)
+      '';
+    };
   };
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. If you don't want to manage your shell through Home
@@ -502,21 +506,7 @@
     allowUnfreePredicate = _: true;
   };
 
-  #programs.mpv = {
-  #enable = true;
-  #bindings = {
-  #"Alt+0" = "set window-scale 0.5";
-  #};
-  #config = {
-  #ytdl-format="bestvideo[height<=?480][fps<=?30][vcodec!=?webm]+bestaudio/best";
-  #cache-default = 4000000;
-  #};
-  #};
 
-  #programs.tint2 = {
-  #enable = true;
-  #extraConfig = builtins.readFile ./dotfiles/tint2rc;
-  #};
 
   programs.wofi = {
     enable = false;
@@ -783,6 +773,11 @@
         "systemadmin"
       ];
     };
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
   };
 
   programs.neovim = {

@@ -66,20 +66,20 @@ in
   #boot.extraModprobeConfig = ''
   #options hid_apple fnmode=1
   #'';
+
   boot.kernelModules = [
     "tun"
     "cifs"
+    "kvm-intel"
     "wl"
-  ];
-  boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
-  boot.blacklistedKernelModules = [
-    "b43"
-    "ssb"
     "brcmfmac"
-    "brcmsmac"
-    "bcma"
   ];
-  #boot.blacklistedKernelModules = [ "b43" "brcmsmac" "bcma" ];
+  boot.blacklistedKernelModules = [ "b43" "ssb" "brcmfmac" "brcmsmac" "bcma" ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
+  hardware.enableRedistributableFirmware = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "broadcom-sta-6.30.223.271-57-6.12.38"
+  ];
 
   services.logind.extraConfig = ''
     HandlePowerKey=suspend
@@ -1321,7 +1321,7 @@ in
     resolvconf.enable = false;
   };
 
-  services.tailscale.enable = false;
+  services.tailscale.enable = true;
 
   services.resolved = {
     enable = true;
@@ -1349,11 +1349,11 @@ in
     configFile = "/home/py/Downloads/mihomo/config.yaml";
   };
   #security.wrappers.mihomo = {
-    #source = "${pkgs.mihomo}/bin/mihomo";
-    ##source = "/home/py/.local/share/v2rayN/bin/mihomo";
-    #capabilities = "cap_net_admin,cap_net_bind_service+eip";
-    #owner = "py";
-    #group = "users";
+  #source = "${pkgs.mihomo}/bin/mihomo";
+  ##source = "/home/py/.local/share/v2rayN/bin/mihomo";
+  #capabilities = "cap_net_admin,cap_net_bind_service+eip";
+  #owner = "py";
+  #group = "users";
   #};
   programs.clash-verge = {
     enable = false;
@@ -1386,7 +1386,6 @@ in
       ];
     };
   };
-
 
   services.dictd.enable = false;
 
