@@ -74,13 +74,18 @@ in
     "wl"
     "brcmfmac"
   ];
-  boot.blacklistedKernelModules = [ "b43" "ssb" "brcmfmac" "brcmsmac" "bcma" ];
+  boot.blacklistedKernelModules = [
+    "b43"
+    "ssb"
+    "brcmfmac"
+    "brcmsmac"
+    "bcma"
+  ];
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-57-6.12.38"
+    "broadcom-sta-6.30.223.271-57-6.12.39"
   ];
-
   services.logind.extraConfig = ''
     HandlePowerKey=suspend
     HandlePowerKeyLongPress=poweroff
@@ -1271,6 +1276,8 @@ in
   #}
   #}
   #'';
+
+  security.krb5.enable = true; # for samba?
 
   programs.bandwhich.enable = true;
   # Open ports in the firewall.
