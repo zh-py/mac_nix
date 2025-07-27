@@ -84,7 +84,7 @@ in
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-57-6.12.39"
+    "broadcom-sta-6.30.223.271-57-6.12.40"
   ];
   services.logind.extraConfig = ''
     HandlePowerKey=suspend
@@ -1277,7 +1277,7 @@ in
   #}
   #'';
 
-  security.krb5.enable = true; # for samba?
+  #security.krb5.enable = true; # for samba?
 
   programs.bandwhich.enable = true;
   # Open ports in the firewall.

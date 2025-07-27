@@ -80,6 +80,7 @@
     nomacs
     gimp
     #ocenaudio
+    audacity
     libsForQt5.kio-extras
     libsForQt5.konsole
     libreoffice-qt6
