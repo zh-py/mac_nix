@@ -49,7 +49,8 @@ in
     "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
   ];
   #nix.settings.substituters = lib.mkBefore [ "https://mirror.sjtu.edu.cn/nix-channels/store" "https://mirrors.ustc.edu.cn/nix-channels/store" "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
-  systemd.extraConfig = "DefaultLimitNOFILE=4096";
+  #systemd.extraConfig = "DefaultLimitNOFILE=4096";
+
   nix.gc = {
     automatic = true;
     dates = "weekly";
@@ -84,7 +85,7 @@ in
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-57-6.12.40"
+    "broadcom-sta-6.30.223.271-57-6.12.41"
   ];
   services.logind.extraConfig = ''
     HandlePowerKey=suspend
@@ -1364,9 +1365,9 @@ in
   #};
   programs.clash-verge = {
     enable = false;
-    autoStart = true;
-    tunMode = true;
-    serviceMode = true;
+    autoStart = false;
+    tunMode = false;
+    serviceMode = false;
   };
   services.v2raya = {
     enable = true;
