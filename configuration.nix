@@ -85,12 +85,12 @@ in
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-57-6.12.41"
+    "broadcom-sta-6.30.223.271-57-6.12.43"
   ];
-  services.logind.extraConfig = ''
-    HandlePowerKey=suspend
-    HandlePowerKeyLongPress=poweroff
-  '';
+  #services.logind.extraConfig = ''
+    #HandlePowerKey=suspend
+    #HandlePowerKeyLongPress=poweroff
+  #'';
   systemd.sleep.extraConfig = ''
     AllowSuspend=yes
     AllowHibernation=yes
@@ -115,7 +115,7 @@ in
     hostName = "nixos";
     wireless = {
       userControlled.enable = true;
-      enable = true; # Whether to enable wpa_supplicant.
+      enable = false; # Whether to enable wpa_supplicant.
       iwd = {
         enable = false;
         settings = {
@@ -133,8 +133,9 @@ in
       };
     };
     networkmanager = {
-      enable = false;
+      enable = true;
       #wifi.backend = "iwd";
+      wifi.backend = "wpa_supplicant";
       #dns = "systemd-resolved";
     };
 
@@ -146,7 +147,7 @@ in
   };
 
   services.connman = {
-    enable = true;
+    enable = false;
     wifi.backend = "wpa_supplicant";
     extraFlags = [
       "--nodnsproxy"
@@ -1138,8 +1139,6 @@ in
 
     kdePackages.qt6ct
     libsForQt5.qt5ct
-    kdePackages.breeze-icons
-    #libsForQt5.breeze-icons
     gnome-icon-theme
     shared-mime-info
     lxqt.lxqt-menu-data
@@ -1177,7 +1176,6 @@ in
     libsForQt5.kglobalaccel
     kdePackages.qttools
     kdePackages.qtmultimedia
-    libsForQt5.breeze-qt5
     libsForQt5.ki18n
     libsForQt5.qt5ct
     kdePackages.ki18n
@@ -1229,6 +1227,7 @@ in
     #shadowsocks-rust
     #hiddify-app
     #metacubexd
+    daed
   ];
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
@@ -1367,7 +1366,7 @@ in
     enable = false;
     autoStart = false;
     tunMode = false;
-    serviceMode = false;
+    serviceMode = true;
   };
   services.v2raya = {
     enable = true;

@@ -81,8 +81,6 @@
     gimp
     #ocenaudio
     #audacity
-    libsForQt5.kio-extras
-    libsForQt5.konsole
     libreoffice-qt6
     speedcrunch
     #photoqt
@@ -181,6 +179,7 @@
     poetry
     texlab
     obsidian
+    qbittorrent-enhanced
     spotify
     spotdl
     lrcget
@@ -188,15 +187,15 @@
     vlc
     smplayer
     ffmpeg
-    conda
-    netcdf
-    netcdffortran
-    mpich
-    jasper
-    libpng
-    zlib
-    gfortran
-    libgcc
+    #netcdf
+    #netcdffortran
+    #automake
+    #mpich
+    #gfortran
+    #jasper
+    #libpng
+    #zlib
+    #libgcc
     tcsh
     #evtest-qt
     #evtest
