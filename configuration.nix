@@ -88,8 +88,8 @@ in
     "broadcom-sta-6.30.223.271-57-6.12.43"
   ];
   #services.logind.extraConfig = ''
-    #HandlePowerKey=suspend
-    #HandlePowerKeyLongPress=poweroff
+  #HandlePowerKey=suspend
+  #HandlePowerKeyLongPress=poweroff
   #'';
   systemd.sleep.extraConfig = ''
     AllowSuspend=yes
@@ -804,19 +804,20 @@ in
     package = pkgs.usbmuxd2;
   };
 
-  #powerManagement = {
-  #enable = true;
-  #powertop.enable = true;
-  #cpuFreqGovernor = "powersave";
-  #};
+  powerManagement = {
+    enable = true;
+    powertop.enable = false;
+    cpuFreqGovernor = "performance";
+    #cpuFreqGovernor = "scheldutil";
+  };
 
   services = {
 
     auto-cpufreq = {
-      enable = true;
+      enable = false;
       settings = {
         battery = {
-          governor = "powersave";
+          governor = "performance";
           turbo = "never";
           enable_thresholds = true;
           start_threshold = 20;
@@ -833,7 +834,7 @@ in
     power-profiles-daemon.enable = false;
 
     tlp = {
-      enable = true;
+      enable = false;
       settings = {
         START_CHARGE_THRESH_BAT0 = 60;
         STOP_CHARGE_THRESH_BAT0 = 80;
@@ -1372,7 +1373,7 @@ in
     enable = true;
   };
 
-  services.sing-box.enable = true;
+  services.sing-box.enable = false;
   services.dae.enable = false;
   services.shadowsocks.enable = false;
   services.v2ray.enable = false;
