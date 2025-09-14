@@ -85,7 +85,7 @@ in
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-57-6.12.43"
+    "broadcom-sta-6.30.223.271-57-6.12.47"
   ];
   #services.logind.extraConfig = ''
   #HandlePowerKey=suspend
@@ -93,10 +93,10 @@ in
   #'';
   systemd.sleep.extraConfig = ''
     AllowSuspend=yes
-    AllowHibernation=yes
-    AllowHybridSleep=yes
-    AllowSuspendThenHibernate=yes
-    HibernateDelaySec=1h
+    SuspendState=freeze
+    AllowHibernation=no
+    AllowHybridSleep=no
+    AllowSuspendThenHibernate=no
   '';
 
   programs.hyprlock.enable = true;
@@ -992,6 +992,31 @@ in
     };
   };
 
+  fonts.fontconfig = {
+    enable = true;
+    useEmbeddedBitmaps = true;
+    defaultFonts = {
+      serif = [
+        "Noto Serif"
+        "Liberation Serif"
+        "FreeSerif"
+      ];
+      sansSerif = [
+        "Noto Sans"
+        "Ubuntu"
+        "Cantarell"
+        "DejaVu Sans"
+        "Roboto"
+        "Inter"
+      ];
+      monospace = [
+        "JetBrains Mono Nerd Font"
+        "DejaVu Sans Mono"
+        "FreeMono"
+      ];
+    };
+  };
+
   fonts.packages = with pkgs; [
     # https://wiki.archlinux.org/title/Font_configuration
     font-awesome
@@ -1011,11 +1036,18 @@ in
     # for Chinese
     source-han-serif
     source-han-sans
+    freefont_ttf
+    roboto
+    inter
+    corefonts
 
     vistafonts
     ubuntu_font_family
+    cantarell-fonts
+    liberation_ttf
 
-    #noto-fonts
+    noto-fonts
+    dejavu_fonts
     #noto-fonts-cjk-sans
     #google-fonts
     #meslo-lgs-nf
@@ -1329,7 +1361,7 @@ in
     resolvconf.enable = false;
   };
 
-  services.tailscale.enable = true;
+  services.tailscale.enable = false;
 
   services.resolved = {
     enable = true;
@@ -1366,7 +1398,7 @@ in
   programs.clash-verge = {
     enable = false;
     autoStart = false;
-    tunMode = false;
+    tunMode = true;
     serviceMode = true;
   };
   services.v2raya = {
