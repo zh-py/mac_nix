@@ -1329,8 +1329,12 @@ in
         #7878 # radarr
         #8989 # sonarr
         #9696 # prowlarr
+        #22000 # Syncthing transfer
+        #22001 # Syncthing transfer (TLS)
+        #21027 # Syncthing discovery
       ];
       allowedUDPPorts = [
+        #21027 # Syncthing Discovery
         2283
         9
         7890 # mihomo
