@@ -85,7 +85,7 @@ in
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-57-6.12.47"
+    "broadcom-sta-6.30.223.271-57-6.12.49"
   ];
   #services.logind.extraConfig = ''
   #HandlePowerKey=suspend
@@ -235,6 +235,9 @@ in
     QT_QPA_PLATFORMTHEME = "qt6ct";
     QT_NO_PLASMA_INTEGRATION = "1";
     QT_STYLE_OVERRIDE = "Fusion";
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
     #QT_QPA_PLATFORM = "wayland";
     #SDL_VIDEODRIVER = "wayland";
     #XDG_SESSION_TYPE = "wayland";
