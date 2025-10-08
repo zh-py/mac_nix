@@ -232,15 +232,16 @@ in
   programs.waybar.enable = true;
 
   environment.sessionVariables = {
-    QT_QPA_PLATFORMTHEME = "qt6ct";
     QT_NO_PLASMA_INTEGRATION = "1";
     QT_STYLE_OVERRIDE = "Fusion";
+    XMODIFIERS = "@im=fcitx";
     #GTK_IM_MODULE = "fcitx";
     #QT_IM_MODULE = "fcitx";
-    XMODIFIERS = "@im=fcitx";
     #QT_QPA_PLATFORM = "wayland";
     #SDL_VIDEODRIVER = "wayland";
     #XDG_SESSION_TYPE = "wayland";
+    #QT_QPA_PLATFORMTHEME = "qt6ct";
+    #QT_PLATFORM_PLUGIN = "qt5ct" this two lines in session window
   };
 
   #security.pam.services.ly.enableGnomeKeyring = true;
@@ -1019,14 +1020,15 @@ in
 
   fonts.packages = with pkgs; [
     # https://wiki.archlinux.org/title/Font_configuration
-    font-awesome
-    uw-ttyp0
-    gohufont
+    #xorg.fontmicromisc
+    #font-awesome
+    #uw-ttyp0
+    #gohufont
     terminus_font_ttf
-    profont
-    efont-unicode
+    #profont
+    #efont-unicode
     noto-fonts-emoji
-    dina-font
+    #dina-font
 
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
@@ -1036,10 +1038,10 @@ in
     # for Chinese
     source-han-serif
     source-han-sans
-    freefont_ttf
+    #freefont_ttf
     roboto
     inter
-    corefonts
+    #corefonts
 
     vistafonts
     ubuntu_font_family
