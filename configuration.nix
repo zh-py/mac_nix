@@ -235,11 +235,12 @@ in
     QT_NO_PLASMA_INTEGRATION = "1";
     QT_STYLE_OVERRIDE = "Fusion";
     XMODIFIERS = "@im=fcitx";
-    #GTK_IM_MODULE = "fcitx";
-    #QT_IM_MODULE = "fcitx";
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
     #QT_QPA_PLATFORM = "wayland";
     #SDL_VIDEODRIVER = "wayland";
     #XDG_SESSION_TYPE = "wayland";
+
     #QT_QPA_PLATFORMTHEME = "qt6ct";
     #QT_PLATFORM_PLUGIN = "qt5ct" this two lines in session window
   };
