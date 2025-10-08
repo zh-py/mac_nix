@@ -242,9 +242,6 @@ in
     #SDL_VIDEODRIVER = "wayland";
     #XDG_SESSION_TYPE = "wayland";
   };
-  #environment.extraInit = ''
-  #export QT_QPA_PLATFORMTHEME=qt5ct
-  #'';
 
   #security.pam.services.ly.enableGnomeKeyring = true;
   #services.displayManager = {
@@ -1241,7 +1238,6 @@ in
     lxqt.lxqt-wayland-session
     wayfire # Wayland compositor
     wlroots # Required for wayfire
-    qt5.qtwayland
 
     swayidle
     gparted

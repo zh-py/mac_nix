@@ -1190,7 +1190,7 @@
         startup_mode = "Maximized";
       };
       font = {
-        size = 14;
+        size = 12;
         #normal.family = "JetbrainsMono Nerd Font";
         #bold.family = "JetbrainsMono Nerd Font";
         #italic.family = "JetbrainsMono Nerd Font";
@@ -1198,14 +1198,15 @@
         #bold.family = "Hack Nerd Font Mono";
         #italic.family = "Hack Nerd Font Mono";
         #normal.family = "terminus";
-        #bold.family = "terminus";
-        #italic.family = "terminus";
+        normal.family = "Terminus (TTF)";
+        bold.family = "Terminus (TTF)";
+        italic.family = "Terminus (TTF)";
         #normal.family = "gohufont";
         #bold.family = "gohufont";
         #italic.family = "gohufont";
-        normal.family = "Ttyp0";
-        bold.family = "Ttyp0";
-        italic.family = "Ttyp0";
+        #normal.family = "Ttyp0";
+        #bold.family = "Ttyp0";
+        #italic.family = "Ttyp0";
       };
       cursor = {
         style.shape = "Beam";
