@@ -6,7 +6,7 @@
   config,
   pkgs,
   lib,
-  inputs,
+inputs,
   ...
 }:
 #let
@@ -85,7 +85,7 @@ in
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-57-6.12.49"
+    "broadcom-sta-6.30.223.271-57-6.12.51"
   ];
   #services.logind.extraConfig = ''
   #HandlePowerKey=suspend
@@ -235,8 +235,8 @@ in
     QT_QPA_PLATFORMTHEME = "qt6ct";
     QT_NO_PLASMA_INTEGRATION = "1";
     QT_STYLE_OVERRIDE = "Fusion";
-    GTK_IM_MODULE = "fcitx";
-    QT_IM_MODULE = "fcitx";
+    #GTK_IM_MODULE = "fcitx";
+    #QT_IM_MODULE = "fcitx";
     XMODIFIERS = "@im=fcitx";
     #QT_QPA_PLATFORM = "wayland";
     #SDL_VIDEODRIVER = "wayland";
@@ -872,13 +872,13 @@ in
     enable = true;
     extraPackages = with pkgs; [
       vaapi-intel-hybrid
-      libva-vdpau-driver
-      libvdpau-va-gl
-      libvdpau
+      #libva-vdpau-driver
+      #libvdpau-va-gl
+      #libvdpau
       intel-media-driver
       intel-ocl
       intel-vaapi-driver
-      vpl-gpu-rt # or intel-media-sdk for QSV
+      #vpl-gpu-rt # or intel-media-sdk for QSV
     ];
   };
   hardware.intel-gpu-tools.enable = true;
@@ -1230,7 +1230,7 @@ in
     #xfce.xfce4-pulseaudio-plugin
     playerctl
     qpwgraph
-    virtualgl
+    #virtualgl
     #pavucontrol
     #pamixer
     #pw-volume

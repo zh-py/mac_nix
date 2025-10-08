@@ -14,10 +14,24 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
+#let
+  #wechat-fcitx = pkgs.wechat.overrideAttrs (old: {
+    #nativeBuildInputs = (old.nativeBuildInputs or []) ++ [ pkgs.makeWrapper ];
+    #postInstall = ''
+      #mv $out/bin/wechat $out/bin/.wechat-orig
+      #makeWrapper $out/bin/.wechat-orig $out/bin/wechat \
+        #--set QT_IM_MODULE fcitx \
+        #--set GTK_IM_MODULE fcitx \
+        #--set XMODIFIERS "@im=fcitx" \
+        #--set INPUT_METHOD fcitx \
+        #--set QT_QPA_PLATFORMTHEME qt6ct
+    #'';
+  #});
+#in {
 {
-  #}: let
   #inherit (pkgs.lib) mkIf optionals;
   #tex = (pkgs.texlive.combine {
   #inherit (pkgs.texlive) scheme-full;
@@ -35,14 +49,7 @@
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
-  # https://github.com/H3rmt/hyprshell/blob/hyprshell-release/NIX.md
-  imports = [
-    ./module/hyprshell.nix
-  ];
-  #home-manager = {
   #extraSpecialArgs = { inherit inputs; };
-  #user.test = import ./user.nix;
-  #};
 
   qt = {
     enable = true;
@@ -51,6 +58,18 @@
     };
     #style = "kvantum";
   };
+
+
+  home.file.".local/share/applications/wechat-fcitx.desktop".text = ''
+    [Desktop Entry]
+    Name=WeChat (Fcitx)
+    Comment=WeChat with Fcitx input support
+    Exec=env QT_IM_MODULE=fcitx GTK_IM_MODULE=fcitx XMODIFIERS=@im=fcitx INPUT_METHOD=fcitx QT_QPA_PLATFORMTHEME=qt6ct wechat
+    Icon=wechat
+    Type=Application
+    Categories=Network;InstantMessaging;
+    Terminal=false
+  '';
 
   home.packages = with pkgs; [
     #nixos only
@@ -72,6 +91,7 @@
     #tor-browser
     #wechat-uos
     wechat
+    #wechat-fcitx
     baidupcs-go
     #teams-for-linux
     #rustdesk
@@ -93,9 +113,9 @@
     #pcmanfm
     xxdiff
     kdePackages.okular
-    mupdf
-    pdfarranger
-    llpp
+    #mupdf
+    #pdfarranger
+    #llpp
     qpdfview
     poppler
     gpick
@@ -246,6 +266,47 @@
       ]
     ))
   ];
+
+  imports = [
+    inputs.hyprshell.homeModules.hyprshell
+  ];
+  #imports = [
+  #inputs.hyprshell.homeManagerModules.hyprshell  # or inputs.hyprshell.homeModules.hyprshell
+  #];
+
+  #programs.hyprshell = {
+  #hyprland = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  #systemd.args = "-v";
+  services.hyprshell = {
+    enable = true;
+    settings = {
+      windows = {
+        enable = true; # please dont forget to enable windows if you want to use overview or switch
+        overview = {
+          enable = true;
+          key = "tab";
+          modifier = "alt";
+          launcher = {
+            max_items = 5;
+            plugins.websearch = {
+              enable = true;
+              engines = [
+                {
+                  name = "DuckDuckGo";
+                  url = "https://duckduckgo.com/?q=%s";
+                  key = "d";
+                }
+              ];
+            };
+          };
+        };
+        switch = {
+          enable = true;
+          modifier = "super";
+        };
+      };
+    };
+  };
 
   services.mpris-proxy.enable = true;
 
@@ -737,7 +798,8 @@
       yb = "(){ yt-dlp --no-mtime -f 'bestvideo+bestaudio' $1. ;}";
       #ys = "(){ yt-dlp --write-sub --write-auto-sub --sub-lang 'en-US,en-GB,en,en.*' --convert-sub srt --skip-download $1. ;}";
       #y = "(){ yt-dlp --write-sub --sub-lang 'en.*' --convert-subtitles srt -f '299+140/137+140/136+140/135+140/134+140/299+140-10/299+140-9/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-10/137+140-9/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-10/136+140-9/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime $1. ;}";
-      y = "(){ ~/python/yt-dlp --cookies-from-browser firefox -vU --write-sub --sub-lang 'en.*' --convert-subtitles srt -f '299+140/137+140/136+140/135+140/134+140/299+140-10/299+140-9/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-10/137+140-9/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-10/136+140-9/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime --no-check-certificate $1. ;}";
+      #y = "(){ ~/python/yt-dlp --cookies-from-browser firefox -vU --write-sub --sub-lang 'en.*' --convert-subtitles srt -f '299+140/137+140/136+140/135+140/134+140/299+140-10/299+140-9/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-10/137+140-9/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-10/136+140-9/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime --no-check-certificate $1. ;}";
+      y = "(){ ~/python/yt-dlp --path /storage/myfiles/youtube --cookies-from-browser firefox -vU --write-sub --sub-lang 'en.*' --convert-subtitles srt -f '299+140/137+140/136+140/135+140/134+140/299+140-10/299+140-9/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-10/137+140-9/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-10/136+140-9/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime --no-check-certificate $1. ;}";
       a = "(){ ~/python/yt-dlp --cookies-from-browser firefox -f 'bestaudio' --extract-audio --audio-format mp3 --no-check-certificate $1. ;}";
       sp = "(){ cd ~/python/spotdl && spotdl --output '/home/py/Downloads/Albums/{artist}_{year}_{album}/{track-number} - {title}.{output-ext}' --yt-dlp-args '--cookies-from-browser firefox' $1. ;}";
       s = "(){ spotdl --output '/home/py/Downloads/Albums/{artist}_{year}_{album}/{track-number} - {title}.{output-ext}' --yt-dlp-args '--cookies-from-browser firefox' $1. ;}";
