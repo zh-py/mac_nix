@@ -14,7 +14,7 @@
   config,
   pkgs,
   lib,
-  inputs,
+  #inputs,
   ...
 }:
 #let
@@ -267,11 +267,8 @@
     ))
   ];
 
-  imports = [
-    inputs.hyprshell.homeModules.hyprshell
-  ];
   #imports = [
-  #inputs.hyprshell.homeManagerModules.hyprshell  # or inputs.hyprshell.homeModules.hyprshell
+    #inputs.hyprshell.homeModules.hyprshell
   #];
 
   #programs.hyprshell = {

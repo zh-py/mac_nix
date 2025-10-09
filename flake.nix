@@ -6,7 +6,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprshell.url = "github:H3rmt/hyprshell";
+    #hyprshell.url = "github:H3rmt/hyprshell";
     nur.url = "github:nix-community/NUR";
     #hyprswitch.url = "github:h3rmt/hyprswitch/release";
     #hyprshell.url = "github:H3rmt/hyprswitch?ref=hyprshell";
@@ -33,7 +33,7 @@
       nixpkgs,
       home-manager,
       hyprland,
-      hyprshell,
+      #hyprshell,
       nur,
       ...
     #}:
@@ -63,7 +63,7 @@
               home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = true;
               home-manager.users.py = import ./home.nix;
-              home-manager.extraSpecialArgs = { inherit inputs; }; # hyprshell
+              #home-manager.extraSpecialArgs = { inherit inputs; }; # hyprshell
 
               # Optionally, use home-manager.extraSpecialArgs to pass
               # arguments to home.nix

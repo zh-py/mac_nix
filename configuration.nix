@@ -6,7 +6,7 @@
   config,
   pkgs,
   lib,
-inputs,
+  inputs,
   ...
 }:
 #let
@@ -87,10 +87,11 @@ in
   nixpkgs.config.permittedInsecurePackages = [
     "broadcom-sta-6.30.223.271-57-6.12.51"
   ];
-  #services.logind.extraConfig = ''
-  #HandlePowerKey=suspend
-  #HandlePowerKeyLongPress=poweroff
-  #'';
+  services.logind.settings.Login = {
+    HandlePowerKey = "suspend";
+    HandlePowerKeyLongPress = "poweroff";
+  };
+
   systemd.sleep.extraConfig = ''
     AllowSuspend=yes
     SuspendState=freeze
@@ -235,8 +236,8 @@ in
     QT_NO_PLASMA_INTEGRATION = "1";
     QT_STYLE_OVERRIDE = "Fusion";
     XMODIFIERS = "@im=fcitx";
-    GTK_IM_MODULE = "fcitx";
-    QT_IM_MODULE = "fcitx";
+    #GTK_IM_MODULE = "fcitx";
+    #QT_IM_MODULE = "fcitx";
     #QT_QPA_PLATFORM = "wayland";
     #SDL_VIDEODRIVER = "wayland";
     #XDG_SESSION_TYPE = "wayland";
@@ -857,10 +858,10 @@ in
         general = {
           min_fan1_speed = 2000;
           max_fan1_speed = 6200;
-          low_temp = 63;
-          high_temp = 66;
-          max_temp = 85;
-          polling_interval = 7;
+          low_temp = 50;
+          high_temp = 60;
+          max_temp = 80;
+          polling_interval = 5;
         };
       };
     };
@@ -1022,7 +1023,7 @@ in
   fonts.packages = with pkgs; [
     # https://wiki.archlinux.org/title/Font_configuration
     #xorg.fontmicromisc
-    #font-awesome
+    font-awesome
     uw-ttyp0
     gohufont
     terminus_font_ttf
@@ -1043,21 +1044,21 @@ in
     roboto
     inter
     corefonts
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+    source-han-serif
 
+    noto-fonts
     vistafonts
     ubuntu_font_family
     cantarell-fonts
     liberation_ttf
 
-    noto-fonts
-    dejavu_fonts
-    #noto-fonts-cjk-sans
     #google-fonts
+    #dejavu_fonts
     #meslo-lgs-nf
-    #noto-fonts-cjk-serif
     #source-han-sans-vf-ttf
     #source-han-serif-vf-ttf
-    #source-han-serif
     ##ark-pixel-font
     ##zpix-pixel-font
     #wqy_microhei
@@ -1245,6 +1246,7 @@ in
     swayidle
     gparted
     cpu-x
+    linuxKernel.packages.linux_6_12.turbostat
     pciutils
     libcap
     #mihomo-party
