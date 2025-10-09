@@ -1023,11 +1023,11 @@ in
     # https://wiki.archlinux.org/title/Font_configuration
     #xorg.fontmicromisc
     #font-awesome
-    #uw-ttyp0
-    #gohufont
+    uw-ttyp0
+    gohufont
     terminus_font_ttf
-    #profont
-    #efont-unicode
+    profont
+    efont-unicode
     noto-fonts-emoji
     #dina-font
 
@@ -1039,10 +1039,10 @@ in
     # for Chinese
     source-han-serif
     source-han-sans
-    #freefont_ttf
+    freefont_ttf
     roboto
     inter
-    #corefonts
+    corefonts
 
     vistafonts
     ubuntu_font_family

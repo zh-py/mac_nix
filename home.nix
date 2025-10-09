@@ -281,27 +281,27 @@
     enable = true;
     settings = {
       windows = {
-        enable = true; # please dont forget to enable windows if you want to use overview or switch
+        #enable = true; # please dont forget to enable windows if you want to use overview or switch
         overview = {
-          enable = true;
+          #enable = true;
           key = "tab";
           modifier = "alt";
           launcher = {
             max_items = 5;
-            plugins.websearch = {
-              enable = true;
-              engines = [
-                {
-                  name = "DuckDuckGo";
-                  url = "https://duckduckgo.com/?q=%s";
-                  key = "d";
-                }
-              ];
-            };
+            #plugins.websearch = {
+              #enable = true;
+              #engines = [
+                #{
+                  #name = "DuckDuckGo";
+                  #url = "https://duckduckgo.com/?q=%s";
+                  #key = "d";
+                #}
+              #];
+            #};
           };
         };
         switch = {
-          enable = true;
+          #enable = true;
           modifier = "super";
         };
       };
