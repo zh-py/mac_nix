@@ -87,9 +87,10 @@ in
   nixpkgs.config.permittedInsecurePackages = [
     "broadcom-sta-6.30.223.271-57-6.12.51"
   ];
+
   services.logind.settings.Login = {
-    HandlePowerKey = "suspend";
-    HandlePowerKeyLongPress = "poweroff";
+    powerKey = "suspend";
+    powerKeyLongPress = "reboot";
   };
 
   systemd.sleep.extraConfig = ''
