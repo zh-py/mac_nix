@@ -74,6 +74,7 @@ in
     "kvm-intel"
     "wl"
     "brcmfmac"
+    "i2c-dev"
   ];
   boot.blacklistedKernelModules = [
     "b43"
@@ -89,8 +90,10 @@ in
   ];
 
   services.logind.settings.Login = {
-    powerKey = "suspend";
-    powerKeyLongPress = "reboot";
+    #powerKey = "suspend";
+    #powerKeyLongPress = "reboot";
+    HandlepowerKey = "suspend";
+    HandlepowerKeyLongPress = "reboot";
   };
 
   systemd.sleep.extraConfig = ''
@@ -859,8 +862,8 @@ in
         general = {
           min_fan1_speed = 2000;
           max_fan1_speed = 6200;
-          low_temp = 50;
-          high_temp = 60;
+          low_temp = 55;
+          high_temp = 65;
           max_temp = 80;
           polling_interval = 5;
         };
@@ -1123,6 +1126,7 @@ in
       "jackaudio"
       "seat"
       "sambashare"
+      "i2c"
     ];
     packages = with pkgs; [
     ];
@@ -1249,7 +1253,10 @@ in
     cpu-x
     linuxKernel.packages.linux_6_12.turbostat
     pciutils
+    ddcutil
+    wlsunset
     libcap
+    systemdUkify
     #mihomo-party
     #gui-for-singbox
     #v2rayn
