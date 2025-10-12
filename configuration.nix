@@ -92,8 +92,8 @@ in
   services.logind.settings.Login = {
     #powerKey = "suspend";
     #powerKeyLongPress = "reboot";
-    HandlepowerKey = "suspend";
-    HandlepowerKeyLongPress = "reboot";
+    HandlePowerKey = "suspend";
+    HandlePowerKeyLongPress = "reboot";
   };
 
   systemd.sleep.extraConfig = ''
@@ -818,6 +818,16 @@ in
     #cpuFreqGovernor = "scheldutil";
   };
 
+  services.upower = {
+    enable = true;
+    criticalPowerAction = "Hibernate";
+    usePercentageForPolicy = true;
+    percentageLow = 30;
+    percentageCritical = 10;
+    percentageAction = 5;
+    ignoreLid = true;
+  };
+
   services = {
 
     auto-cpufreq = {
@@ -1109,6 +1119,12 @@ in
   #group = "keyd";
   #isSystemUser = true;
   #};
+  services.udev.extraRules = ''
+    KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
+    SUBSYSTEM=="i2c-dev", GROUP="i2c", MODE="0660"
+  '';
+  users.groups.i2c = { };
+
   users.users.py = {
     isNormalUser = true;
     description = "py";
