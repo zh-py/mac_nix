@@ -18,18 +18,18 @@
   ...
 }:
 #let
-  #wechat-fcitx = pkgs.wechat.overrideAttrs (old: {
-    #nativeBuildInputs = (old.nativeBuildInputs or []) ++ [ pkgs.makeWrapper ];
-    #postInstall = ''
-      #mv $out/bin/wechat $out/bin/.wechat-orig
-      #makeWrapper $out/bin/.wechat-orig $out/bin/wechat \
-        #--set QT_IM_MODULE fcitx \
-        #--set GTK_IM_MODULE fcitx \
-        #--set XMODIFIERS "@im=fcitx" \
-        #--set INPUT_METHOD fcitx \
-        #--set QT_QPA_PLATFORMTHEME qt6ct
-    #'';
-  #});
+#wechat-fcitx = pkgs.wechat.overrideAttrs (old: {
+#nativeBuildInputs = (old.nativeBuildInputs or []) ++ [ pkgs.makeWrapper ];
+#postInstall = ''
+#mv $out/bin/wechat $out/bin/.wechat-orig
+#makeWrapper $out/bin/.wechat-orig $out/bin/wechat \
+#--set QT_IM_MODULE fcitx \
+#--set GTK_IM_MODULE fcitx \
+#--set XMODIFIERS "@im=fcitx" \
+#--set INPUT_METHOD fcitx \
+#--set QT_QPA_PLATFORMTHEME qt6ct
+#'';
+#});
 #in {
 {
   #inherit (pkgs.lib) mkIf optionals;
@@ -58,7 +58,6 @@
     };
     #style = "kvantum";
   };
-
 
   home.file.".local/share/applications/wechat-fcitx.desktop".text = ''
     [Desktop Entry]
@@ -268,12 +267,17 @@
   ];
 
   #imports = [
-    #inputs.hyprshell.homeModules.hyprshell
+  #inputs.hyprshell.homeModules.hyprshell
   #];
 
   #programs.hyprshell = {
   #hyprland = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
   #systemd.args = "-v";
+  services.dunst.enable = false;
+  services.mako.enable = false;
+  services.swaync.enable = true;
+  #~/.cache/swaync/notifications.json
+
   services.hyprshell = {
     enable = true;
     settings = {
@@ -286,14 +290,14 @@
           launcher = {
             max_items = 5;
             #plugins.websearch = {
-              #enable = true;
-              #engines = [
-                #{
-                  #name = "DuckDuckGo";
-                  #url = "https://duckduckgo.com/?q=%s";
-                  #key = "d";
-                #}
-              #];
+            #enable = true;
+            #engines = [
+            #{
+            #name = "DuckDuckGo";
+            #url = "https://duckduckgo.com/?q=%s";
+            #key = "d";
+            #}
+            #];
             #};
           };
         };
