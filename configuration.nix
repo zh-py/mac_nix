@@ -86,7 +86,7 @@ in
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-57-6.12.51"
+    "broadcom-sta-6.30.223.271-57-6.12.52"
   ];
 
   services.logind.settings.Login = {
@@ -1270,6 +1270,9 @@ in
     linuxKernel.packages.linux_6_12.turbostat
     pciutils
     ddcutil
+    inetutils
+    tcpdump
+    mtr
     wlsunset
     libcap
     systemdUkify
