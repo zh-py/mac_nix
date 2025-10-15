@@ -94,15 +94,60 @@ in
     #powerKeyLongPress = "reboot";
     HandlePowerKey = "suspend";
     HandlePowerKeyLongPress = "reboot";
+    HandleLidSwitch = "ignore";
+    HandleLidSwitchDocked = "ignore";
   };
 
+  boot.kernelParams = [
+    "mem_sleep_default=deep"
+    #"acpi_sleep=s3_bios"
+    #"acpi_osi=Darwin"
+    "acpi_sleep=nonvs"
+    "acpi_osi=!Darwin"
+    "acpi_osi=\"Windows 2015\""
+  ];
   systemd.sleep.extraConfig = ''
-    AllowSuspend=yes
-    SuspendState=freeze
-    AllowHibernation=no
-    AllowHybridSleep=no
-    AllowSuspendThenHibernate=no
+    [Sleep]
+      AllowSuspend=yes
+      AllowHibernation=no
+      AllowHybridSleep=no
+      AllowSuspendThenHibernate=no
+      SuspendState=mem
+      MemorySleepMode=deep
   '';
+
+  systemd.services.disable-wakeups = {
+    description = "Disable unwanted wakeup sources";
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = pkgs.writeShellScript "disable-wakeups" ''
+        echo XHC1 > /proc/acpi/wakeup
+        echo LID0 > /proc/acpi/wakeup
+        echo RP01 > /proc/acpi/wakeup
+        echo RP02 > /proc/acpi/wakeup
+        echo RP03 > /proc/acpi/wakeup
+        echo RP05 > /proc/acpi/wakeup
+        echo RP06 > /proc/acpi/wakeup
+      '';
+      User = "root";
+    };
+  };
+
+  #systemd.services.disable-wakeup-devices = {
+  #description = "Disable wakeup for LID0 and XHC1 to improve suspend stability";
+  #wantedBy = [ "multi-user.target" ];
+  #serviceConfig.ExecStart = ''
+  #/run/current-system/sw/bin/bash -c '
+  #for dev in LID0 XHC1; do
+  #if grep -q "^$dev.*enabled" /proc/acpi/wakeup; then
+  #echo "Disabling $dev wakeup..."
+  #echo $dev > /proc/acpi/wakeup
+  #fi
+  #done
+  #'
+  #'';
+  #};
 
   programs.hyprlock.enable = true;
 
