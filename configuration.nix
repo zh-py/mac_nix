@@ -93,46 +93,47 @@ in
     #powerKey = "suspend";
     #powerKeyLongPress = "reboot";
     HandlePowerKey = "suspend";
+    #HandlePowerKey = "hibernate";
     HandlePowerKeyLongPress = "reboot";
     HandleLidSwitch = "ignore";
     HandleLidSwitchDocked = "ignore";
   };
 
   boot.kernelParams = [
-    "mem_sleep_default=deep"
+    "mem_sleep_default=s2idle"
+    "sleep.deep=disabled"
+    "usbcore.autosuspend=1"
     #"acpi_sleep=s3_bios"
     #"acpi_osi=Darwin"
-    "acpi_sleep=nonvs"
-    "acpi_osi=!Darwin"
-    "acpi_osi=\"Windows 2015\""
+    #"acpi_sleep=nonvs"
+    #"acpi_osi=!Darwin"
+    #"acpi_osi=\"Windows 2015\""
   ];
   systemd.sleep.extraConfig = ''
     [Sleep]
-      AllowSuspend=yes
-      AllowHibernation=no
-      AllowHybridSleep=no
-      AllowSuspendThenHibernate=no
-      SuspendState=mem
-      MemorySleepMode=deep
+    AllowSuspend=yes
+    AllowHibernation=no
+    AllowSuspendThenHibernate=no
+    HibernateDelaySec=3h
   '';
 
-  systemd.services.disable-wakeups = {
-    description = "Disable unwanted wakeup sources";
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = pkgs.writeShellScript "disable-wakeups" ''
-        echo XHC1 > /proc/acpi/wakeup
-        echo LID0 > /proc/acpi/wakeup
-        echo RP01 > /proc/acpi/wakeup
-        echo RP02 > /proc/acpi/wakeup
-        echo RP03 > /proc/acpi/wakeup
-        echo RP05 > /proc/acpi/wakeup
-        echo RP06 > /proc/acpi/wakeup
-      '';
-      User = "root";
-    };
-  };
+  #systemd.services.disable-wakeups = {
+  #description = "Disable unwanted wakeup sources";
+  #wantedBy = [ "multi-user.target" ];
+  #serviceConfig = {
+  #Type = "oneshot";
+  #ExecStart = pkgs.writeShellScript "disable-wakeups" ''
+  #echo XHC1 > /proc/acpi/wakeup
+  #echo LID0 > /proc/acpi/wakeup
+  #echo RP01 > /proc/acpi/wakeup
+  #echo RP02 > /proc/acpi/wakeup
+  #echo RP03 > /proc/acpi/wakeup
+  #echo RP05 > /proc/acpi/wakeup
+  #echo RP06 > /proc/acpi/wakeup
+  #'';
+  #User = "root";
+  #};
+  #};
 
   #systemd.services.disable-wakeup-devices = {
   #description = "Disable wakeup for LID0 and XHC1 to improve suspend stability";
@@ -904,6 +905,7 @@ in
         CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
         CPU_MIN_PERF_ON_AC = 0;
         CPU_MAX_PERF_ON_AC = 100;
+        MAX_CHARGE_RATE_BAT0 = 60;
         PLATFORM_PROFILE_ON_AC = "balanced";
         PLATFORM_PROFILE_ON_BAT = "low-power";
         MEM_SLEEP_ON_AC = "s2idle";
@@ -1316,6 +1318,7 @@ in
     pciutils
     ddcutil
     inetutils
+    usbutils
     tcpdump
     mtr
     wlsunset
