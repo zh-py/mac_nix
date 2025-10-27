@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    hyprland.url = "github:hyprwm/Hyprland";
+    #hyprland.url = "github:hyprwm/Hyprland";
     #hyprshell.url = "github:H3rmt/hyprshell";
     nur.url = "github:nix-community/NUR";
     #hyprswitch.url = "github:h3rmt/hyprswitch/release";
@@ -20,11 +20,11 @@
       url = "github:musnix/musnix";
     };
     xremap-flake.url = "github:xremap/nix-flake";
-    rose-pine-hyprcursor = {
-      url = "github:ndom91/rose-pine-hyprcursor";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.hyprlang.follows = "hyprland/hyprlang";
-    };
+    #rose-pine-hyprcursor = {
+      #url = "github:ndom91/rose-pine-hyprcursor";
+      #inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.hyprlang.follows = "hyprland/hyprlang";
+    #};
   };
 
   #inputs@{
@@ -32,7 +32,7 @@
     {
       nixpkgs,
       home-manager,
-      hyprland,
+      #hyprland,
       #hyprshell,
       nur,
       ...

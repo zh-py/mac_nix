@@ -1248,7 +1248,8 @@ in
     lxqt.lxqt-menu-data
 
     # cd /run/current-system/sw/share/icons  they are stored here!!
-    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    #inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    hyprcursor
     bibata-cursors
     nordzy-cursor-theme
     numix-cursor-theme

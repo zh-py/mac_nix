@@ -81,6 +81,11 @@
     Terminal=false
   '';
 
+  nixpkgs.config.packageOverrides = pkgs: {
+    maestral = pkgs.maestral.overridePythonAttrs (old: {
+      doCheck = false;
+    });
+  };
   home.packages = with pkgs; [
     #nixos only
     proxychains-ng
@@ -143,9 +148,7 @@
     mediainfo-gui
     trashy
     #insync
-    #maestral
-    #python313Packages.maestral
-    python312Packages.maestral
+    maestral
     keepassxc
     #appimage-run
     dmenu
