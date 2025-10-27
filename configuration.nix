@@ -86,7 +86,7 @@ in
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-57-6.12.52"
+    "broadcom-sta-6.30.223.271-57-6.12.55"
   ];
 
   services.logind.settings.Login = {
@@ -631,11 +631,10 @@ in
   #environment.DISPLAY = ":0.0"; # NOTE: This is hardcoded for this flake
   #};
   services.xremap = {
+    enable = true;
     # NOTE: since this sample configuration does not have any DE, xremap needs to be started manually by systemctl --user start xremap
     serviceMode = "user";
     userName = "py";
-  };
-  services.xremap = {
     withX11 = true;
     withHypr = false;
     #yamlConfig = ''
@@ -1463,6 +1462,10 @@ in
     #hostNames = [ "192.168.124.76" ];
     #publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINhppLSZ+s+f27ZY7YkDwCQFF5dILpqV9uqj1UmyuPqs";
     #};
+  };
+  programs.mosh = {
+    enable = true;
+    openFirewall = true;
   };
 
   services.mihomo = {

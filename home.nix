@@ -70,6 +70,17 @@
     Terminal=false
   '';
 
+  home.file.".local/share/applications/eudic-fcitx.desktop".text = ''
+    [Desktop Entry]
+    Name=Eudic (Fcitx)
+    Comment=Eudic with Fcitx input support
+    Exec=env QT_IM_MODULE=fcitx GTK_IM_MODULE=fcitx XMODIFIERS=@im=fcitx INPUT_METHOD=fcitx QT_QPA_PLATFORMTHEME=qt6ct eudic
+    Icon=eudic
+    Type=Application
+    Categories=Education;Dictionary;
+    Terminal=false
+  '';
+
   home.packages = with pkgs; [
     #nixos only
     proxychains-ng
@@ -82,6 +93,7 @@
     cifs-utils
     samba
     remmina
+    autossh
 
     fusuma
     firefox
@@ -131,7 +143,9 @@
     mediainfo-gui
     trashy
     #insync
-    maestral
+    #maestral
+    #python313Packages.maestral
+    python312Packages.maestral
     keepassxc
     #appimage-run
     dmenu
@@ -620,9 +634,11 @@
 
   programs.git = {
     enable = true;
-    userEmail = "pierrez1984@gmail.com";
-    userName = "zh-py";
-    extraConfig = {
+    settings = {
+      user = {
+        email = "pierrez1984@gmail.com";
+        name = "zh-py";
+      };
       core = {
         editor = "nvim";
         pager = "delta --dark";
