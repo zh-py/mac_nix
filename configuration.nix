@@ -1249,7 +1249,10 @@ in
 
     # cd /run/current-system/sw/share/icons  they are stored here!!
     #inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    hyprpaper
+    waypaper
     hyprcursor
+
     bibata-cursors
     nordzy-cursor-theme
     numix-cursor-theme
