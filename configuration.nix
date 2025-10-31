@@ -1532,12 +1532,22 @@ in
   #'';
 
   #myfiles  -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino  ://192.168.2.1/myfiles
+  #/home/py/sambamnt -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino,cache=none,actimeo=5,uid=py,gid=users ://192.168.2.1/myfiles
+  #myfiles -fstype=cifs,mountprog=/bin/mount.cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,serverino,cache=none,actimeo=1,echo_interval=5,retrans=3,uid=py,gid=users ://192.168.2.1/myfiles
+  #fileSystems."/home/py/sambamnt" = {
+  #device = "/mnt/smb/myfiles";
+  #fsType = "none";
+  #options = [ "bind" ];
+  #};
   services.autofs = {
     enable = true;
+    #autoMaster = ''
+    #/home/py/sambamnt -fstype=cifs,mountprog=/bin/mount.cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino,cache=none,actimeo=5,retrans=1,uid=py,gid=users ://192.168.2.1/myfiles
+    #'';
     autoMaster =
       let
         smbMap = pkgs.writeText "auto.smb" ''
-          myfiles  -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino,cache=none,actimeo=30,uid=py,gid=users  ://192.168.2.1/myfiles
+          myfiles -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino,cache=loose,actimeo=1,uid=py,gid=users ://192.168.2.1/myfiles
         '';
       in
       ''
@@ -1558,7 +1568,7 @@ in
     #autoMaster = ''
     #/home/py/sambamnt -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino ://192.168.2.1/myfiles
     #'';
-    timeout = 300;
+    timeout = 5;
     debug = true;
   };
 
