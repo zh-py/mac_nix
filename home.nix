@@ -17,26 +17,7 @@
   #inputs,
   ...
 }:
-#let
-#wechat-fcitx = pkgs.wechat.overrideAttrs (old: {
-#nativeBuildInputs = (old.nativeBuildInputs or []) ++ [ pkgs.makeWrapper ];
-#postInstall = ''
-#mv $out/bin/wechat $out/bin/.wechat-orig
-#makeWrapper $out/bin/.wechat-orig $out/bin/wechat \
-#--set QT_IM_MODULE fcitx \
-#--set GTK_IM_MODULE fcitx \
-#--set XMODIFIERS "@im=fcitx" \
-#--set INPUT_METHOD fcitx \
-#--set QT_QPA_PLATFORMTHEME qt6ct
-#'';
-#});
-#in {
 {
-  #inherit (pkgs.lib) mkIf optionals;
-  #tex = (pkgs.texlive.combine {
-  #inherit (pkgs.texlive) scheme-full;
-  #});
-  #in {
   home.username = "py";
   home.homeDirectory = "/home/py";
 
@@ -81,11 +62,11 @@
     Terminal=false
   '';
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    maestral = pkgs.maestral.overridePythonAttrs (old: {
-      doCheck = false;
-    });
-  };
+  #nixpkgs.config.packageOverrides = pkgs: {
+    #maestral = pkgs.maestral.overridePythonAttrs (old: {
+      #doCheck = false;
+    #});
+  #};
   home.packages = with pkgs; [
     #nixos only
     proxychains-ng
@@ -123,10 +104,6 @@
     #photoqt
     qview
     viewnior
-    krusader
-    doublecmd
-    lxqt.pcmanfm-qt
-    #pcmanfm
     xxdiff
     kdePackages.okular
     #mupdf
@@ -190,7 +167,7 @@
     htop
     neofetch
     fastfetch
-    du-dust
+    dust
     fd
     ripgrep
     bat
@@ -198,7 +175,7 @@
     fontconfig
     glances
     bottom
-    aria
+    aria2
     pay-respects
     rclone
     syncthing

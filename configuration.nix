@@ -10,11 +10,14 @@
   ...
 }:
 #let
-#compiledLayout = pkgs.runCommand "keyboard-layout" {} ''
-#${pkgs.xorg.xkbcomp}/bin/xkbcomp ${./path/to/layout.xkb} $out
+#autoSamba = pkgs.writeText "auto.samba" ''
+#sambamnt -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino,cache=none,actimeo=30 ://192.168.2.1/myfiles
 #'';
-#in
 let
+  #compiledLayout = pkgs.runCommand "keyboard-layout" {} ''
+  #${pkgs.xorg.xkbcomp}/bin/xkbcomp ${./path/to/layout.xkb} $out
+  #'';
+  #in
   customKeyboardLayout = pkgs.writeText "custom-keyboard-layout" ''
     xkb_keymap {
       xkb_keycodes  { include "evdev+aliases(qwerty)"	};
@@ -230,7 +233,7 @@ in
       waylandFrontend = true;
       addons = with pkgs; [
         fcitx5-gtk
-        fcitx5-chinese-addons
+        qt6Packages.fcitx5-chinese-addons
         fcitx5-pinyin-zhwiki
         fcitx5-nord
       ];
@@ -1089,7 +1092,7 @@ in
     terminus_font_ttf
     profont
     efont-unicode
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     #dina-font
 
     nerd-fonts.fira-code
@@ -1109,8 +1112,8 @@ in
     source-han-serif
 
     noto-fonts
-    vistafonts
-    ubuntu_font_family
+    vista-fonts
+    ubuntu-classic
     cantarell-fonts
     liberation_ttf
 
@@ -1343,6 +1346,14 @@ in
     #hiddify-app
     #metacubexd
     daed
+
+    cifs-utils
+    gnome.gvfs
+    gvfs
+    lxqt.lxqt-policykit
+    krusader
+    doublecmd
+    lxqt.pcmanfm-qt
   ];
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
@@ -1470,6 +1481,85 @@ in
   programs.mosh = {
     enable = true;
     openFirewall = true;
+  };
+
+  #fileSystems."/home/py/sambamnt" = {
+  #device = "//192.168.2.1/myfiles";
+  #fsType = "cifs";
+  #options =
+  #let
+  #automountOpts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+  #in
+  #[
+  #"${automountOpts}"
+  #"credentials=/home/py/Dropbox (Maestral)/mac_config/Scripts/smb-credentials"
+  #"vers=3.1.1"
+  #"soft"
+  #"_netdev"
+  #"noserverino"
+  #"cache=none"
+  #"actimeo=30"
+  #"iocharset=utf8"
+  #"rw"
+  #];
+  #};
+  services.gvfs = {
+    enable = true;
+    package = pkgs.gnome.gvfs;
+  };
+
+  #fileSystems."/home/py/sambamnt" = {
+  #device = "//192.168.2.1/myfiles";
+  #fsType = "cifs";
+  #options = [
+  #"credentials=/home/py/Dropbox (Maestral)/mac_config/Scripts/smb-credentials"
+  #"vers=3.1.1"
+  #"soft"
+  #"_netdev"
+  #"noserverino"
+  #"cache=none"
+  #"actimeo=30"
+  #"iocharset=utf8"
+  #"x-systemd.automount"
+  #"noauto"
+  #"x-systemd.idle-timeout=60" # Unmount after inactivity
+  #];
+  #};
+
+  #myfiles -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/Dropbox\040(Maestral\)/mac_config/Scripts/smb-credentials,iocharset=utf8,noserverino ://192.168.2.1/myfiles
+  #environment.etc."auto.smb".text = ''
+  #/home/py/sambamnt -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino ://192.168.2.1/myfiles
+  #'';
+
+  #myfiles  -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino  ://192.168.2.1/myfiles
+  services.autofs = {
+    enable = true;
+    autoMaster =
+      let
+        smbMap = pkgs.writeText "auto.smb" ''
+          myfiles  -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino,cache=none,actimeo=30,uid=py,gid=users  ://192.168.2.1/myfiles
+        '';
+      in
+      ''
+        /home/py/sambamnt file:${smbMap}
+      '';
+    #autoMaster = ''
+    #/home/py file:${autoSamba}
+    #'';
+    #autoMaster = ''
+    #/home/py/sambamnt -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino,cache=none,actimeo=30 ://192.168.2.1/myfiles
+    #'';
+    #autoMaster = ''
+    #/home/py/sambamnt -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino,cache=none,actimeo=30,x-systemd.automount ://192.168.2.1/myfiles
+    #'';
+    #autoMaster = ''
+    #/home/py/sambamnt file:/etc/auto.smb
+    #'';
+    #autoMaster = ''
+    #/home/py/sambamnt -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino ://192.168.2.1/myfiles
+    #'';
+    timeout = 300;
+    debug = true;
   };
 
   services.mihomo = {
