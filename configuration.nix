@@ -153,7 +153,6 @@ in
   #'';
   #};
 
-  programs.hyprlock.enable = true;
 
   systemd.network = {
     enable = false;
@@ -280,6 +279,9 @@ in
     enable = true;
     xwayland.enable = true;
   };
+  services.hypridle.enable = true;
+  programs.hyprlock.enable = true;
+
   programs.labwc = {
     enable = true;
   };

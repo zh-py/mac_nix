@@ -1,6 +1,7 @@
 #ln -s ~/Insync/pierrez1984@gmail.com/Dropbox/mac_config/home-manager ~/.config
 #ln -s ~/Dropbox\ \(Maestral\)/mac_config/mac_nix/nixos /etc
 #ln -sf /etc/nixos/dotfiles/hyprland.conf ~/.config/hypr
+#ln -sf /etc/nixos/dotfiles/hypridle.conf ~/.config/hypr
 #ln -sf /etc/nixos/dotfiles/.xinitrc ~/.config/
 
 # in ~/.config/lxqt/session.conf or lxqt session setting
