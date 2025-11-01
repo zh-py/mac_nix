@@ -2,6 +2,7 @@
 #ln -s ~/Dropbox\ \(Maestral\)/mac_config/mac_nix/nixos /etc
 #ln -sf /etc/nixos/dotfiles/hyprland.conf ~/.config/hypr
 #ln -sf /etc/nixos/dotfiles/hypridle.conf ~/.config/hypr
+#ln -sf /etc/nixos/dotfiles/hyprsunset.conf ~/.config/hypr
 #ln -sf /etc/nixos/dotfiles/.xinitrc ~/.config/
 
 # in ~/.config/lxqt/session.conf or lxqt session setting
@@ -223,11 +224,15 @@
     #gtk3
     #gtk4
     #glib
+    #lxappearance-gtk2
+    #hyprqt6engine
     gnome-themes-extra
     shared-mime-info
     krusader
     doublecmd
     mc
+    superfile
+    ranger
     #mucommander
     #nemo-with-extensions
     gnome-commander

@@ -1264,6 +1264,10 @@ in
     hyprpaper
     waypaper
     hyprcursor
+    hyprland-qtutils
+    nwg-look
+    lxappearance
+    hyprsunset
 
     bibata-cursors
     nordzy-cursor-theme
