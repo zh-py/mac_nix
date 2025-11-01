@@ -296,6 +296,7 @@ in
     #SDL_VIDEODRIVER = "wayland";
     #XDG_SESSION_TYPE = "wayland";
 
+    QT_QPA_PLATFORMTHEME = "qt5ct";
     #QT_QPA_PLATFORMTHEME = "qt6ct";
     #QT_PLATFORM_PLUGIN = "qt5ct" this two lines in session window
   };
@@ -1256,8 +1257,6 @@ in
 
     kdePackages.qt6ct
     libsForQt5.qt5ct
-    gnome-icon-theme
-    shared-mime-info
     lxqt.lxqt-menu-data
 
     # cd /run/current-system/sw/share/icons  they are stored here!!
@@ -1362,14 +1361,18 @@ in
     gvfs
     #autofs5
     lxqt.lxqt-policykit
-    krusader
-    doublecmd
-    lxqt.pcmanfm-qt
   ];
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
 
   ];
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+      thunar-volman
+    ];
+  };
 
   system.activationScripts.diff = {
     supportsDryActivation = true;
@@ -1556,7 +1559,7 @@ in
     autoMaster =
       let
         smbMap = pkgs.writeText "auto.smb" ''
-          myfiles -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino,cache=loose,actimeo=1,uid=py,gid=users ://192.168.2.1/myfiles
+          myfiles -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino,cache=loose,uid=py,gid=users ://192.168.2.1/myfiles
         '';
       in
       ''
@@ -1584,17 +1587,29 @@ in
   #};
   #};
   systemd.services.autofs-refresh = {
-    description = "Restart autofs after resume";
+    description = "Refresh autofs after resume (force unmount + pre-mount)";
     after = [
       "network-online.target"
       "autofs.service"
     ];
-    requires = [ "network-online.target" ];
-    wantedBy = [ "sleep.target" ];
+    wants = [ "network-online.target" ];
+    wantedBy = [
+      "suspend.target"
+      "hibernate.target"
+      "sleep.target"
+    ];
     serviceConfig = {
       Type = "oneshot";
-      ExecStartPre = "${pkgs.util-linux}/bin/umount -l /home/py/sambamnt || true";
-      ExecStart = "${pkgs.systemd}/bin/systemctl try-restart autofs.service";
+      ExecStart = ''
+        # Force unmount any stale mounts (won't fail if clean)
+        ${pkgs.util-linux}/bin/umount -lf /home/py/sambamnt/myfiles || true
+
+        # Restart autofs
+        ${pkgs.systemd}/bin/systemctl try-restart autofs.service
+
+        # Pre-mount the indirect share so GUI sees files immediately
+        ls /home/py/sambamnt/myfiles > /dev/null || true
+      '';
     };
   };
   #systemd.services.autofs-refresh = {

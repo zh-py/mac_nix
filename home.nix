@@ -64,9 +64,9 @@
   '';
 
   #nixpkgs.config.packageOverrides = pkgs: {
-    #maestral = pkgs.maestral.overridePythonAttrs (old: {
-      #doCheck = false;
-    #});
+  #maestral = pkgs.maestral.overridePythonAttrs (old: {
+  #doCheck = false;
+  #});
   #};
   home.packages = with pkgs; [
     #nixos only
@@ -138,7 +138,6 @@
 
     #share
     openssl
-    mc
     eza
     lsof
     tldr
@@ -192,6 +191,7 @@
     poetry
     texlab
     obsidian
+    aichat
     qbittorrent-enhanced
     spotify
     spotdl
@@ -215,6 +215,23 @@
     #evtest
     eudic
     texliveFull
+
+    gnome-icon-theme
+    papirus-icon-theme
+    #numix-icon-theme
+    adwaita-icon-theme
+    gtk3
+    gtk4
+    glib
+    gnome-themes-extra
+    shared-mime-info
+    krusader
+    doublecmd
+    mc
+    #mucommander
+    #nemo-with-extensions
+    gnome-commander
+    lxqt.pcmanfm-qt
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -472,8 +489,28 @@
     EDITOR = "nvim";
     BROWSER = "firefox";
     TERMINAL = "kitty";
+    #XCURSOR_THEME = "Adwaita";
+    #XCURSOR_SIZE = "24";
+    #GTK_THEME = "Adwaita";
+    #GTK_ICON_THEME = "Papirus";
     #XDG_CONFIG_HOME = "$HOME/.config";
     #XDG_CONFIG_HOME = lib.mkDefault "$HOME/.config";
+  };
+
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Papirus";
+      package = pkgs.papirus-icon-theme;
+    };
+    theme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+    };
+    cursorTheme = {
+      name = "rose-pine-hyprcursor";
+      package = pkgs.adwaita-icon-theme; # or your custom cursor package
+    };
   };
 
   xdg = {
