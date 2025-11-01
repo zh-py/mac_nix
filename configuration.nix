@@ -89,7 +89,7 @@ in
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-57-6.12.55"
+    "broadcom-sta-6.30.223.271-57-6.12.56"
   ];
 
   services.logind.settings.Login = {
@@ -296,7 +296,7 @@ in
     #SDL_VIDEODRIVER = "wayland";
     #XDG_SESSION_TYPE = "wayland";
 
-    QT_QPA_PLATFORMTHEME = "qt5ct";
+    QT_QPA_PLATFORMTHEME = "qt6ct";
     #QT_QPA_PLATFORMTHEME = "qt6ct";
     #QT_PLATFORM_PLUGIN = "qt5ct" this two lines in session window
   };

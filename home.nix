@@ -220,9 +220,9 @@
     papirus-icon-theme
     #numix-icon-theme
     adwaita-icon-theme
-    gtk3
-    gtk4
-    glib
+    #gtk3
+    #gtk4
+    #glib
     gnome-themes-extra
     shared-mime-info
     krusader
