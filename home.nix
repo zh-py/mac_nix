@@ -477,7 +477,7 @@
   };
 
   xdg = {
-    enable = false;
+    enable = true;
     mimeApps = {
       enable = true;
       defaultApplications = {

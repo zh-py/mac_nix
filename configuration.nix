@@ -153,7 +153,6 @@ in
   #'';
   #};
 
-
   systemd.network = {
     enable = false;
     networks."eth0" = {
@@ -337,6 +336,15 @@ in
 
   security.polkit.enable = true;
 
+  services.dbus.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.kdePackages.xdg-desktop-portal-kde
+    ];
+  };
   #xdg.portal = {
   #enable = true;
   #lxqt.enable = true;
@@ -1352,6 +1360,7 @@ in
     cifs-utils
     gnome.gvfs
     gvfs
+    #autofs5
     lxqt.lxqt-policykit
     krusader
     doublecmd
@@ -1510,21 +1519,21 @@ in
     package = pkgs.gnome.gvfs;
   };
 
-  #fileSystems."/home/py/sambamnt" = {
+  #fileSystems."/home/py/sambamnt/myfiles" = {
   #device = "//192.168.2.1/myfiles";
   #fsType = "cifs";
   #options = [
   #"credentials=/home/py/Dropbox (Maestral)/mac_config/Scripts/smb-credentials"
+  #"uid=1000"
+  #"gid=1000"
+  #"iocharset=utf8"
   #"vers=3.1.1"
   #"soft"
-  #"_netdev"
-  #"noserverino"
-  #"cache=none"
-  #"actimeo=30"
-  #"iocharset=utf8"
   #"x-systemd.automount"
+  #"_netdev"
+  #"nofail"
   #"noauto"
-  #"x-systemd.idle-timeout=60" # Unmount after inactivity
+  #"idle-timeout=10"
   #];
   #};
 
@@ -1541,11 +1550,9 @@ in
   #fsType = "none";
   #options = [ "bind" ];
   #};
+
   services.autofs = {
     enable = true;
-    #autoMaster = ''
-    #/home/py/sambamnt -fstype=cifs,mountprog=/bin/mount.cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino,cache=none,actimeo=5,retrans=1,uid=py,gid=users ://192.168.2.1/myfiles
-    #'';
     autoMaster =
       let
         smbMap = pkgs.writeText "auto.smb" ''
@@ -1553,26 +1560,57 @@ in
         '';
       in
       ''
-        /home/py/sambamnt file:${smbMap}
+        /home/py/sambamnt file:${smbMap} --ghost
       '';
-    #autoMaster = ''
-    #/home/py file:${autoSamba}
-    #'';
-    #autoMaster = ''
-    #/home/py/sambamnt -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino,cache=none,actimeo=30 ://192.168.2.1/myfiles
-    #'';
-    #autoMaster = ''
-    #/home/py/sambamnt -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino,cache=none,actimeo=30,x-systemd.automount ://192.168.2.1/myfiles
-    #'';
-    #autoMaster = ''
-    #/home/py/sambamnt file:/etc/auto.smb
-    #'';
-    #autoMaster = ''
-    #/home/py/sambamnt -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino ://192.168.2.1/myfiles
-    #'';
-    timeout = 5;
+    timeout = 600;
     debug = true;
   };
+  #systemd.services.autofs-refresh = {
+  #description = "Restart autofs after resume";
+  #after = [
+  #"network-online.target"
+  #"autofs.service"
+  #];
+  #requires = [ "network-online.target" ];
+  #wantedBy = [
+  #"suspend.target"
+  #"hibernate.target"
+  #"sleep.target"
+  #];
+  #serviceConfig = {
+  #Type = "oneshot";
+  #ExecStartPre = "${pkgs.util-linux}/bin/umount -l /home/py/sambamnt || true";
+  #ExecStart = "${pkgs.systemd}/bin/systemctl try-restart autofs.service";
+  #};
+  #};
+  systemd.services.autofs-refresh = {
+    description = "Restart autofs after resume";
+    after = [
+      "network-online.target"
+      "autofs.service"
+    ];
+    requires = [ "network-online.target" ];
+    wantedBy = [ "sleep.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStartPre = "${pkgs.util-linux}/bin/umount -l /home/py/sambamnt || true";
+      ExecStart = "${pkgs.systemd}/bin/systemctl try-restart autofs.service";
+    };
+  };
+  #systemd.services.autofs-refresh = {
+  #description = "Restart autofs after resume";
+  #after = [ "network-online.target" ];
+  #requires = [ "network-online.target" ];
+  #wantedBy = [
+  #"suspend.target"
+  #"hibernate.target"
+  #"sleep.target"
+  #];
+  #serviceConfig = {
+  #Type = "oneshot";
+  #ExecStart = "${pkgs.systemd}/bin/systemctl restart autofs.service";
+  #};
+  #};
 
   services.mihomo = {
     enable = false;
