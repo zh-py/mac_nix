@@ -2,7 +2,7 @@ local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 vim.lsp.set_log_level("error")
 
 vim.lsp.config('*', {
-  capabilities = lsp_capabilities,
+	capabilities = lsp_capabilities,
 })
 
 
@@ -127,40 +127,46 @@ local servers = {
 		cmd = { "texlab" },
 		filetypes = { "tex", "plaintex" }
 	},
+
+	--hyprls = {
+		--cmd = { 'hyprls' },
+		--filetypes = { 'hyprlang', 'hyprland.conf' }, -- You don't need '*.hl' here; use actual filetypes
+		--root_dir = lspconfig.util.root_pattern('.git', 'hyprland.conf'),
+	--}
 }
 
 for name, config in pairs(servers) do
-  vim.lsp.config(name, config)
+	vim.lsp.config(name, config)
 end
 
 -- Enable all servers
 for name, _ in pairs(servers) do
-  vim.lsp.enable(name)
+	vim.lsp.enable(name)
 end
 
 --for name, opts in pairs(servers) do
-	--vim.api.nvim_create_autocmd("FileType", {
-		--pattern = opts.filetypes,
-		--callback = function(ev)
-			---- make sure cmd is defined!
-			--local cfg = vim.tbl_extend("force", {
-				--capabilities = lsp_capabilities,
-			--}, opts)
+--vim.api.nvim_create_autocmd("FileType", {
+--pattern = opts.filetypes,
+--callback = function(ev)
+---- make sure cmd is defined!
+--local cfg = vim.tbl_extend("force", {
+--capabilities = lsp_capabilities,
+--}, opts)
 
-			--if not cfg.cmd then
-				---- try to infer from system path if possible
-				--local bin = name
-				--if vim.fn.executable(bin) == 1 then
-					--cfg.cmd = { bin }
-				--else
-					--vim.notify("No LSP cmd found for " .. name, vim.log.levels.ERROR)
-					--return
-				--end
-			--end
+--if not cfg.cmd then
+---- try to infer from system path if possible
+--local bin = name
+--if vim.fn.executable(bin) == 1 then
+--cfg.cmd = { bin }
+--else
+--vim.notify("No LSP cmd found for " .. name, vim.log.levels.ERROR)
+--return
+--end
+--end
 
-			--vim.lsp.start(cfg, { bufnr = ev.buf })
-		--end,
-	--})
+--vim.lsp.start(cfg, { bufnr = ev.buf })
+--end,
+--})
 --end
 
 

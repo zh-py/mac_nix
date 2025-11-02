@@ -1022,6 +1022,7 @@
         type = "lua";
         config = ''
           require('nvim-treesitter.configs').setup({
+            ensure_installed = { "hyprlang" },
             highlight = {
               enable = true,
               --disable = { "latex" },

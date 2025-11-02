@@ -1365,6 +1365,7 @@ in
     #autofs5
     lxqt.lxqt-policykit
 
+    trash-cli
     xdg-utils
     gnome-shell
 
