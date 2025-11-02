@@ -295,6 +295,7 @@ in
     #QT_QPA_PLATFORM = "wayland";
     #SDL_VIDEODRIVER = "wayland";
     #XDG_SESSION_TYPE = "wayland";
+    #XDG_DATA_DIRS = "/run/current-system/sw/share:${pkgs.kdePackages.plasma-workspace}/share";
 
     QT_QPA_PLATFORMTHEME = "qt6ct";
     #QT_QPA_PLATFORMTHEME = "qt6ct";
@@ -1361,11 +1362,48 @@ in
     daed
 
     cifs-utils
-    gnome.gvfs
-    gvfs
     #autofs5
     lxqt.lxqt-policykit
+
+    xdg-utils
+    gnome-shell
+
+    gnome-menus
+    desktop-file-utils
+
+    kdePackages.plasma-workspace
+    kdePackages.plasma-integration
+    kdePackages.kservice # for kbuildsycoca6
+    kdePackages.kde-cli-tools
+    kdePackages.dolphin
+    kdePackages.qtsvg
+    kdePackages.kio-fuse
+    kdePackages.kio-extras
   ];
+  environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
+  environment.pathsToLink = [
+    "/libexec"
+    "/share/kservices6"
+    "/share/kservicetypes6"
+  ]; # kde
+  programs.dconf.enable = true; # for gnome packages outside of gnome
+  nixpkgs.overlays = [
+    (self: super: {
+      gnome = super.gnome.overrideScope (
+        gself: gsuper: {
+          nautilus = gsuper.nautilus.overrideAttrs (nsuper: {
+            buildInputs =
+              nsuper.buildInputs
+              ++ (with super.gst_all_1; [
+                gst-plugins-good
+                gst-plugins-bad
+              ]);
+          });
+        }
+      );
+    })
+  ];
+
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
 

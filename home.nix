@@ -69,6 +69,8 @@
   #doCheck = false;
   #});
   #};
+  home.sessionPath = [ "/run/current-system/sw/libexec" ];
+
   home.packages = with pkgs; [
     #nixos only
     proxychains-ng
@@ -217,15 +219,16 @@
     eudic
     texliveFull
 
+    gtk3
+    nautilus
+    glib
+    #gtk4
+    #lxappearance-gtk2
+    #hyprqt6engine
     gnome-icon-theme
     papirus-icon-theme
     #numix-icon-theme
     adwaita-icon-theme
-    #gtk3
-    #gtk4
-    #glib
-    #lxappearance-gtk2
-    #hyprqt6engine
     gnome-themes-extra
     shared-mime-info
     krusader
@@ -521,7 +524,7 @@
   xdg = {
     enable = true;
     mimeApps = {
-      enable = true;
+      enable = false;
       defaultApplications = {
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = "writer.desktop";
         "application/pdf" = "org.pwmt.zathura-pdf-mupdf.desktop";
