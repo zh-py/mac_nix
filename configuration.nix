@@ -1207,7 +1207,9 @@ in
     ];
     packages = with pkgs; [
     ];
+    shell = pkgs.zsh;
   };
+  programs.zsh.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -1381,7 +1383,8 @@ in
     kdePackages.kio-fuse
     kdePackages.kio-extras
   ];
-  environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
+  environment.etc."xdg/menus/applications.menu".source =
+    "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
   environment.pathsToLink = [
     "/libexec"
     "/share/kservices6"

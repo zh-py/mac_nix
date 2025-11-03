@@ -42,6 +42,17 @@
     #style = "kvantum";
   };
 
+  home.file.".local/share/applications/vifm-alacritty.desktop".text = ''
+    [Desktop Entry]
+    Name=Vifm (Alacritty)
+    Comment=Launch Vifm in Alacritty terminal
+    Exec=alacritty -e vifm
+    Icon=utilities-terminal
+    Type=Application
+    Categories=Utility;FileManager;
+    Terminal=false
+  '';
+
   home.file.".local/share/applications/wechat-fcitx.desktop".text = ''
     [Desktop Entry]
     Name=WeChat (Fcitx)
@@ -234,6 +245,8 @@
     krusader
     doublecmd
     mc
+    xfe
+    vifm
     superfile
     ranger
     #mucommander
@@ -524,12 +537,19 @@
   xdg = {
     enable = true;
     mimeApps = {
-      enable = false;
+      enable = true;
+      associations.added = {
+        "video/mp4" = [ "mpv.desktop" ];
+        "video/webm" = [ "mpv.desktop" ];
+        "video/x-matroska" = [ "mpv.desktop" ]; # for .mkv
+      };
       defaultApplications = {
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = "writer.desktop";
         "application/pdf" = "org.pwmt.zathura-pdf-mupdf.desktop";
         "text/plain" = "nvim.desktop";
         "video/mp4" = "mpv.desktop";
+        "video/webm" = "mpv.desktop";
+        "video/x-matroska" = "mpv.desktop";
         "video/mpeg" = "mpv.desktop";
         "video/quicktime" = "mpv.desktop";
         "video/x-msvideo" = "mpv.desktop";
@@ -561,6 +581,10 @@
   #inherit (tpkgs) collection-fontsrecommended winfonts;
   #};
   #};
+
+  programs.nnn = {
+    enable = true;
+  };
 
   programs.sagemath.enable = false;
 
@@ -851,6 +875,9 @@
       yv = "(){ yt-dlp -f '299+140/137+140/136+140/135+140/134+140/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime $1. ;}";
       yc = "(){ yt-dlp --cookies ~/Downloads/c.txt --write-sub --sub-lang 'en.*' --convert-subtitles srt -f '299+140/137+140/136+140/135+140/134+140/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime $1. ;}";
       sa = "(){ spotdl --output '{artist}_{year}_{album}/{track-number} - {title}.{output-ext}' $1. ;}";
+
+      v2a = "find . -maxdepth 1 -type f \\( -iname \"*.mp4\" -o -iname \"*.mkv\" -o -iname \"*.mov\" \\) -exec sh -c 'for f; do out=\"\${f%.*}.mp3\"; [ -f \"$out\" ] || ffmpeg -i \"$f\" -q:a 0 -map a \"$out\"; done' _ {} +";
+      srt2lrc = "for f in *.srt; do ~/python/subtitle-to-lrc_linux-amd64/subtitle-to-lrc \"$f\"; done";
       #bl = "sudo python3 ~/Downloads/osx_battery_charge_limit/main.py -s 42";
       #bh = "sudo python3 ~/Downloads/osx_battery_charge_limit/main.py -s 77";
     };
@@ -1022,7 +1049,6 @@
         type = "lua";
         config = ''
           require('nvim-treesitter.configs').setup({
-            ensure_installed = { "hyprlang" },
             highlight = {
               enable = true,
               --disable = { "latex" },
