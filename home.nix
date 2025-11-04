@@ -528,7 +528,7 @@
     package = pkgs.rose-pine-hyprcursor;
     hyprcursor = {
       enable = true;
-      size = 24;
+      size = 22;
     };
   };
 

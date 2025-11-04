@@ -1270,6 +1270,7 @@ in
     hyprsunset
 
     # cd /run/current-system/sw/share/icons  they are stored here!!
+    # cd /etc/profiles/per-user/py/share/icons/ here for home.nix pointcursor and xdg
     #inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     hyprcursor
     rose-pine-hyprcursor
