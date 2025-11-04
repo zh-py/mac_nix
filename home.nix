@@ -519,6 +519,19 @@
     #XDG_CONFIG_HOME = lib.mkDefault "$HOME/.config";
   };
 
+  home.pointerCursor = {
+    enable = true;
+    gtk.enable = true;
+    x11.enable = true;
+    size = 20;
+    name = "rose-pine-hyprcursor";
+    package = pkgs.rose-pine-hyprcursor;
+    hyprcursor = {
+      enable = true;
+      size = 24;
+    };
+  };
+
   gtk = {
     enable = true;
     iconTheme = {
@@ -529,10 +542,10 @@
       name = "Adwaita";
       package = pkgs.adwaita-icon-theme;
     };
-    cursorTheme = {
-      name = "rose-pine-hyprcursor";
-      package = pkgs.adwaita-icon-theme; # or your custom cursor package
-    };
+    #cursorTheme = {
+    #name = "rose-pine-hyprcursor";
+    #package = pkgs.adwaita-icon-theme; # or your custom cursor package
+    #};
   };
 
   xdg = {

@@ -1262,16 +1262,17 @@ in
     libsForQt5.qt5ct
     lxqt.lxqt-menu-data
 
-    # cd /run/current-system/sw/share/icons  they are stored here!!
-    #inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     hyprpaper
     waypaper
-    hyprcursor
     hyprland-qtutils
     nwg-look
     lxappearance
     hyprsunset
 
+    # cd /run/current-system/sw/share/icons  they are stored here!!
+    #inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    hyprcursor
+    rose-pine-hyprcursor
     bibata-cursors
     nordzy-cursor-theme
     numix-cursor-theme
