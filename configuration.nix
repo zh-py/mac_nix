@@ -89,7 +89,7 @@ in
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-57-6.12.56"
+    "broadcom-sta-6.30.223.271-57-6.12.57"
   ];
 
   services.logind.settings.Login = {
@@ -1600,6 +1600,8 @@ in
   #options = [ "bind" ];
   #};
 
+          #myfiles -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino,cache=loose,uid=py,gid=users ://192.168.2.1/myfiles
+          #myfiles -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,uid=py,gid=users ://192.168.2.1/myfiles
   services.autofs = {
     enable = true;
     autoMaster =

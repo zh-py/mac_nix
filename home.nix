@@ -508,8 +508,9 @@
   #
   home.sessionVariables = {
     EDITOR = "nvim";
-    BROWSER = "firefox";
+    BROWSER = "google-chrome-stable";
     TERMINAL = "kitty";
+    TERM = "xterm-256color";
     #XCURSOR_THEME = "Adwaita";
     #XCURSOR_SIZE = "24";
     #GTK_THEME = "Adwaita";
@@ -559,6 +560,11 @@
         "image/gif" = "nomacs.desktop";
         "image/bmp" = "nomacs.desktop";
         "image/webp" = "nomacs.desktop";
+        "x-scheme-handler/http" = "com.google.Chrome.desktop";
+        "x-scheme-handler/https" = "com.google.Chrome.desktop";
+        "x-scheme-handler/about" = "com.google.Chrome.desktop";
+        "x-scheme-handler/unknown" = "com.google.Chrome.desktop";
+        "text/html" = "com.google.Chrome.desktop";
       };
     };
   };
@@ -784,6 +790,7 @@
       #map cmd+v paste_from_clipboard
       map shift+insert paste_from_clipboard
       clipboard_control write-clipboard write-primary read-clipboard read-primary
+      open_url_with default
     '';
   };
 
