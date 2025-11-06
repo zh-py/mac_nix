@@ -1342,6 +1342,7 @@ in
     pciutils
     ddcutil
     inetutils
+    libva-utils #VA-API
     usbutils
     tcpdump
     mtr
