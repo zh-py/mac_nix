@@ -5,13 +5,12 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    #hyprland.url = "github:hyprwm/Hyprland";
-    #hyprshell.url = "github:H3rmt/hyprshell";
     nur.url = "github:nix-community/NUR";
-    #hyprswitch.url = "github:h3rmt/hyprswitch/release";
-    #hyprshell.url = "github:H3rmt/hyprswitch?ref=hyprshell";
-    #hyprshell.url = "github:H3rmt/hyprshell?ref=hyprshell-release";
-    #hyprshell.inputs.nixpkgs.follows = "nixpkgs";
+    #hyprland.url = "github:hyprwm/Hyprland";
+    #hyprshell = {
+      #url = "github:H3rmt/hyprshell?ref=hyprshell-release";
+      #inputs.hyprland.follows = "hyprland";
+    #};
     #kmonad = {
     #url = "git+https://github.com/kmonad/kmonad?submodules=1&dir=nix";
     #inputs.nixpkgs.follows = "nixpkgs";
@@ -21,9 +20,9 @@
     };
     xremap-flake.url = "github:xremap/nix-flake";
     #rose-pine-hyprcursor = {
-      #url = "github:ndom91/rose-pine-hyprcursor";
-      #inputs.nixpkgs.follows = "nixpkgs";
-      #inputs.hyprlang.follows = "hyprland/hyprlang";
+    #url = "github:ndom91/rose-pine-hyprcursor";
+    #inputs.nixpkgs.follows = "nixpkgs";
+    #inputs.hyprlang.follows = "hyprland/hyprlang";
     #};
   };
 

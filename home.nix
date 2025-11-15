@@ -16,7 +16,7 @@
   config,
   pkgs,
   lib,
-  #inputs,
+  inputs,
   ...
 }:
 {
@@ -31,8 +31,6 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
-
-  #extraSpecialArgs = { inherit inputs; };
 
   qt = {
     enable = true;
@@ -230,7 +228,6 @@
     eudic
     texliveFull
 
-    gtk3
     nautilus
     glib
     #gtk4
@@ -253,6 +250,10 @@
     #nemo-with-extensions
     gnome-commander
     lxqt.pcmanfm-qt
+
+    waypaper
+    hyprpaper
+    hyprland-qtutils
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -299,25 +300,49 @@
     ))
   ];
 
-  #imports = [
-  #inputs.hyprshell.homeModules.hyprshell
-  #];
-
-  #programs.hyprshell = {
-  #hyprland = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
-  #systemd.args = "-v";
   services.dunst.enable = false;
   services.mako.enable = false;
   services.swaync.enable = true;
   #~/.cache/swaync/notifications.json
 
-  services.hyprshell = {
+  wayland.windowManager.hyprland = {
+    #programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    #plugins = with pkgs; [
+    #hyprshell
+    #];
+    systemd.enable = false;
+  };
+  #home.file.".config/hypr/hyprland.conf".enable = false;
+  xdg.configFile."hypr/hyprland.conf".enable = false;
+
+  services.hypridle.enable = true;
+  programs.hyprlock.enable = true;
+  services.hyprsunset.enable = true;
+  services.hyprpaper.enable = true;
+  programs.ashell.enable = false;
+
+  ##extraSpecialArgs = { inherit inputs; };
+  #imports = [
+    #inputs.hyprshell.homeModules.hyprshell
+  #];
+  #programs.hyprshell = {
+    #enable = true;
+    ## use this if you want the more minimal hyprshell (see Readme.md > Features)
+    ##package = inputs.hyprshell.packages.${pkgs.stdenv.hostPlatform.system}.hyprshell-slim;
+    ## OR use this if you dont use hyprland via a flake and override hyprshells hyprland input
+    #package = inputs.hyprshell.packages.${pkgs.stdenv.hostPlatform.system}.hyprshell-nixpkgs;
+    #systemd.args = "-v";
+    ##systemd.enable = false;
+
+    services.hyprshell = {
     enable = true;
     settings = {
       windows = {
-        #enable = true; # please dont forget to enable windows if you want to use overview or switch
+        #enable = true; # for flake!!
         overview = {
-          #enable = true;
+          #enable = true; # for flake!!
           key = "tab";
           modifier = "alt";
           launcher = {
@@ -335,7 +360,7 @@
           };
         };
         switch = {
-          #enable = true;
+          #enable = true; # for flake!!
           modifier = "super";
         };
       };

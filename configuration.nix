@@ -89,7 +89,7 @@ in
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-57-6.12.57"
+    "broadcom-sta-6.30.223.271-59-6.12.57"
   ];
 
   services.logind.settings.Login = {
@@ -274,12 +274,6 @@ in
     enable = false;
     wrapperFeatures.gtk = true;
   };
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-  services.hypridle.enable = true;
-  programs.hyprlock.enable = true;
 
   programs.labwc = {
     enable = true;
@@ -1262,17 +1256,12 @@ in
     libsForQt5.qt5ct
     lxqt.lxqt-menu-data
 
-    hyprpaper
-    waypaper
-    hyprland-qtutils
     nwg-look
     lxappearance
-    hyprsunset
 
     # cd /run/current-system/sw/share/icons  they are stored here!!
     # cd /etc/profiles/per-user/py/share/icons/ here for home.nix pointcursor and xdg
     #inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
-    hyprcursor
     rose-pine-hyprcursor
     bibata-cursors
     nordzy-cursor-theme
@@ -1342,11 +1331,11 @@ in
     pciutils
     ddcutil
     inetutils
-    libva-utils #VA-API
+    libva-utils # VA-API
     usbutils
     tcpdump
     mtr
-    wlsunset
+    #wlsunset
     libcap
     systemdUkify
     #mihomo-party
@@ -1603,8 +1592,8 @@ in
   #options = [ "bind" ];
   #};
 
-          #myfiles -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino,cache=loose,uid=py,gid=users ://192.168.2.1/myfiles
-          #myfiles -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,uid=py,gid=users ://192.168.2.1/myfiles
+  #myfiles -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,noserverino,cache=loose,uid=py,gid=users ://192.168.2.1/myfiles
+  #myfiles -fstype=cifs,rw,soft,_netdev,vers=3.1.1,credentials=/home/py/smb-credentials,iocharset=utf8,uid=py,gid=users ://192.168.2.1/myfiles
   services.autofs = {
     enable = true;
     autoMaster =
