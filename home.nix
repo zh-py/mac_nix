@@ -30,7 +30,7 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.stateVersion = "26.05"; # Please read the comment before changing.
 
   qt = {
     enable = true;
@@ -94,6 +94,7 @@
     remmina
     autossh
 
+    xclicker
     fusuma
     firefox
     #opera
@@ -145,8 +146,8 @@
     #rofi-wayland
     rofi
 
-    gemini-cli
-    claude-code
+    #gemini-cli
+    #claude-code
 
     #share
     openssl
@@ -250,10 +251,13 @@
     #nemo-with-extensions
     gnome-commander
     lxqt.pcmanfm-qt
+    x2goclient
 
     waypaper
     hyprpaper
     hyprland-qtutils
+
+    pgadmin4-desktopmode
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -317,26 +321,24 @@
   #home.file.".config/hypr/hyprland.conf".enable = false;
   xdg.configFile."hypr/hyprland.conf".enable = false;
 
-  services.hypridle.enable = true;
-  programs.hyprlock.enable = true;
   services.hyprsunset.enable = true;
   services.hyprpaper.enable = true;
   programs.ashell.enable = false;
 
   ##extraSpecialArgs = { inherit inputs; };
   #imports = [
-    #inputs.hyprshell.homeModules.hyprshell
+  #inputs.hyprshell.homeModules.hyprshell
   #];
   #programs.hyprshell = {
-    #enable = true;
-    ## use this if you want the more minimal hyprshell (see Readme.md > Features)
-    ##package = inputs.hyprshell.packages.${pkgs.stdenv.hostPlatform.system}.hyprshell-slim;
-    ## OR use this if you dont use hyprland via a flake and override hyprshells hyprland input
-    #package = inputs.hyprshell.packages.${pkgs.stdenv.hostPlatform.system}.hyprshell-nixpkgs;
-    #systemd.args = "-v";
-    ##systemd.enable = false;
+  #enable = true;
+  ## use this if you want the more minimal hyprshell (see Readme.md > Features)
+  ##package = inputs.hyprshell.packages.${pkgs.stdenv.hostPlatform.system}.hyprshell-slim;
+  ## OR use this if you dont use hyprland via a flake and override hyprshells hyprland input
+  #package = inputs.hyprshell.packages.${pkgs.stdenv.hostPlatform.system}.hyprshell-nixpkgs;
+  #systemd.args = "-v";
+  ##systemd.enable = false;
 
-    services.hyprshell = {
+  services.hyprshell = {
     enable = true;
     settings = {
       windows = {
@@ -585,6 +587,7 @@
       defaultApplications = {
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = "writer.desktop";
         "application/pdf" = "org.pwmt.zathura-pdf-mupdf.desktop";
+        "image/vnd.djvu" = "org.pwmt.zathura-djvu.desktop";
         "text/plain" = "nvim.desktop";
         "video/mp4" = "mpv.desktop";
         "video/webm" = "mpv.desktop";
@@ -897,6 +900,7 @@
 
   programs.zsh = {
     enable = true;
+    dotDir = "${config.xdg.configHome}/zsh";
     autosuggestion.enable = true;
     enableCompletion = true;
     defaultKeymap = "emacs"; # others don't work as good as this
@@ -911,14 +915,16 @@
       #ys = "(){ yt-dlp --write-sub --write-auto-sub --sub-lang 'en-US,en-GB,en,en.*' --convert-sub srt --skip-download $1. ;}";
       #y = "(){ yt-dlp --write-sub --sub-lang 'en.*' --convert-subtitles srt -f '299+140/137+140/136+140/135+140/134+140/299+140-10/299+140-9/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-10/137+140-9/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-10/136+140-9/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime $1. ;}";
       #y = "(){ ~/python/yt-dlp --cookies-from-browser firefox -vU --write-sub --sub-lang 'en.*' --convert-subtitles srt -f '299+140/137+140/136+140/135+140/134+140/299+140-10/299+140-9/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-10/137+140-9/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-10/136+140-9/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime --no-check-certificate $1. ;}";
-      y = "(){ ~/python/yt-dlp --path /storage/myfiles/youtube --cookies-from-browser firefox -vU --write-sub --sub-lang 'en.*' --convert-subtitles srt -f '299+140/137+140/136+140/135+140/134+140/299+140-10/299+140-9/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-10/137+140-9/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-10/136+140-9/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime --no-check-certificate $1. ;}";
+      y = "(){ ~/python/yt-dlp --cookies-from-browser firefox -vU --write-sub --sub-lang 'en.*' --convert-subtitles srt -f '299+140/137+140/136+140/135+140/134+140/299+140-22/299+140-21/299+140-20/299+140-19/299+140-18/299+140-17/299+140-16/299+140-15/299+140-14/299+140-13/299+140-12/299+140-11/299+140-10/299+140-9/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-22/137+140-21/137+140-20/137+140-19/137+140-18/137+140-17/137+140-16/137+140-15/137+140-14/137+140-13/137+140-12/137+140-11/137+140-10/137+140-9/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-10/136+140-9/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime --no-check-certificate $1. ;}";
+      yc = "(){ ~/python/yt-dlp --cookies ~/Downloads/cookie.txt -vU --write-sub --sub-lang 'en.*' --convert-subtitles srt -f '299+140/137+140/136+140/135+140/134+140/299+140-22/299+140-21/299+140-20/299+140-19/299+140-18/299+140-17/299+140-16/299+140-15/299+140-14/299+140-13/299+140-12/299+140-11/299+140-10/299+140-9/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-22/137+140-21/137+140-20/137+140-19/137+140-18/137+140-17/137+140-16/137+140-15/137+140-14/137+140-13/137+140-12/137+140-11/137+140-10/137+140-9/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-10/136+140-9/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime --no-check-certificate $1. ;}";
+      ybc = "(){ ~/python/yt-dlp --cookies ~/Downloads/cookie.txt -f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]' --no-mtime --merge-output-format mp4 --write-sub --sub-lang 'en.*' --convert-subtitles srt -vU $1. ;}";
+
       a = "(){ ~/python/yt-dlp --cookies-from-browser firefox -f 'bestaudio' --extract-audio --audio-format mp3 --no-check-certificate $1. ;}";
       sp = "(){ cd ~/python/spotdl && spotdl --output '/home/py/Downloads/Albums/{artist}_{year}_{album}/{track-number} - {title}.{output-ext}' --yt-dlp-args '--cookies-from-browser firefox' $1. ;}";
       s = "(){ spotdl --output '/home/py/Downloads/Albums/{artist}_{year}_{album}/{track-number} - {title}.{output-ext}' --yt-dlp-args '--cookies-from-browser firefox' $1. ;}";
       ys = "(){ ~/python/yt-dlp --cookies-from-browser firefox -vU --write-sub --write-auto-sub --sub-lang 'en-US,en-GB,en,en.*' --convert-subtitles srt --skip-download --no-check-certificate $1. ;}";
 
       yv = "(){ yt-dlp -f '299+140/137+140/136+140/135+140/134+140/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime $1. ;}";
-      yc = "(){ yt-dlp --cookies ~/Downloads/c.txt --write-sub --sub-lang 'en.*' --convert-subtitles srt -f '299+140/137+140/136+140/135+140/134+140/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime $1. ;}";
       sa = "(){ spotdl --output '{artist}_{year}_{album}/{track-number} - {title}.{output-ext}' $1. ;}";
 
       v2a = "find . -maxdepth 1 -type f \\( -iname \"*.mp4\" -o -iname \"*.mkv\" -o -iname \"*.mov\" \\) -exec sh -c 'for f; do out=\"\${f%.*}.mp3\"; [ -f \"$out\" ] || ffmpeg -i \"$f\" -q:a 0 -map a \"$out\"; done' _ {} +";

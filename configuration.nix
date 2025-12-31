@@ -89,7 +89,7 @@ in
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-59-6.12.57"
+    "broadcom-sta-6.30.223.271-59-6.12.63"
   ];
 
   services.logind.settings.Login = {
@@ -166,8 +166,8 @@ in
   networking = {
     hostName = "nixos";
     wireless = {
-      userControlled.enable = true;
-      enable = false; # Whether to enable wpa_supplicant.
+      userControlled = true;
+      enable = true; # Whether to enable wpa_supplicant.
       iwd = {
         enable = false;
         settings = {
@@ -333,6 +333,9 @@ in
   security.polkit.enable = true;
 
   services.dbus.enable = true;
+
+  services.hypridle.enable = true;
+  programs.hyprlock.enable = true;
 
   xdg.portal = {
     enable = true;
@@ -1221,6 +1224,8 @@ in
     grim # screenshot functionality
     slurp # screenshot functionality
     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
+    xsel
+    xclip
     mako # notification system developed by swaywm maintainer
     #nur.repos.xddxdd.wine-wechat
     #nur.repos.xddxdd.wechat-uos-without-sandbox
