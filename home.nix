@@ -39,6 +39,28 @@
     };
     #style = "kvantum";
   };
+  home.file.".local/share/applications/nvim-alacritty.desktop".text = ''
+    [Desktop Entry]
+    Name=Neovim (Alacritty)
+    Comment=Launch Neovim in Alacritty terminal
+    Exec=alacritty -e nvim %F
+    Icon=utilities-terminal
+    Type=Application
+    Categories=Utility;TextEditor;
+    Terminal=true
+    MimeType=text/plain;text/markdown;text/x-shellscript;text/x-python;text/x-csrc;text/x-c++src;application/x-subrip;
+  '';
+  #home.file.".local/share/applications/nvim-alacritty.desktop".text = ''
+    #[Desktop Entry]
+    #Name=Neovim (Alacritty)
+    #Comment=Launch Neovim in Alacritty terminal
+    #Exec=alacritty -e nvim %f
+    #Icon=utilities-terminal
+    #Type=Application
+    #Categories=Utility;TextEditor;
+    #Terminal=false
+    #MimeType=text/plain;text/markdown;text/x-shellscript;text/x-python;text/x-csrc;text/x-c++src;application/x-subrip;
+  #'';
 
   home.file.".local/share/applications/vifm-alacritty.desktop".text = ''
     [Desktop Entry]
@@ -73,6 +95,20 @@
     Terminal=false
   '';
 
+  home.sessionVariables = {
+    QT_QPA_PLATFORMTHEME = "qt5ct";
+    QT_STYLE_OVERRIDE = "Fusion";
+    QT_NO_PLASMA_INTEGRATION = "1";
+    XMODIFIERS = "@im=fcitx";
+  };
+  systemd.user.services.lxqt-notificationd = {
+    Service = {
+      Environment = [
+        "QT_QPA_PLATFORMTHEME=qt5ct"
+        "QT_STYLE_OVERRIDE=Fusion"
+      ];
+    };
+  };
   #nixpkgs.config.packageOverrides = pkgs: {
   #maestral = pkgs.maestral.overridePythonAttrs (old: {
   #doCheck = false;
@@ -86,6 +122,9 @@
     dig
     redsocks
     iptables
+    nethogs
+    bmon
+    iftop
     nmap
     tun2socks
     wakeonlan
@@ -256,8 +295,6 @@
     waypaper
     hyprpaper
     hyprland-qtutils
-
-    pgadmin4-desktopmode
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -588,7 +625,12 @@
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = "writer.desktop";
         "application/pdf" = "org.pwmt.zathura-pdf-mupdf.desktop";
         "image/vnd.djvu" = "org.pwmt.zathura-djvu.desktop";
-        "text/plain" = "nvim.desktop";
+        "application/epub+zip" = "org.pwmt.zathura-pdf-mupdf.desktop";
+        "application/x-mobipocket-ebook" = "org.pwmt.zathura-pdf-mupdf.desktop";
+        "text/plain" = "nvim-alacritty.desktop";
+        #"text/plain" = "nvim.desktop";
+        "text/markdown" = "nvim-alacritty.desktop";
+        "application/x-subrip" = "nvim-alacritty.desktop"; # for .srt
         "video/mp4" = "mpv.desktop";
         "video/webm" = "mpv.desktop";
         "video/x-matroska" = "mpv.desktop";

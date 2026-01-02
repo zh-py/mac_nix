@@ -92,11 +92,10 @@ in
     "broadcom-sta-6.30.223.271-59-6.12.63"
   ];
 
+  # options: https://www.freedesktop.org/software/systemd/man/latest/logind.conf.html
+  # options: https://github.com/NixOS/nixpkgs/blob/nixos-25.11/nixos/modules/system/boot/systemd/logind.nix
   services.logind.settings.Login = {
-    #powerKey = "suspend";
-    #powerKeyLongPress = "reboot";
     HandlePowerKey = "suspend";
-    #HandlePowerKey = "hibernate";
     HandlePowerKeyLongPress = "reboot";
     HandleLidSwitch = "ignore";
     HandleLidSwitchDocked = "ignore";
@@ -280,21 +279,21 @@ in
   };
   programs.waybar.enable = true;
 
-  environment.sessionVariables = {
-    QT_NO_PLASMA_INTEGRATION = "1";
-    QT_STYLE_OVERRIDE = "Fusion";
-    XMODIFIERS = "@im=fcitx";
-    #GTK_IM_MODULE = "fcitx";
-    #QT_IM_MODULE = "fcitx";
-    #QT_QPA_PLATFORM = "wayland";
-    #SDL_VIDEODRIVER = "wayland";
-    #XDG_SESSION_TYPE = "wayland";
-    #XDG_DATA_DIRS = "/run/current-system/sw/share:${pkgs.kdePackages.plasma-workspace}/share";
+  #environment.sessionVariables = {
+    ##QT_NO_PLASMA_INTEGRATION = "1";
+    ##QT_STYLE_OVERRIDE = "Fusion";
+    ##XMODIFIERS = "@im=fcitx";
 
-    QT_QPA_PLATFORMTHEME = "qt6ct";
-    #QT_QPA_PLATFORMTHEME = "qt6ct";
-    #QT_PLATFORM_PLUGIN = "qt5ct" this two lines in session window
-  };
+    ##GTK_IM_MODULE = "fcitx";
+    ##QT_IM_MODULE = "fcitx";
+    ##QT_QPA_PLATFORM = "wayland";
+    ##SDL_VIDEODRIVER = "wayland";
+    ##XDG_SESSION_TYPE = "wayland";
+    ##XDG_DATA_DIRS = "/run/current-system/sw/share:${pkgs.kdePackages.plasma-workspace}/share";
+
+    ##QT_QPA_PLATFORMTHEME = "qt6ct";
+    ##QT_PLATFORM_PLUGIN = "qt5ct" this two lines in session window
+  #};
 
   #security.pam.services.ly.enableGnomeKeyring = true;
   #services.displayManager = {
@@ -1331,7 +1330,7 @@ in
 
     swayidle
     gparted
-    cpu-x
+    #cpu-x
     linuxKernel.packages.linux_6_12.turbostat
     pciutils
     ddcutil
@@ -1411,7 +1410,7 @@ in
   ];
   programs.thunar = {
     enable = true;
-    plugins = with pkgs.xfce; [
+    plugins = with pkgs; [
       thunar-archive-plugin
       thunar-volman
     ];
