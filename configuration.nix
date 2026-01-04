@@ -1314,6 +1314,7 @@ in
     #xfce.xfwm4
     #xfce.xfce4-dict
     #xfce.xfce4-pulseaudio-plugin
+    libnotify
     playerctl
     qpwgraph
     #virtualgl

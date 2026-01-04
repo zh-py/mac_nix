@@ -51,15 +51,15 @@
     MimeType=text/plain;text/markdown;text/x-shellscript;text/x-python;text/x-csrc;text/x-c++src;application/x-subrip;
   '';
   #home.file.".local/share/applications/nvim-alacritty.desktop".text = ''
-    #[Desktop Entry]
-    #Name=Neovim (Alacritty)
-    #Comment=Launch Neovim in Alacritty terminal
-    #Exec=alacritty -e nvim %f
-    #Icon=utilities-terminal
-    #Type=Application
-    #Categories=Utility;TextEditor;
-    #Terminal=false
-    #MimeType=text/plain;text/markdown;text/x-shellscript;text/x-python;text/x-csrc;text/x-c++src;application/x-subrip;
+  #[Desktop Entry]
+  #Name=Neovim (Alacritty)
+  #Comment=Launch Neovim in Alacritty terminal
+  #Exec=alacritty -e nvim %f
+  #Icon=utilities-terminal
+  #Type=Application
+  #Categories=Utility;TextEditor;
+  #Terminal=false
+  #MimeType=text/plain;text/markdown;text/x-shellscript;text/x-python;text/x-csrc;text/x-c++src;application/x-subrip;
   #'';
 
   home.file.".local/share/applications/vifm-alacritty.desktop".text = ''
@@ -687,20 +687,12 @@
   programs.mpv = {
     # mkdir /var/log/mpv && sudo chmod -R u=rwx,g=rwx,o=rwx /var/log/mpv    ### for recent.lua history.log
     enable = true;
-    package = (
-      pkgs.mpv-unwrapped.wrapper {
-        scripts = with pkgs.mpvScripts; [
-          #uosc
-          sponsorblock
-          mpris
-          thumbfast
-        ];
-        mpv = pkgs.mpv-unwrapped.override {
-          waylandSupport = true;
-          ffmpeg = pkgs.ffmpeg-full;
-        };
-      }
-    );
+    scripts = with pkgs.mpvScripts; [
+      sponsorblock
+      mpris
+      thumbfast
+      #uosc
+    ];
     #config = {
     #"script-opts" = "ytdl_hook-ytdl_path=/etc/profiles/per-user/py/bin/yt-dlp";
     #"ytdl-format" = "bestvideo[height<=?720][fps<=?30][vcodec!=?webm]+bestaudio/best";
@@ -1101,6 +1093,19 @@
     #let g:airline_symbols.maxlinenr = '☰ '
     #let g:airline_symbols.dirty='⚡'
     plugins = with pkgs.vimPlugins; [
+      {
+        plugin = nvim-treesitter.withAllGrammars;
+        type = "lua";
+        config = ''
+          require('nvim-treesitter').setup({
+            highlight = {
+              enable = true,
+              --disable = { "latex" },
+            },
+            indent = { enable = true},
+          })
+        '';
+      }
       #copilot-vim
       vim-visual-multi
       gruvbox
@@ -1137,19 +1142,6 @@
       #}
       #vim-airline
       #vim-airline-themes
-      {
-        plugin = nvim-treesitter.withAllGrammars;
-        type = "lua";
-        config = ''
-          require('nvim-treesitter.configs').setup({
-            highlight = {
-              enable = true,
-              --disable = { "latex" },
-            },
-            indent = { enable = true},
-          })
-        '';
-      }
       #nui-nvim
       #nvim-notify
       #{
