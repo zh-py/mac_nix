@@ -39,6 +39,8 @@
     };
     #style = "kvantum";
   };
+
+
   home.file.".local/share/applications/nvim-alacritty.desktop".text = ''
     [Desktop Entry]
     Name=Neovim (Alacritty)
@@ -345,14 +347,11 @@
   services.mako.enable = false;
   services.swaync.enable = true;
   #~/.cache/swaync/notifications.json
-
   wayland.windowManager.hyprland = {
-    #programs.hyprland = {
     enable = true;
-    xwayland.enable = true;
-    #plugins = with pkgs; [
-    #hyprshell
-    #];
+    settings = {
+      xwayland.enable = true;
+    };
     systemd.enable = false;
   };
   #home.file.".config/hypr/hyprland.conf".enable = false;
@@ -534,6 +533,7 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".config/lxqt/globalkeyshortcuts.conf".source = dotfiles/lxqt/globalkeyshortcuts.conf;
     ".config/mpv".source = dotfiles/mpv;
     #".config/wezterm/wezterm.lua".source = dotfiles/wezterm.lua;
     ".config/fusuma/config.yml".source = dotfiles/fusuma/config.yml;
