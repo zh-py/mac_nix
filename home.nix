@@ -234,7 +234,7 @@
     rclone
     syncthing
     nil
-    nixfmt-rfc-style
+    nixfmt
     pyright
     ruff
     luajitPackages.luacheck
@@ -535,8 +535,8 @@
     # '';
     ".config/lxqt/globalkeyshortcuts.conf".source = dotfiles/lxqt/globalkeyshortcuts.conf;
     ".config/mpv".source = dotfiles/mpv;
-    #".config/wezterm/wezterm.lua".source = dotfiles/wezterm.lua;
     ".config/fusuma/config.yml".source = dotfiles/fusuma/config.yml;
+    # ~/.config/autostart/maestral.desktop put: Exec=pgrep -f maestral || /etc/profiles/per-user/py/bin/maestral start
     ".config/systemd/user/maestral.service".source = dotfiles/maestral.service;
     ".config/lf/lfcd.sh".source = dotfiles/lf-config/lfcd.sh;
     ".config/lf/lf.bash".source = dotfiles/lf-config/lf.bash;

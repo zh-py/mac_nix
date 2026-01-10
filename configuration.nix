@@ -89,7 +89,7 @@ in
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-59-6.12.63"
+    "broadcom-sta-6.30.223.271-59-6.12.64"
   ];
 
   # options: https://www.freedesktop.org/software/systemd/man/latest/logind.conf.html
