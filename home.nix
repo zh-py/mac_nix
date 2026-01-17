@@ -313,15 +313,19 @@
 
     stack
 
-    (python313.withPackages (
+    (python314.withPackages (
       p: with p; [
         py-cpuinfo
         extractcode
         pip
         numpy
         jupyter
+        jupyterlab-lsp
+        python-lsp-server
+        jedi-language-server
         qtconsole
         sympy
+        scipy
         requests
         pandas
         matplotlib
@@ -675,7 +679,7 @@
     enable = true;
   };
 
-  programs.sagemath.enable = false;
+  programs.sagemath.enable = true;
 
   programs.zathura = {
     enable = true;
