@@ -40,7 +40,6 @@
     #style = "kvantum";
   };
 
-
   home.file.".local/share/applications/nvim-alacritty.desktop".text = ''
     [Desktop Entry]
     Name=Neovim (Alacritty)
@@ -242,13 +241,14 @@
     marksman
     tree-sitter
     tree-sitter-grammars.tree-sitter-python
-    poetry
+    #poetry
     texlab
     obsidian
     aichat
     qbittorrent-enhanced
     spotify
     spotdl
+    deno # JavaScript and TypeScript
     #lrcget
     #yt-dlp
     #spotube
@@ -944,8 +944,8 @@
       y7 = "(){ yt-dlp -f 137+140 --no-mtime $1. ;}";
       y6 = "(){ yt-dlp -f 136+140 --no-mtime $1. ;}";
       y67 = "(){ yt-dlp -f '137+140/136+140' --no-mtime $1. ;}";
-      yfm = "(){ yt-dlp --list-formats $1. ;}";
-      yb = "(){ yt-dlp --no-mtime -f 'bestvideo+bestaudio' $1. ;}";
+      yfm = "(){ ~/python/yt-dlp --list-formats $1. ;}";
+      yb = "(){ ~/python/yt-dlp --no-mtime -f 'bestvideo+bestaudio' $1. ;}";
       #ys = "(){ yt-dlp --write-sub --write-auto-sub --sub-lang 'en-US,en-GB,en,en.*' --convert-sub srt --skip-download $1. ;}";
       #y = "(){ yt-dlp --write-sub --sub-lang 'en.*' --convert-subtitles srt -f '299+140/137+140/136+140/135+140/134+140/299+140-10/299+140-9/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-10/137+140-9/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-10/136+140-9/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime $1. ;}";
       #y = "(){ ~/python/yt-dlp --cookies-from-browser firefox -vU --write-sub --sub-lang 'en.*' --convert-subtitles srt -f '299+140/137+140/136+140/135+140/134+140/299+140-10/299+140-9/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-10/137+140-9/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-10/136+140-9/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime --no-check-certificate $1. ;}";
@@ -954,6 +954,7 @@
       ybc = "(){ ~/python/yt-dlp --cookies ~/Downloads/cookie.txt -f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]' --no-mtime --merge-output-format mp4 --write-sub --sub-lang 'en.*' --convert-subtitles srt -vU $1. ;}";
 
       a = "(){ ~/python/yt-dlp --cookies-from-browser firefox -f 'bestaudio' --extract-audio --audio-format mp3 --no-check-certificate $1. ;}";
+      ap = "(){ ~/python/yt-dlp --path ~/Downloads/Podcast -f '140' --extract-audio --audio-format mp3 $1. ;}";
       sp = "(){ cd ~/python/spotdl && spotdl --output '/home/py/Downloads/Albums/{artist}_{year}_{album}/{track-number} - {title}.{output-ext}' --yt-dlp-args '--cookies-from-browser firefox' $1. ;}";
       s = "(){ spotdl --output '/home/py/Downloads/Albums/{artist}_{year}_{album}/{track-number} - {title}.{output-ext}' --yt-dlp-args '--cookies-from-browser firefox' $1. ;}";
       ys = "(){ ~/python/yt-dlp --cookies-from-browser firefox -vU --write-sub --write-auto-sub --sub-lang 'en-US,en-GB,en,en.*' --convert-subtitles srt --skip-download --no-check-certificate $1. ;}";
@@ -963,6 +964,8 @@
 
       v2a = "find . -maxdepth 1 -type f \\( -iname \"*.mp4\" -o -iname \"*.mkv\" -o -iname \"*.mov\" \\) -exec sh -c 'for f; do out=\"\${f%.*}.mp3\"; [ -f \"$out\" ] || ffmpeg -i \"$f\" -q:a 0 -map a \"$out\"; done' _ {} +";
       srt2lrc = "for f in *.srt; do ~/python/subtitle-to-lrc_linux-amd64/subtitle-to-lrc \"$f\"; done";
+      hs = "bluetoothctl power on && pactl set-card-profile alsa_card.pci-0000_00_1b.0 output:iec958-stereo";
+      spk = "bluetoothctl power off && pactl set-card-profile alsa_card.pci-0000_00_1b.0 output:analog-stereo";
       #bl = "sudo python3 ~/Downloads/osx_battery_charge_limit/main.py -s 42";
       #bh = "sudo python3 ~/Downloads/osx_battery_charge_limit/main.py -s 77";
     };
@@ -992,6 +995,15 @@
         "terraform"
         "systemadmin"
       ];
+    };
+  };
+
+  programs.poetry = {
+    enable = true;
+    package = pkgs.poetry.withPlugins (ps: with ps; [ poetry-plugin-up ]);
+    settings = {
+      virtualenvs.create = true;
+      virtualenvs.in-project = true;
     };
   };
 

@@ -89,7 +89,7 @@ in
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-59-6.12.64"
+    "broadcom-sta-6.30.223.271-59-6.12.65"
   ];
 
   # options: https://www.freedesktop.org/software/systemd/man/latest/logind.conf.html
@@ -280,19 +280,19 @@ in
   programs.waybar.enable = true;
 
   #environment.sessionVariables = {
-    ##QT_NO_PLASMA_INTEGRATION = "1";
-    ##QT_STYLE_OVERRIDE = "Fusion";
-    ##XMODIFIERS = "@im=fcitx";
+  ##QT_NO_PLASMA_INTEGRATION = "1";
+  ##QT_STYLE_OVERRIDE = "Fusion";
+  ##XMODIFIERS = "@im=fcitx";
 
-    ##GTK_IM_MODULE = "fcitx";
-    ##QT_IM_MODULE = "fcitx";
-    ##QT_QPA_PLATFORM = "wayland";
-    ##SDL_VIDEODRIVER = "wayland";
-    ##XDG_SESSION_TYPE = "wayland";
-    ##XDG_DATA_DIRS = "/run/current-system/sw/share:${pkgs.kdePackages.plasma-workspace}/share";
+  ##GTK_IM_MODULE = "fcitx";
+  ##QT_IM_MODULE = "fcitx";
+  ##QT_QPA_PLATFORM = "wayland";
+  ##SDL_VIDEODRIVER = "wayland";
+  ##XDG_SESSION_TYPE = "wayland";
+  ##XDG_DATA_DIRS = "/run/current-system/sw/share:${pkgs.kdePackages.plasma-workspace}/share";
 
-    ##QT_QPA_PLATFORMTHEME = "qt6ct";
-    ##QT_PLATFORM_PLUGIN = "qt5ct" this two lines in session window
+  ##QT_QPA_PLATFORMTHEME = "qt6ct";
+  ##QT_PLATFORM_PLUGIN = "qt5ct" this two lines in session window
   #};
 
   #security.pam.services.ly.enableGnomeKeyring = true;
@@ -1520,10 +1520,13 @@ in
   services.resolved = {
     enable = true;
     #fallbackDns = [ "127.0.0.1" ];
-    extraConfig = ''
-      DNSStubListener=yes
-      #Domains=~.
-    '';
+    settings = {
+      Resolve = {
+        Domains = [ "~." ];
+        DNSStubListener = "yes";
+      };
+    };
+
   };
   services.openssh = {
     enable = true;
