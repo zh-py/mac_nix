@@ -31,8 +31,8 @@ local o = {
     -- Split paths to only show the file or show the full path
     split_paths = true,
     -- Font settings
-    font_scale = 50,
-    border_size = 0.7,
+    font_scale = 65,
+    border_size = 0.3,
     -- Highlight color in BGR hexadecimal
     hi_color = "H46CFFF",
     -- Draw ellipsis at start/end denoting ommited entries

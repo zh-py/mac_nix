@@ -89,7 +89,7 @@ in
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-59-6.12.65"
+    "broadcom-sta-6.30.223.271-59-6.12.66"
   ];
 
   # options: https://www.freedesktop.org/software/systemd/man/latest/logind.conf.html
@@ -508,17 +508,23 @@ in
   #};
   #};
   services.input-remapper.enable = true;
-  security.sudo.extraRules = [
-    {
-      users = [ "py" ];
-      commands = [
-        {
-          command = "${pkgs.systemd}/bin/systemctl stop keyd.service";
-          options = [ "NOPASSWD" ];
-        }
-      ];
-    }
-  ];
+  security.sudo = {
+    extraConfig = ''
+      Defaults:py timestamp_timeout=30
+    '';
+    extraRules = [
+      {
+        users = [ "py" ];
+        #options = [ "timestamp_timeout=30" ];
+        commands = [
+          {
+            command = "${pkgs.systemd}/bin/systemctl stop keyd.service";
+            options = [ "NOPASSWD" ];
+          }
+        ];
+      }
+    ];
+  };
   services.keyd = {
     # 93
     enable = true;

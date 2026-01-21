@@ -1022,7 +1022,7 @@
     viAlias = true;
     withPython3 = true;
     extraConfig = ''
-      colorscheme gruvbox
+      colorscheme kanagawa
       filetype plugin indent on
       syntax enable
       set mouse=a
@@ -1109,6 +1109,12 @@
     #let g:airline_symbols.maxlinenr = '☰ '
     #let g:airline_symbols.dirty='⚡'
     plugins = with pkgs.vimPlugins; [
+      gruvbox
+      kanagawa-nvim
+      nightfox-nvim
+      kanagawa-paper-nvim
+      #melange-nvim
+      #tokyonight-nvim
       {
         plugin = nvim-treesitter.withAllGrammars;
         type = "lua";
@@ -1124,7 +1130,6 @@
       }
       #copilot-vim
       vim-visual-multi
-      gruvbox
       trouble-nvim
       vim-nix
       nerdcommenter
@@ -1263,6 +1268,8 @@
       #cmp-vsnip
       #vim-vsnip
       #friendly-snippets
+      luasnip
+      cmp_luasnip
       cmp-nvim-lsp
       lspkind-nvim
       {
