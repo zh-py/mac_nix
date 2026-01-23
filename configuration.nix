@@ -510,7 +510,7 @@ in
   services.input-remapper.enable = true;
   security.sudo = {
     extraConfig = ''
-      Defaults:py timestamp_timeout=30
+      Defaults:py timestamp_timeout=60
     '';
     extraRules = [
       {

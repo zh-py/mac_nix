@@ -1022,7 +1022,7 @@
     viAlias = true;
     withPython3 = true;
     extraConfig = ''
-      colorscheme kanagawa
+      colorscheme gruvbox
       filetype plugin indent on
       syntax enable
       set mouse=a
@@ -1114,7 +1114,7 @@
       nightfox-nvim
       kanagawa-paper-nvim
       #melange-nvim
-      #tokyonight-nvim
+      tokyonight-nvim
       {
         plugin = nvim-treesitter.withAllGrammars;
         type = "lua";
