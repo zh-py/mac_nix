@@ -89,7 +89,7 @@ in
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-59-6.12.66"
+    "broadcom-sta-6.30.223.271-59-6.12.67"
   ];
 
   # options: https://www.freedesktop.org/software/systemd/man/latest/logind.conf.html
@@ -950,7 +950,7 @@ in
     extraPackages = with pkgs; [
       vaapi-intel-hybrid
       #libva-vdpau-driver
-      #libvdpau-va-gl
+      libvdpau-va-gl
       #libvdpau
       intel-media-driver
       intel-ocl
@@ -959,6 +959,10 @@ in
     ];
   };
   hardware.intel-gpu-tools.enable = true;
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD"; # Explicitly tells Chrome which driver to use
+  };
+
   #hardware.facetimehd.enable = true;
   #hardware.facetimehd.withCalibration = true;
 
