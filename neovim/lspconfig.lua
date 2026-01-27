@@ -1,4 +1,4 @@
-local lspconfig = require('lspconfig')
+--local lspconfig = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 vim.lsp.set_log_level("error")
@@ -6,64 +6,81 @@ vim.lsp.config('*', {
 	capabilities = capabilities,
 })
 
---local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
---vim.lsp.set_log_level("error")
-
---vim.lsp.config('*', {
---capabilities = lsp_capabilities,
---})
-
-
 -- Define all servers and their custom settings
 local servers = {
-	--pyright = {
-	--cmd = { "pyright-langserver", "--stdio" },
-	--filetypes = { "python" },
+	pyright = {
+		cmd = { "pyright-langserver", "--stdio" },
+		filetypes = { "python" },
+		single_file_support = true,
+		root_markers = {
+			"pyrightconfig.json",
+			"pyproject.toml",
+			"setup.py",
+			"setup.cfg",
+			"requirements.txt",
+			"Pipfile",
+			".git",
+		},
+		before_init = function(params, config)
+			if not config.root_dir then
+				config.root_dir = vim.fn.expand("%:p:h")
+			end
+		end,
 
-	--on_attach = function(client)
-	--client.server_capabilities.documentFormattingProvider = false
-	--client.server_capabilities.documentRangeFormattingProvider = false
-	--vim.keymap.set('n', '<F4>', function() require('dap').continue() end)
-	--vim.keymap.set('n', '<F6>', function() require('dap').restart() end)
-	--vim.keymap.set('n', '<F3>', function() require('dap').step_over() end)
-	--vim.keymap.set('n', '<F1>', function() require('dap').step_into() end)
-	--vim.keymap.set('n', '<F2>', function() require('dap').step_out() end)
-	--vim.keymap.set('n', '<leader>s', function() require('dap').terminate() end)
-	--vim.keymap.set('n', '<F8>', function() require('dap').toggle_breakpoint() end)
-	--vim.keymap.set('n', '<F9>',
-	--function() require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: ')) end)
-	--vim.keymap.set('n', '<leader>dp', function() require("dap").pause() end)
-	--vim.keymap.set('n', '<Leader>lp',
-	--function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
-	--vim.keymap.set('n', '<leader>lb', function() require('dap').list_breakpoints() end)
-	--vim.keymap.set('n', '<leader>cb', function() require('dap').clear_breakpoints() end)
-	--vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.toggle() end)
-	--vim.keymap.set("n", "<leader>du", function() require('dapui').toggle() end)
-	--vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
-	--vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function() require('dap.ui.widgets').hover() end)
-	--vim.keymap.set({ 'n', 'v' }, '<Leader>dp', function() require('dap.ui.widgets').preview() end)
-	--vim.keymap.set({ 'n', 'v' }, '<Leader>de', function() require('dapui').eval() end)
-	--vim.keymap.set('n', '<Leader>df', function()
-	--local widgets = require('dap.ui.widgets')
-	--widgets.centered_float(widgets.frames)
-	--end)
-	--vim.keymap.set('n', '<Leader>ds', function()
-	--local widgets = require('dap.ui.widgets')
-	--widgets.centered_float(widgets.scopes)
-	--end)
-	--end,
-	--settings = {
-	--pyright = { autoImportCompletion = true },
-	--python = {
-	--analysis = {
-	--autoSearchPaths = true,
-	--diagnosticMode = 'workspace',
-	--useLibraryCodeForTypes = true,
-	--typeCheckingMode = 'basic',
-	--},
-	--},
-	--},
-	--},
+		settings = {
+			pyright = {
+				autoImportCompletion = true,
+			},
+			python = {
+				analysis = {
+					autoSearchPaths = true,
+					useLibraryCodeForTypes = true,
+					diagnosticMode = "openFilesOnly", -- safer for single files
+					typeCheckingMode = "basic",
+				},
+			},
+		},
+
+		on_attach = function(client, bufnr)
+			client.server_capabilities.documentFormattingProvider = false
+			client.server_capabilities.documentRangeFormattingProvider = false
+
+			vim.keymap.set('n', '<F4>', function() require('dap').continue() end, { buffer = bufnr })
+			vim.keymap.set('n', '<F6>', function() require('dap').restart() end, { buffer = bufnr })
+			vim.keymap.set('n', '<F3>', function() require('dap').step_over() end, { buffer = bufnr })
+			vim.keymap.set('n', '<F1>', function() require('dap').step_into() end, { buffer = bufnr })
+			vim.keymap.set('n', '<F2>', function() require('dap').step_out() end, { buffer = bufnr })
+			vim.keymap.set('n', '<leader>s', function() require('dap').terminate() end, { buffer = bufnr })
+			vim.keymap.set('n', '<F8>', function() require('dap').toggle_breakpoint() end, { buffer = bufnr })
+			vim.keymap.set('n', '<F9>', function()
+				require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))
+			end, { buffer = bufnr })
+
+			vim.keymap.set('n', '<leader>dp', function() require("dap").pause() end, { buffer = bufnr })
+			vim.keymap.set('n', '<Leader>lp', function()
+				require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))
+			end, { buffer = bufnr })
+			vim.keymap.set('n', '<leader>lb', function() require('dap').list_breakpoints() end, { buffer = bufnr })
+			vim.keymap.set('n', '<leader>cb', function() require('dap').clear_breakpoints() end, { buffer = bufnr })
+			vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.toggle() end, { buffer = bufnr })
+			vim.keymap.set("n", "<leader>du", function() require('dapui').toggle() end, { buffer = bufnr })
+			vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end, { buffer = bufnr })
+			vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function() require('dap.ui.widgets').hover() end,
+				{ buffer = bufnr })
+			vim.keymap.set({ 'n', 'v' }, '<Leader>dp', function() require('dap.ui.widgets').preview() end,
+				{ buffer = bufnr })
+			vim.keymap.set({ 'n', 'v' }, '<Leader>de', function() require('dapui').eval() end, { buffer = bufnr })
+			vim.keymap.set('n', '<Leader>df', function()
+				local widgets = require('dap.ui.widgets')
+				widgets.centered_float(widgets.frames)
+			end, { buffer = bufnr })
+			vim.keymap.set('n', '<Leader>ds', function()
+				local widgets = require('dap.ui.widgets')
+				widgets.centered_float(widgets.scopes)
+			end, { buffer = bufnr })
+		end,
+	},
+
 
 	pylsp = {
 		cmd = { 'pylsp' },
