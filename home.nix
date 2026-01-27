@@ -338,7 +338,6 @@
         python-lsp-server
         python-lsp-ruff
         ruff
-        python-lsp-ruff
         black
         pynvim
         send2trash
