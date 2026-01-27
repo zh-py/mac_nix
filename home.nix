@@ -235,7 +235,6 @@
     nil
     nixfmt
     pyright
-    ruff
     luajitPackages.luacheck
     lua-language-server
     marksman
@@ -338,6 +337,9 @@
         debugpy
         python-lsp-server
         python-lsp-ruff
+        ruff
+        python-lsp-ruff
+        black
         pynvim
         send2trash
         openpyxl

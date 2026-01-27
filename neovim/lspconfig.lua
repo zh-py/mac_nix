@@ -1,72 +1,86 @@
-local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+local lspconfig = require('lspconfig')
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 vim.lsp.set_log_level("error")
-
 vim.lsp.config('*', {
-	capabilities = lsp_capabilities,
+	capabilities = capabilities,
 })
+
+--local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+--vim.lsp.set_log_level("error")
+
+--vim.lsp.config('*', {
+--capabilities = lsp_capabilities,
+--})
 
 
 -- Define all servers and their custom settings
 local servers = {
-	pyright = {
-		cmd = { "pyright-langserver", "--stdio" },
-		filetypes = { "python" },
-		on_attach = function()
-			-- DAP keymaps only for pyright
-			vim.keymap.set('n', '<F4>', function() require('dap').continue() end)
-			vim.keymap.set('n', '<F6>', function() require('dap').restart() end)
-			vim.keymap.set('n', '<F3>', function() require('dap').step_over() end)
-			vim.keymap.set('n', '<F1>', function() require('dap').step_into() end)
-			vim.keymap.set('n', '<F2>', function() require('dap').step_out() end)
-			vim.keymap.set('n', '<leader>s', function() require('dap').terminate() end)
-			vim.keymap.set('n', '<F8>', function() require('dap').toggle_breakpoint() end)
-			vim.keymap.set('n', '<F9>',
-				function() require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: ')) end)
-			vim.keymap.set('n', '<leader>dp', function() require("dap").pause() end)
-			vim.keymap.set('n', '<Leader>lp',
-				function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
-			vim.keymap.set('n', '<leader>lb', function() require('dap').list_breakpoints() end)
-			vim.keymap.set('n', '<leader>cb', function() require('dap').clear_breakpoints() end)
-			vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.toggle() end)
-			vim.keymap.set("n", "<leader>du", function() require('dapui').toggle() end)
-			vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
-			vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function() require('dap.ui.widgets').hover() end)
-			vim.keymap.set({ 'n', 'v' }, '<Leader>dp', function() require('dap.ui.widgets').preview() end)
-			vim.keymap.set({ 'n', 'v' }, '<Leader>de', function() require('dapui').eval() end)
-			vim.keymap.set('n', '<Leader>df', function()
-				local widgets = require('dap.ui.widgets')
-				widgets.centered_float(widgets.frames)
-			end)
-			vim.keymap.set('n', '<Leader>ds', function()
-				local widgets = require('dap.ui.widgets')
-				widgets.centered_float(widgets.scopes)
-			end)
-		end,
-		settings = {
-			pyright = { autoImportCompletion = true },
-			python = {
-				analysis = {
-					autoSearchPaths = true,
-					diagnosticMode = 'workspace',
-					useLibraryCodeForTypes = true,
-					typeCheckingMode = 'basic',
-				},
-			},
-		},
-	},
+	--pyright = {
+	--cmd = { "pyright-langserver", "--stdio" },
+	--filetypes = { "python" },
+
+	--on_attach = function(client)
+	--client.server_capabilities.documentFormattingProvider = false
+	--client.server_capabilities.documentRangeFormattingProvider = false
+	--vim.keymap.set('n', '<F4>', function() require('dap').continue() end)
+	--vim.keymap.set('n', '<F6>', function() require('dap').restart() end)
+	--vim.keymap.set('n', '<F3>', function() require('dap').step_over() end)
+	--vim.keymap.set('n', '<F1>', function() require('dap').step_into() end)
+	--vim.keymap.set('n', '<F2>', function() require('dap').step_out() end)
+	--vim.keymap.set('n', '<leader>s', function() require('dap').terminate() end)
+	--vim.keymap.set('n', '<F8>', function() require('dap').toggle_breakpoint() end)
+	--vim.keymap.set('n', '<F9>',
+	--function() require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: ')) end)
+	--vim.keymap.set('n', '<leader>dp', function() require("dap").pause() end)
+	--vim.keymap.set('n', '<Leader>lp',
+	--function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
+	--vim.keymap.set('n', '<leader>lb', function() require('dap').list_breakpoints() end)
+	--vim.keymap.set('n', '<leader>cb', function() require('dap').clear_breakpoints() end)
+	--vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.toggle() end)
+	--vim.keymap.set("n", "<leader>du", function() require('dapui').toggle() end)
+	--vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
+	--vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function() require('dap.ui.widgets').hover() end)
+	--vim.keymap.set({ 'n', 'v' }, '<Leader>dp', function() require('dap.ui.widgets').preview() end)
+	--vim.keymap.set({ 'n', 'v' }, '<Leader>de', function() require('dapui').eval() end)
+	--vim.keymap.set('n', '<Leader>df', function()
+	--local widgets = require('dap.ui.widgets')
+	--widgets.centered_float(widgets.frames)
+	--end)
+	--vim.keymap.set('n', '<Leader>ds', function()
+	--local widgets = require('dap.ui.widgets')
+	--widgets.centered_float(widgets.scopes)
+	--end)
+	--end,
+	--settings = {
+	--pyright = { autoImportCompletion = true },
+	--python = {
+	--analysis = {
+	--autoSearchPaths = true,
+	--diagnosticMode = 'workspace',
+	--useLibraryCodeForTypes = true,
+	--typeCheckingMode = 'basic',
+	--},
+	--},
+	--},
+	--},
 
 	pylsp = {
 		cmd = { 'pylsp' },
 		filetypes = { "python" },
-
+		single_file_support = true,
+		on_attach = function(client)
+			client.server_capabilities.documentFormattingProvider = true
+			client.server_capabilities.documentRangeFormattingProvider = true
+		end,
 		settings = {
 			pylsp = {
 				plugins = {
 					ruff = {
 						enabled = true,
 						formatEnabled = true,
-						executable = "<path-to-ruff-bin>",
-						config = "<path_to_custom_ruff_toml>",
+						executable = "ruff",
+						--config = "<path_to_custom_ruff_toml>",
 						extendSelect = { "I" },
 						extendIgnore = { "C90" },
 						format = { "I" },
@@ -108,8 +122,10 @@ local servers = {
 	},
 
 	nil_ls = {
+		on_attach = function(client)
+			client.server_capabilities.documentFormattingProvider = true
+		end,
 		cmd = { 'nil' },
-
 		filetypes = { "nix" },
 		settings = {
 			['nil'] = {
@@ -129,9 +145,9 @@ local servers = {
 	},
 
 	--hyprls = {
-		--cmd = { 'hyprls' },
-		--filetypes = { 'hyprlang', 'hyprland.conf' }, -- You don't need '*.hl' here; use actual filetypes
-		--root_dir = lspconfig.util.root_pattern('.git', 'hyprland.conf'),
+	--cmd = { 'hyprls' },
+	--filetypes = { 'hyprlang', 'hyprland.conf' }, -- You don't need '*.hl' here; use actual filetypes
+	--root_dir = lspconfig.util.root_pattern('.git', 'hyprland.conf'),
 	--}
 }
 
@@ -202,7 +218,52 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
 		vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
 		vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-		vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, opts)
+		vim.keymap.set('n', '<space>f', function()
+			vim.lsp.buf.format { async = true }
+		end)
+		--
+		--vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, opts)
+		--vim.keymap.set('n', '<space>f', function()
+		--local ft = vim.bo.filetype
+		--vim.lsp.buf.format {
+		--async = true,
+		--filter = function(client)
+		--if ft == "python" then
+		--return client.name == "pylsp"
+		--end
+		--return client:supports_method(
+		--vim.lsp.protocol.Methods.textDocument_formatting,
+		--bufnr
+		--)
+		--end,
+		--}
+		--end)
+		--vim.keymap.set('n', '<space>f', function()
+		--local bufnr = vim.api.nvim_get_current_buf()
+		--local ft = vim.bo[bufnr].filetype
+
+		--vim.lsp.buf.format {
+		--async = true,
+		--filter = function(client)
+		--if ft == "python" then
+		--return client.name == "pylsp"
+		--end
+
+		--return client:supports_method(
+		--vim.lsp.protocol.Methods.textDocument_formatting,
+		--bufnr
+		--)
+		--end,
+		--}
+		--end)
+		--vim.keymap.set('n', '<space>f', function()
+		--vim.lsp.buf.format {
+		--async = true,
+		--filter = function(client)
+		--return client.name == "pylsp"
+		--end,
+		--}
+		--end)
 		--vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 		vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, opts)
 	end,

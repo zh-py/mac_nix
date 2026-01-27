@@ -511,6 +511,8 @@ in
   security.sudo = {
     extraConfig = ''
       Defaults:py timestamp_timeout=60
+
+      Defaults:py timestamp_type=global
     '';
     extraRules = [
       {
@@ -955,12 +957,16 @@ in
       intel-media-driver
       intel-ocl
       intel-vaapi-driver
+      mesa
       #vpl-gpu-rt # or intel-media-sdk for QSV
     ];
   };
   hardware.intel-gpu-tools.enable = true;
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD"; # Explicitly tells Chrome which driver to use
+    ANV_VIDEO_DECODE = "1";
+    # This environment variable forces Mesa to use the legacy HasVK driver
+    MESA_VK_DEVICE_SELECT = "intel_hasvk";
   };
 
   #hardware.facetimehd.enable = true;
@@ -1341,7 +1347,8 @@ in
 
     swayidle
     gparted
-    #cpu-x
+    cpu-x
+    vulkan-tools
     linuxKernel.packages.linux_6_12.turbostat
     pciutils
     ddcutil

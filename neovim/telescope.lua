@@ -1,4 +1,29 @@
 local builtin = require('telescope.builtin')
+
+local pickers = require('telescope.pickers')
+local finders = require('telescope.finders')
+local conf = require('telescope.config').values
+
+local function lsp_clients_picker()
+  local clients = vim.lsp.get_active_clients({ bufnr = 0 })
+  local entries = {}
+  for _, client in ipairs(clients) do
+    local fmt = string.format("%s (formatting: %s)",
+      client.name,
+      client.server_capabilities.documentFormattingProvider and "yes" or "no")
+    table.insert(entries, fmt)
+  end
+
+  pickers.new({}, {
+    prompt_title = "LSP Clients",
+    finder = finders.new_table(entries),
+    sorter = conf.generic_sorter({}),
+  }):find()
+end
+
+vim.keymap.set('n', '<leader>lc', lsp_clients_picker, { desc = "List LSP Clients" })
+
+
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
