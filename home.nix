@@ -294,7 +294,9 @@
     x2goclient
 
     waypaper
+    waytrogen
     hyprpaper
+    swaybg
     hyprland-qtutils
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
