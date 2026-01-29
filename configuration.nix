@@ -105,6 +105,7 @@ in
     "mem_sleep_default=s2idle"
     "sleep.deep=disabled"
     "usbcore.autosuspend=1"
+    #"vt.handoff=0"
     #"acpi_sleep=s3_bios"
     #"acpi_osi=Darwin"
     #"acpi_sleep=nonvs"
@@ -327,8 +328,6 @@ in
 
   services.haveged.enable = true;
 
-  services.getty.autologinUser = "py";
-
   security.polkit.enable = true;
 
   services.dbus.enable = true;
@@ -367,14 +366,15 @@ in
     #xrender-sync-fence = true;
     #};
   };
-
+  services.getty.autologinUser = "py";
   services = {
-    displayManager = {
-      defaultSession = "lxqt-wayland";
-    };
+    #displayManager = {
+    #defaultSession = "lxqt-wayland";
+    #};
     xserver = {
       # 47lines
       enable = true;
+      autorun = false;
       displayManager = {
         startx.enable = true;
       };
