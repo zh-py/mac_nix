@@ -234,6 +234,8 @@ in
         qt6Packages.fcitx5-chinese-addons
         fcitx5-pinyin-zhwiki
         fcitx5-nord
+        kdePackages.fcitx5-qt
+        libsForQt5.fcitx5-qt
       ];
     };
   };
@@ -367,6 +369,12 @@ in
     #};
   };
   services.getty.autologinUser = "py";
+  systemd.services."getty@tty1" = {
+    enable = true;
+    wantedBy = [ "multi-user.target" ];
+    #overrideStrategy = "asDropin";
+    #serviceConfig.Restart = "always";
+  };
   services = {
     #displayManager = {
     #defaultSession = "lxqt-wayland";

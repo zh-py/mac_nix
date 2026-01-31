@@ -51,17 +51,17 @@
     Terminal=true
     MimeType=text/plain;text/markdown;text/x-shellscript;text/x-python;text/x-csrc;text/x-c++src;application/x-subrip;
   '';
-  #home.file.".local/share/applications/nvim-alacritty.desktop".text = ''
-  #[Desktop Entry]
-  #Name=Neovim (Alacritty)
-  #Comment=Launch Neovim in Alacritty terminal
-  #Exec=alacritty -e nvim %f
-  #Icon=utilities-terminal
-  #Type=Application
-  #Categories=Utility;TextEditor;
-  #Terminal=false
-  #MimeType=text/plain;text/markdown;text/x-shellscript;text/x-python;text/x-csrc;text/x-c++src;application/x-subrip;
-  #'';
+
+  home.file.".local/share/applications/btop-foot.desktop".text = ''
+    [Desktop Entry]
+    Name=btop (Foot)
+    Comment=Resource monitor in Foot terminal
+    Exec=foot -e btop
+    Icon=utilities-system-monitor
+    Type=Application
+    Categories=System;Monitor;
+    Terminal=false
+  '';
 
   home.file.".local/share/applications/vifm-alacritty.desktop".text = ''
     [Desktop Entry]
@@ -74,39 +74,51 @@
     Terminal=false
   '';
 
-  home.file.".local/share/applications/wechat-fcitx.desktop".text = ''
-    [Desktop Entry]
-    Name=WeChat (Fcitx)
-    Comment=WeChat with Fcitx input support
-    Exec=env QT_IM_MODULE=fcitx GTK_IM_MODULE=fcitx XMODIFIERS=@im=fcitx INPUT_METHOD=fcitx QT_QPA_PLATFORMTHEME=qt6ct wechat
-    Icon=wechat
-    Type=Application
-    Categories=Network;InstantMessaging;
-    Terminal=false
-  '';
+  #xdg.desktopEntries.wechat-fcitx = {
+    #name = "WeChat (Fcitx)";
+    #genericName = "Instant Messenger";
+    #exec = "env QT_IM_MODULE=fcitx GTK_IM_MODULE=fcitx XMODIFIERS=@im=fcitx INPUT_METHOD=fcitx QT_QPA_PLATFORMTHEME=qt5ct wechat";
+    #icon = "wechat";
+    #comment = "WeChat with Fcitx input support";
+    #categories = [
+      #"Network"
+      #"InstantMessaging"
+    #];
+    #terminal = false;
+    #settings = {
+      #Path = "/home/py";
+    #};
+  #};
 
-  home.file.".local/share/applications/eudic-fcitx.desktop".text = ''
-    [Desktop Entry]
-    Name=Eudic (Fcitx)
-    Comment=Eudic with Fcitx input support
-    Exec=env QT_IM_MODULE=fcitx GTK_IM_MODULE=fcitx XMODIFIERS=@im=fcitx INPUT_METHOD=fcitx QT_QPA_PLATFORMTHEME=qt6ct eudic
-    Icon=eudic
-    Type=Application
-    Categories=Education;Dictionary;
-    Terminal=false
-  '';
+  #home.file.".local/share/applications/eudic-fcitx.desktop".text = ''
+    #[Desktop Entry]
+    #Name=Eudic (Fcitx)
+    #Comment=Eudic with Fcitx input support
+    #Exec=env QT_IM_MODULE=fcitx GTK_IM_MODULE=fcitx XMODIFIERS=@im=fcitx INPUT_METHOD=fcitx QT_QPA_PLATFORMTHEME=qt6ct eudic
+    #Icon=eudic
+    #Type=Application
+    #Categories=Education;Dictionary;
+    #Terminal=false
+  #'';
 
   home.sessionVariables = {
     QT_QPA_PLATFORMTHEME = "qt5ct";
-    QT_STYLE_OVERRIDE = "Fusion";
+    #QT_STYLE_OVERRIDE = "Fusion";
     QT_NO_PLASMA_INTEGRATION = "1";
+
     XMODIFIERS = "@im=fcitx";
+    QT_IM_MODULE = "fcitx";
+    GTK_IM_MODULE = "fcitx";
+    #NIX_IM_MODULE = "fcitx";
+    #SDL_IM_MODULE = "fcitx";
+    ## Force WeChat to recognize the Wayland environment if it's Electron-based
+    #NIXOS_OZONE_WL = "1";
   };
   systemd.user.services.lxqt-notificationd = {
     Service = {
       Environment = [
-        "QT_QPA_PLATFORMTHEME=qt5ct"
-        "QT_STYLE_OVERRIDE=Fusion"
+        "QT_QPA_PLATFORMTHEME=qt6ct"
+        #"QT_STYLE_OVERRIDE=Fusion"
       ];
     };
   };
@@ -139,7 +151,7 @@
     firefox
     #opera
     google-chrome
-    #tor-browser
+    tor-browser
     #wechat-uos
     wechat
     #wechat-fcitx
@@ -150,6 +162,7 @@
     koreader
     peazip
     nomacs
+    loupe
     gimp
     #ocenaudio
     #audacity
@@ -158,6 +171,9 @@
     #photoqt
     qview
     viewnior
+    feh
+    imv
+    geeqie
     xxdiff
     kdePackages.okular
     #mupdf
@@ -298,6 +314,7 @@
     hyprpaper
     swaybg
     hyprland-qtutils
+    #hyprshutdown
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -645,11 +662,18 @@
         "video/quicktime" = "mpv.desktop";
         "video/x-msvideo" = "mpv.desktop";
         "video/x-flv" = "mpv.desktop";
-        "image/png" = "nomacs.desktop";
-        "image/jpeg" = "nomacs.desktop";
-        "image/gif" = "nomacs.desktop";
-        "image/bmp" = "nomacs.desktop";
-        "image/webp" = "nomacs.desktop";
+        #"image/png" = "nomacs.desktop";
+        #"image/jpeg" = "nomacs.desktop";
+        #"image/gif" = "nomacs.desktop";
+        #"image/bmp" = "nomacs.desktop";
+        #"image/webp" = "nomacs.desktop";
+        "image/png" = "org.gnome.Loupe.desktop";
+        "image/jpeg" = "org.gnome.Loupe.desktop";
+        "image/gif" = "org.gnome.Loupe.desktop";
+        "image/webp" = "org.gnome.Loupe.desktop";
+        "image/bmp" = "org.gnome.Loupe.desktop";
+        "image/svg+xml" = "org.gnome.Loupe.desktop";
+        "image/tiff" = "org.gnome.Loupe.desktop";
         "x-scheme-handler/http" = "com.google.Chrome.desktop";
         "x-scheme-handler/https" = "com.google.Chrome.desktop";
         "x-scheme-handler/about" = "com.google.Chrome.desktop";
@@ -1357,6 +1381,20 @@
     ];
   };
 
+  programs.foot = {
+    enable = true;
+    settings = {
+      main = {
+        term = "xterm-256color";
+        font = "Fixed:size=12";
+        dpi-aware = "yes";
+      };
+      mouse = {
+        hide-when-typing = "yes";
+      };
+    };
+  };
+
   programs.alacritty = {
     enable = true;
     settings = {
@@ -1383,6 +1421,9 @@
         normal.family = "Terminus (TTF)";
         bold.family = "Terminus (TTF)";
         italic.family = "Terminus (TTF)";
+        #normal.family = "Fixed";
+        #bold.family = "Fixed";
+        #italic.family = "Fixed";
         #normal.family = "gohufont";
         #bold.family = "gohufont";
         #italic.family = "gohufont";
