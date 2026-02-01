@@ -8,8 +8,8 @@
     nur.url = "github:nix-community/NUR";
     #hyprland.url = "github:hyprwm/Hyprland";
     #hyprshell = {
-      #url = "github:H3rmt/hyprshell?ref=hyprshell-release";
-      #inputs.hyprland.follows = "hyprland";
+    #url = "github:H3rmt/hyprshell?ref=hyprshell-release";
+    #inputs.hyprland.follows = "hyprland";
     #};
     #kmonad = {
     #url = "git+https://github.com/kmonad/kmonad?submodules=1&dir=nix";
@@ -35,7 +35,7 @@
       #hyprshell,
       nur,
       ...
-    #}:
+      #}:
     }@inputs:
     {
       #outputs = { nixpkgs, home-manager, hyprland, hyprshell, nur, ... }@inputs: {
@@ -61,7 +61,12 @@
             {
               home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = true;
-              home-manager.users.py = import ./home.nix;
+              home-manager.users.py = {
+                imports = [
+                  ./home.nix
+                  #inputs.walker.homeManagerModules.default
+                ];
+              };
               #home-manager.extraSpecialArgs = { inherit inputs; }; # hyprshell
 
               # Optionally, use home-manager.extraSpecialArgs to pass

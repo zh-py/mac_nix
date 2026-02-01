@@ -75,30 +75,30 @@
   '';
 
   #xdg.desktopEntries.wechat-fcitx = {
-    #name = "WeChat (Fcitx)";
-    #genericName = "Instant Messenger";
-    #exec = "env QT_IM_MODULE=fcitx GTK_IM_MODULE=fcitx XMODIFIERS=@im=fcitx INPUT_METHOD=fcitx QT_QPA_PLATFORMTHEME=qt5ct wechat";
-    #icon = "wechat";
-    #comment = "WeChat with Fcitx input support";
-    #categories = [
-      #"Network"
-      #"InstantMessaging"
-    #];
-    #terminal = false;
-    #settings = {
-      #Path = "/home/py";
-    #};
+  #name = "WeChat (Fcitx)";
+  #genericName = "Instant Messenger";
+  #exec = "env QT_IM_MODULE=fcitx GTK_IM_MODULE=fcitx XMODIFIERS=@im=fcitx INPUT_METHOD=fcitx QT_QPA_PLATFORMTHEME=qt5ct wechat";
+  #icon = "wechat";
+  #comment = "WeChat with Fcitx input support";
+  #categories = [
+  #"Network"
+  #"InstantMessaging"
+  #];
+  #terminal = false;
+  #settings = {
+  #Path = "/home/py";
+  #};
   #};
 
   #home.file.".local/share/applications/eudic-fcitx.desktop".text = ''
-    #[Desktop Entry]
-    #Name=Eudic (Fcitx)
-    #Comment=Eudic with Fcitx input support
-    #Exec=env QT_IM_MODULE=fcitx GTK_IM_MODULE=fcitx XMODIFIERS=@im=fcitx INPUT_METHOD=fcitx QT_QPA_PLATFORMTHEME=qt6ct eudic
-    #Icon=eudic
-    #Type=Application
-    #Categories=Education;Dictionary;
-    #Terminal=false
+  #[Desktop Entry]
+  #Name=Eudic (Fcitx)
+  #Comment=Eudic with Fcitx input support
+  #Exec=env QT_IM_MODULE=fcitx GTK_IM_MODULE=fcitx XMODIFIERS=@im=fcitx INPUT_METHOD=fcitx QT_QPA_PLATFORMTHEME=qt6ct eudic
+  #Icon=eudic
+  #Type=Application
+  #Categories=Education;Dictionary;
+  #Terminal=false
   #'';
 
   home.sessionVariables = {
@@ -201,6 +201,7 @@
     dmenu
     #rofi-wayland
     rofi
+    raffi # for Fuzzel config
 
     #gemini-cli
     #claude-code
@@ -426,6 +427,17 @@
           modifier = "super";
         };
       };
+    };
+  };
+
+  programs.fuzzel = {
+    enable = true;
+    settings = {
+      main = {
+        terminal = "${pkgs.foot}/bin/foot";
+        layer = "overlay";
+      };
+      colors.background = "ffffffff";
     };
   };
 
