@@ -44,11 +44,11 @@
     [Desktop Entry]
     Name=Neovim (Alacritty)
     Comment=Launch Neovim in Alacritty terminal
-    Exec=alacritty -e nvim %F
+    Exec=alacritty -e nvim %U
     Icon=utilities-terminal
     Type=Application
     Categories=Utility;TextEditor;
-    Terminal=true
+    Terminal=false
     MimeType=text/plain;text/markdown;text/x-shellscript;text/x-python;text/x-csrc;text/x-c++src;application/x-subrip;
   '';
 
@@ -201,7 +201,7 @@
     dmenu
     #rofi-wayland
     rofi
-    raffi # for Fuzzel config
+    #raffi # for Fuzzel config
 
     #gemini-cli
     #claude-code
@@ -436,6 +436,8 @@
       main = {
         terminal = "${pkgs.foot}/bin/foot";
         layer = "overlay";
+        match-mode = "fuzzy";
+        font = "Fixed:size=12";
       };
       colors.background = "ffffffff";
     };
