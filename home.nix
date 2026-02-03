@@ -102,10 +102,21 @@
   #'';
 
   home.sessionVariables = {
+    EDITOR = "nvim";
+    BROWSER = "google-chrome-stable";
+    TERMINAL = "kitty";
+    TERM = "xterm-256color";
+    #QT_QPA_PLATFORM = "wayland;xcb";
     QT_QPA_PLATFORMTHEME = "qt5ct";
+    #XCURSOR_THEME = "Adwaita";
+    #XCURSOR_SIZE = "24";
+    #GTK_THEME = "Adwaita";
+    #GTK_ICON_THEME = "Papirus";
+    #XDG_CONFIG_HOME = "$HOME/.config";
+    #XDG_CONFIG_HOME = lib.mkDefault "$HOME/.config";
     #QT_STYLE_OVERRIDE = "Fusion";
-    QT_NO_PLASMA_INTEGRATION = "1";
 
+    QT_NO_PLASMA_INTEGRATION = "1";
     XMODIFIERS = "@im=fcitx";
     QT_IM_MODULE = "fcitx";
     GTK_IM_MODULE = "fcitx";
@@ -375,13 +386,13 @@
   services.mako.enable = false;
   services.swaync.enable = true;
   #~/.cache/swaync/notifications.json
-  wayland.windowManager.hyprland = {
-    enable = true;
-    settings = {
-      xwayland.enable = true;
-    };
-    systemd.enable = false;
-  };
+  #wayland.windowManager.hyprland = {
+    #enable = true;
+    #settings = {
+      #xwayland.enable = true;
+    #};
+    #systemd.enable = false;
+  #};
   #home.file.".config/hypr/hyprland.conf".enable = false;
   xdg.configFile."hypr/hyprland.conf".enable = false;
 
@@ -611,19 +622,6 @@
   #
   #  /etc/profiles/per-user/py/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    BROWSER = "google-chrome-stable";
-    TERMINAL = "kitty";
-    TERM = "xterm-256color";
-    QT_QPA_PLATFORM = "wayland;xcb";
-    #XCURSOR_THEME = "Adwaita";
-    #XCURSOR_SIZE = "24";
-    #GTK_THEME = "Adwaita";
-    #GTK_ICON_THEME = "Papirus";
-    #XDG_CONFIG_HOME = "$HOME/.config";
-    #XDG_CONFIG_HOME = lib.mkDefault "$HOME/.config";
-  };
 
   home.pointerCursor = {
     enable = true;

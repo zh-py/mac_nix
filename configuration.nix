@@ -277,10 +277,17 @@ in
     wrapperFeatures.gtk = true;
   };
 
-  programs.labwc = {
+  programs.hyprland = {
     enable = true;
+    withUWSM = true; # recommended for most users
+    xwayland.enable = true; # Xwayland can be disabled.
   };
+
   programs.waybar.enable = true;
+
+  programs.labwc = {
+    enable = false;
+  };
 
   #environment.sessionVariables = {
   ##QT_NO_PLASMA_INTEGRATION = "1";
@@ -363,20 +370,6 @@ in
     #};
   };
 
-  services.greetd = {
-    enable = true;
-    settings = {
-      initial_session = {
-        command = "start-hyprland";
-        user = "py";
-      };
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd start-hyprland";
-        user = "py";
-      };
-    };
-  };
-
   services.getty.autologinUser = "py";
   #systemd.services."getty@tty1" = {
   #enable = true;
@@ -399,6 +392,32 @@ in
       desktopManager = {
         lxqt.enable = true;
         xterm.enable = false;
+      };
+    };
+
+    displayManager = {
+      #autoLogin.user = "py";
+      ly = {
+        enable = false;
+        x11Support = true;
+        settings = {
+          load = true;
+          save = true;
+        };
+      };
+    };
+
+    greetd = {
+      enable = true;
+      settings = {
+        initial_session = {
+          command = "start-hyprland";
+          user = "py";
+        };
+        default_session = {
+          command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd start-hyprland";
+          user = "py";
+        };
       };
     };
 
