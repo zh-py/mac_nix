@@ -106,7 +106,7 @@
     BROWSER = "google-chrome-stable";
     TERMINAL = "kitty";
     TERM = "xterm-256color";
-    #QT_QPA_PLATFORM = "wayland;xcb";
+    QT_QPA_PLATFORM = "wayland;xcb";
     QT_QPA_PLATFORMTHEME = "qt5ct";
     #XCURSOR_THEME = "Adwaita";
     #XCURSOR_SIZE = "24";

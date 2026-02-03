@@ -346,10 +346,18 @@ in
 
   xdg.portal = {
     enable = true;
+    config = {
+      common = {
+        default = [
+          "*"
+        ];
+      };
+    };
+    #configPackages = [ pkgs.gnome-session ];
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
       kdePackages.xdg-desktop-portal-kde
-      xdg-desktop-portal-hyprland
+      lxqt.xdg-desktop-portal-lxqt
     ];
     lxqt.enable = true;
   };
@@ -408,7 +416,7 @@ in
     };
 
     greetd = {
-      enable = true;
+      enable = false;
       settings = {
         initial_session = {
           command = "start-hyprland";
