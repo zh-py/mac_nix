@@ -339,19 +339,13 @@ in
 
   xdg.portal = {
     enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.kdePackages.xdg-desktop-portal-kde
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      kdePackages.xdg-desktop-portal-kde
+      xdg-desktop-portal-hyprland
     ];
+    lxqt.enable = true;
   };
-  #xdg.portal = {
-  #enable = true;
-  #lxqt.enable = true;
-  #extraPortals = with pkgs; [
-  #xdg-desktop-portal-hyprland
-  ##xdg-desktop-portal-gtk # Fallback GTK portal
-  #];
-  #};
 
   services.picom = {
     enable = false;
@@ -368,13 +362,28 @@ in
     #xrender-sync-fence = true;
     #};
   };
-  services.getty.autologinUser = "py";
-  systemd.services."getty@tty1" = {
+
+  services.greetd = {
     enable = true;
-    wantedBy = [ "multi-user.target" ];
-    #overrideStrategy = "asDropin";
-    #serviceConfig.Restart = "always";
+    settings = {
+      initial_session = {
+        command = "start-hyprland";
+        user = "py";
+      };
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd start-hyprland";
+        user = "py";
+      };
+    };
   };
+
+  services.getty.autologinUser = "py";
+  #systemd.services."getty@tty1" = {
+  #enable = true;
+  #wantedBy = [ "multi-user.target" ];
+  ##overrideStrategy = "asDropin";
+  ##serviceConfig.Restart = "always";
+  #};
   services = {
     #displayManager = {
     #defaultSession = "lxqt-wayland";
@@ -1326,6 +1335,8 @@ in
     libsForQt5.ki18n
     libsForQt5.qt5ct
     kdePackages.ki18n
+    qt6.qtwayland
+    qt5.qtwayland
     #kdePackages.qt6gtk2
     #kdePackages.qt6ct
     #xorg.setxkbmap

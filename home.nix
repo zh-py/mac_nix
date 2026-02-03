@@ -152,6 +152,7 @@
     #opera
     google-chrome
     tor-browser
+    #mailspring
     #wechat-uos
     wechat
     #wechat-fcitx
@@ -315,7 +316,9 @@
     hyprpaper
     swaybg
     hyprland-qtutils
-    #hyprshutdown
+    hyprpicker
+    hyprpwcenter
+    hyprshutdown
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -613,6 +616,7 @@
     BROWSER = "google-chrome-stable";
     TERMINAL = "kitty";
     TERM = "xterm-256color";
+    QT_QPA_PLATFORM = "wayland;xcb";
     #XCURSOR_THEME = "Adwaita";
     #XCURSOR_SIZE = "24";
     #GTK_THEME = "Adwaita";
@@ -1003,7 +1007,7 @@
       ap = "(){ ~/python/yt-dlp --path ~/Downloads/Podcast -f '140' --extract-audio --audio-format mp3 $1. ;}";
       sp = "(){ cd ~/python/spotdl && spotdl --output '/home/py/Downloads/Albums/{artist}_{year}_{album}/{track-number} - {title}.{output-ext}' --yt-dlp-args '--cookies-from-browser firefox' $1. ;}";
       s = "(){ spotdl --output '/home/py/Downloads/Albums/{artist}_{year}_{album}/{track-number} - {title}.{output-ext}' --yt-dlp-args '--cookies-from-browser firefox' $1. ;}";
-      ys = "(){ ~/python/yt-dlp --cookies-from-browser firefox -vU --write-sub --write-auto-sub --sub-lang 'en-US,en-GB,en,en.*' --convert-subtitles srt --skip-download --no-check-certificate $1. ;}";
+      ys = "(){ ~/python/yt-dlp --path ~/Downloads --cookies-from-browser firefox -vU --write-sub --write-auto-sub --sub-lang 'en-US,en-GB,en,en.*' --convert-subtitles srt --skip-download --no-check-certificate $1. ;}";
 
       yv = "(){ yt-dlp -f '299+140/137+140/136+140/135+140/134+140/299+140-8/299+140-7/299+140-6/299+140-5/299+140-4/299+140-3/299+140-2/299+140-1/137+140-8/137+140-7/137+140-6/137+140-5/137+140-4/137+140-3/137+140-2/137+140-1/136+140-8/136+140-7/136+140-6/136+140-5/136+140-4/136+140-3/136+140-2/136+140-1' --no-mtime $1. ;}";
       sa = "(){ spotdl --output '{artist}_{year}_{album}/{track-number} - {title}.{output-ext}' $1. ;}";
