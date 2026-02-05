@@ -74,6 +74,19 @@
     Terminal=false
   '';
 
+  xdg.desktopEntries.mailspring-libsecret = {
+    name = "Mailspring (GNOME libsecret)";
+    genericName = "Email Client";
+    exec = "mailspring --password-store=gnome-libsecret";
+    icon = "mailspring";
+    comment = "Mailspring with GNOME libsecret password store";
+    categories = [
+      "Network"
+      "Email"
+    ];
+    terminal = false;
+  };
+
   #xdg.desktopEntries.wechat-fcitx = {
   #name = "WeChat (Fcitx)";
   #genericName = "Instant Messenger";
@@ -163,7 +176,9 @@
     #opera
     google-chrome
     tor-browser
-    #mailspring
+    #geary
+    #thunderbird
+    mailspring
     #wechat-uos
     wechat
     #wechat-fcitx
@@ -213,7 +228,7 @@
     dmenu
     #rofi-wayland
     rofi
-    #raffi # for Fuzzel config
+    raffi # for Fuzzel config
 
     #gemini-cli
     #claude-code
@@ -387,11 +402,11 @@
   services.swaync.enable = true;
   #~/.cache/swaync/notifications.json
   #wayland.windowManager.hyprland = {
-    #enable = true;
-    #settings = {
-      #xwayland.enable = true;
-    #};
-    #systemd.enable = false;
+  #enable = true;
+  #settings = {
+  #xwayland.enable = true;
+  #};
+  #systemd.enable = false;
   #};
   #home.file.".config/hypr/hyprland.conf".enable = false;
   xdg.configFile."hypr/hyprland.conf".enable = false;
