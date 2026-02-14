@@ -87,32 +87,46 @@
     terminal = false;
   };
 
-  #xdg.desktopEntries.wechat-fcitx = {
-  #name = "WeChat (Fcitx)";
-  #genericName = "Instant Messenger";
-  #exec = "env QT_IM_MODULE=fcitx GTK_IM_MODULE=fcitx XMODIFIERS=@im=fcitx INPUT_METHOD=fcitx QT_QPA_PLATFORMTHEME=qt5ct wechat";
-  #icon = "wechat";
-  #comment = "WeChat with Fcitx input support";
+  #xdg.desktopEntries.mpv-waylandvk = {
+  #name = "mpv gpu-context auto";
+  #genericName = "Media Player";
+  #exec = "umpv --gpu-context=auto";
+  #icon = "mpv";
+  #comment = "mpv in wayland";
   #categories = [
-  #"Network"
-  #"InstantMessaging"
+  #"AudioVideo"
+  #"Video"
+  #"Player"
   #];
   #terminal = false;
-  #settings = {
-  #Path = "/home/py";
-  #};
   #};
 
-  #home.file.".local/share/applications/eudic-fcitx.desktop".text = ''
-  #[Desktop Entry]
-  #Name=Eudic (Fcitx)
-  #Comment=Eudic with Fcitx input support
-  #Exec=env QT_IM_MODULE=fcitx GTK_IM_MODULE=fcitx XMODIFIERS=@im=fcitx INPUT_METHOD=fcitx QT_QPA_PLATFORMTHEME=qt6ct eudic
-  #Icon=eudic
-  #Type=Application
-  #Categories=Education;Dictionary;
-  #Terminal=false
-  #'';
+  xdg.desktopEntries.wechat-fcitx = {
+    name = "WeChat (Fcitx)";
+    genericName = "Instant Messenger";
+    exec = "env QT_IM_MODULE=fcitx GTK_IM_MODULE=fcitx XMODIFIERS=@im=fcitx INPUT_METHOD=fcitx QT_QPA_PLATFORMTHEME=qt5ct wechat";
+    icon = "wechat";
+    comment = "WeChat with Fcitx input support";
+    categories = [
+      "Network"
+      "InstantMessaging"
+    ];
+    terminal = false;
+    settings = {
+      Path = "/home/py";
+    };
+  };
+
+  home.file.".local/share/applications/eudic-fcitx.desktop".text = ''
+    [Desktop Entry]
+    Name=Eudic (Fcitx)
+    Comment=Eudic with Fcitx input support
+    Exec=env QT_IM_MODULE=fcitx GTK_IM_MODULE=fcitx XMODIFIERS=@im=fcitx INPUT_METHOD=fcitx QT_QPA_PLATFORMTHEME=qt6ct eudic
+    Icon=eudic
+    Type=Application
+    Categories=Education;Dictionary;
+    Terminal=false
+  '';
 
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -232,6 +246,7 @@
 
     #gemini-cli
     #claude-code
+    #kilocode-cli
 
     #share
     openssl
