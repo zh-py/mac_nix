@@ -195,11 +195,10 @@
     mailspring
     #wechat-uos
     wechat
-    #wechat-fcitx
     baidupcs-go
     #teams-for-linux
     #rustdesk
-    calibre
+    #calibre
     koreader
     peazip
     nomacs
@@ -249,6 +248,7 @@
     #kilocode-cli
 
     #share
+    tailscale
     openssl
     eza
     lsof
@@ -302,7 +302,8 @@
     #poetry
     texlab
     obsidian
-    aichat
+    #notion-app
+    #aichat
     qbittorrent-enhanced
     spotify
     spotdl
@@ -379,7 +380,7 @@
     (python314.withPackages (
       p: with p; [
         py-cpuinfo
-        extractcode
+        #extractcode
         pip
         numpy
         jupyter
@@ -752,7 +753,7 @@
     enable = true;
   };
 
-  programs.sagemath.enable = true;
+  programs.sagemath.enable = false;
 
   programs.zathura = {
     enable = true;
