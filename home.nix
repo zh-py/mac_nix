@@ -199,6 +199,7 @@
     #teams-for-linux
     #rustdesk
     #calibre
+    #calibre-web
     koreader
     peazip
     nomacs
@@ -206,7 +207,8 @@
     gimp
     #ocenaudio
     #audacity
-    libreoffice-qt6
+    #libreoffice-qt6
+    libreoffice-fresh
     speedcrunch
     #photoqt
     qview
@@ -246,6 +248,7 @@
     #gemini-cli
     #claude-code
     #kilocode-cli
+    cursor-cli
 
     #share
     tailscale
@@ -297,6 +300,7 @@
     luajitPackages.luacheck
     lua-language-server
     marksman
+    prettier
     tree-sitter
     tree-sitter-grammars.tree-sitter-python
     #poetry
@@ -404,6 +408,7 @@
         python-lsp-ruff
         ruff
         black
+        stylua
         pynvim
         send2trash
         openpyxl
@@ -1203,6 +1208,15 @@
           })
         '';
       }
+      {
+        plugin = pkgs.vimPlugins.avante-nvim;
+        type = "lua";
+        config = ''
+          require("avante_lib").load()
+          require("avante").setup()
+        '';
+        # or builtins.readFile ./neovim/avante.lua;
+      }
       #copilot-vim
       vim-visual-multi
       trouble-nvim
@@ -1295,7 +1309,7 @@
         config = # vim
           ''
             "let g:vimtex_view_general_method='qpdfview'
-            let g:vimtex_view_method = 'zathura'
+            let g:vimtex_view_method = 'zathura_simple'
             "let g:vimtex_view_mupdf_send_keys = 'shift+h'
             "let g:vimtex_view_general_options = '-reuse-instance u/pdf'
             "let g:vimtex_view_general_viewer = 'okular'
@@ -1335,6 +1349,11 @@
         plugin = nvim-lspconfig;
         type = "lua";
         config = builtins.readFile (./neovim/lspconfig.lua);
+      }
+      {
+        plugin = conform-nvim;
+        type = "lua";
+        config = builtins.readFile (./neovim/conform.lua);
       }
       cmp-buffer
       cmp-path

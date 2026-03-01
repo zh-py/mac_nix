@@ -1160,7 +1160,6 @@ in
     terminus_font_ttf
     profont
     efont-unicode
-    noto-fonts-color-emoji
     dina-font
     fanwood
 
@@ -1176,11 +1175,13 @@ in
     roboto
     inter
     corefonts
-    noto-fonts-cjk-sans
-    noto-fonts-cjk-serif
     source-han-serif
 
     noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+    noto-fonts-color-emoji
+
     vista-fonts
     ubuntu-classic
     cantarell-fonts
