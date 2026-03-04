@@ -248,6 +248,7 @@
     gemini-cli
     #claude-code
     #kilocode-cli
+    opencode
     cursor-cli
 
     #share
@@ -304,6 +305,7 @@
     prettier
     tree-sitter
     tree-sitter-grammars.tree-sitter-python
+    lazygit
     #poetry
     texlab
     obsidian
@@ -1361,6 +1363,16 @@
         plugin = conform-nvim;
         type = "lua";
         config = builtins.readFile (./neovim/conform.lua);
+      }
+      {
+        plugin = opencode-nvim;
+        type = "lua";
+        config = builtins.readFile (./neovim/opencode.lua);
+      }
+      {
+        plugin = snacks-nvim;
+        type = "lua";
+        config = builtins.readFile (./neovim/snacks.lua);
       }
       cmp-buffer
       cmp-path
