@@ -245,7 +245,7 @@
     rofi
     raffi # for Fuzzel config
 
-    #gemini-cli
+    gemini-cli
     #claude-code
     #kilocode-cli
     cursor-cli
@@ -300,6 +300,7 @@
     luajitPackages.luacheck
     lua-language-server
     marksman
+    vscode-json-languageserver
     prettier
     tree-sitter
     tree-sitter-grammars.tree-sitter-python
@@ -1355,6 +1356,7 @@
         type = "lua";
         config = builtins.readFile (./neovim/lspconfig.lua);
       }
+      SchemaStore-nvim
       {
         plugin = conform-nvim;
         type = "lua";
