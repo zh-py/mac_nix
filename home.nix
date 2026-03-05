@@ -302,6 +302,7 @@
     lua-language-server
     marksman
     vscode-json-languageserver
+    stylua
     prettier
     tree-sitter
     tree-sitter-grammars.tree-sitter-python
@@ -411,7 +412,6 @@
         python-lsp-ruff
         ruff
         black
-        stylua
         pynvim
         send2trash
         openpyxl
