@@ -89,7 +89,7 @@ in
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-59-6.18.15"
+    "broadcom-sta-6.30.223.271-59-6.18.16"
   ];
 
   # options: https://www.freedesktop.org/software/systemd/man/latest/logind.conf.html
@@ -112,13 +112,14 @@ in
     #"acpi_osi=!Darwin"
     #"acpi_osi=\"Windows 2015\""
   ];
-  systemd.sleep.extraConfig = ''
-    [Sleep]
-    AllowSuspend=yes
-    AllowHibernation=no
-    AllowSuspendThenHibernate=no
-    HibernateDelaySec=3h
-  '';
+
+  systemd.sleep.settings.Sleep = {
+    AllowSuspend = "yes";
+    AllowHibernation = "no";
+    #AllowHybridSleep = "yes";
+    AllowSuspendThenHibernate = "no";
+    HibernateDelaySec = "3h";
+  };
 
   #systemd.services.disable-wakeups = {
   #description = "Disable unwanted wakeup sources";
@@ -1580,7 +1581,7 @@ in
     resolvconf.enable = false;
   };
 
-  services.tailscale.enable = false;
+  services.tailscale.enable = true;
 
   services.resolved = {
     enable = true;

@@ -250,9 +250,9 @@
     #kilocode-cli
     opencode
     cursor-cli
+    pgcli
 
     #share
-    tailscale
     openssl
     eza
     lsof
@@ -281,7 +281,6 @@
     wordnet
     btop
     htop
-    neofetch
     fastfetch
     dust
     fd
@@ -1029,6 +1028,11 @@
     autosuggestion.enable = true;
     enableCompletion = true;
     defaultKeymap = "emacs"; # others don't work as good as this
+    initContent = builtins.readFile ./dotfiles/.zshrc + ''
+      claw() { docker exec -it openclaw-source-openclaw-gateway-1 openclaw "$@"; }
+      cca() { rsync -avz -e "ssh -i /home/py/.ssh/thekey" "$@" py@192.168.1.2:/home/py/.openclaw/workspace-coding_agent/files/; }
+      ch() { for f in "$@"; do rsync -avz -e "ssh -i /home/py/.ssh/thekey" py@192.168.1.2:/home/py/.openclaw/workspace-coding_agent/files/"$f" /home/py/Codes/; done; }
+    '';
     shellAliases = {
       proxychains = "proxychains4";
       ll = "ls -l";
@@ -1073,7 +1077,6 @@
         file = ".p10k.zsh";
       }
     ];
-    initContent = builtins.readFile ./dotfiles/.zshrc;
     #envExtra= builtins.readFile ./dotfiles/.zshenv;
     oh-my-zsh = {
       enable = true;
