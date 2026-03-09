@@ -251,6 +251,7 @@
     opencode
     cursor-cli
     pgcli
+    openai-whisper
 
     #share
     openssl
@@ -303,6 +304,7 @@
     vscode-json-languageserver
     stylua
     prettier
+    yaml-language-server
     tree-sitter
     tree-sitter-grammars.tree-sitter-python
     lazygit
@@ -1120,7 +1122,7 @@
       set number
       set wrap
       set linebreak
-      set clipboard=unnamed
+      set clipboard=unnamedplus
       set nu rnu
       let &scrolloff = 5
       nn <F7> :setlocal spell! spell?<CR>
