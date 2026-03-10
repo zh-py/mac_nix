@@ -251,6 +251,7 @@
     opencode
     cursor-cli
     pgcli
+    visidata
     openai-whisper
 
     #share
@@ -913,9 +914,10 @@
       }
     ];
     extraConfig = ''
-      set-option -g mouse on
       set -g default-terminal "screen-256color"
+      set-option -g mouse on
       set -ag terminal-overrides ",xterm-256color:RGB"
+      set -s extended-keys on
     '';
   };
 
@@ -1456,6 +1458,25 @@
             dot_repeat = true,
             on_error = nil,
             }
+        '';
+      }
+      {
+        plugin = csvview-nvim;
+        type = "lua";
+        config = ''
+          require("csvview").setup({
+            parser = {
+              comments = { "#", "//" },
+            },
+            keymaps = {
+              textobject_field_inner = { "if", mode = { "o", "x" } },
+              textobject_field_outer = { "af", mode = { "o", "x" } },
+              jump_next_field_end = { "<Tab>", mode = { "n", "v" } },
+              jump_prev_field_end = { "<S-Tab>", mode = { "n", "v" } },
+              jump_next_row = { "<Enter>", mode = { "n", "v" } },
+              jump_prev_row = { "<S-Enter>", mode = { "n", "v" } },
+            },
+          })
         '';
       }
       nvim-dap
