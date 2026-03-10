@@ -1286,6 +1286,7 @@ in
     grim # screenshot functionality
     slurp # screenshot functionality
     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
+    cliphist
     xsel
     xclip
     mako # notification system developed by swaywm maintainer

@@ -802,7 +802,7 @@
   };
 
   programs.wofi = {
-    enable = false;
+    enable = true;
     settings = {
     };
   };
@@ -961,6 +961,7 @@
       map shift+insert paste_from_clipboard
       clipboard_control write-clipboard write-primary read-clipboard read-primary
       open_url_with default
+      map ctrl+. send_text all \x1b[46;5u
     '';
   };
 
