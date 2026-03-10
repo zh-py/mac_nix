@@ -183,6 +183,7 @@
     samba
     remmina
     autossh
+    eternal-terminal
 
     xclicker
     fusuma
