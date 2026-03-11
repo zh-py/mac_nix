@@ -308,8 +308,8 @@
     prettier
     yaml-language-server
     harper
+    hyprls
     tree-sitter
-    tree-sitter-grammars.tree-sitter-python
     lazygit
     #poetry
     texlab

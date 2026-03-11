@@ -6,6 +6,13 @@ vim.lsp.config("*", {
 	capabilities = capabilities,
 })
 
+vim.filetype.add({
+	pattern = {
+		[".*/hypr/.*%.conf"] = "hyprlang",
+		["%.hl$"] = "hyprlang",
+	},
+})
+
 -- Define all servers and their custom settings
 local servers = {
 	pyright = {
@@ -264,11 +271,17 @@ local servers = {
 		},
 	},
 
-	--hyprls = {
-	--cmd = { 'hyprls' },
-	--filetypes = { 'hyprlang', 'hyprland.conf' }, -- You don't need '*.hl' here; use actual filetypes
-	--root_dir = lspconfig.util.root_pattern('.git', 'hyprland.conf'),
-	--}
+	hyprls = {
+		cmd = { "hyprls" },
+		filetypes = { "hyprlang" },
+		root_markers = { ".git", "hyprland.conf" },
+		settings = {
+			hyprls = {
+				preferIgnoreFile = false,
+				ignore = { "hyprlock.conf", "hypridle.conf" },
+			},
+		},
+	},
 }
 
 for name, config in pairs(servers) do
