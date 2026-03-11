@@ -357,6 +357,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			require("fzf-lua").lsp_references()
 		end, opts)
 	end,
+	})
+
 
 		--vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, opts)
 		--vim.keymap.set('n', '<space>f', function()
