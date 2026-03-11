@@ -307,6 +307,7 @@
     stylua
     prettier
     yaml-language-server
+    harper
     tree-sitter
     tree-sitter-grammars.tree-sitter-python
     lazygit

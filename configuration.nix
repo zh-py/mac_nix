@@ -54,12 +54,6 @@ in
   #nix.settings.substituters = lib.mkBefore [ "https://mirror.sjtu.edu.cn/nix-channels/store" "https://mirrors.ustc.edu.cn/nix-channels/store" "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
   #systemd.extraConfig = "DefaultLimitNOFILE=4096";
 
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 50d";
-  };
-
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -1431,6 +1425,9 @@ in
     #autofs5
     lxqt.lxqt-policykit
 
+    nh
+    nvd
+
     trash-cli
     xdg-utils
     gnome-shell
@@ -1487,10 +1484,21 @@ in
   system.activationScripts.diff = {
     supportsDryActivation = true;
     text = ''
-      ${pkgs.nvd}/bin/nvd --nix-bin-dir=${pkgs.nix}/bin diff \
+      export TERM=xterm-256color
+      ${pkgs.nvd}/bin/nvd --color=always --nix-bin-dir=${pkgs.nix}/bin diff \
            /run/current-system "$systemConfig"
     '';
   };
+
+  programs.nh = {
+    enable = true;
+    flake = "/etc/nixos"; # Tells NH where your config lives globally
+    clean = {
+      enable = true;
+      extraArgs = "--keep-since 4d --keep 3";
+    };
+  };
+  nix.gc.automatic = false;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

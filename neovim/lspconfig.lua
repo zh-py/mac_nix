@@ -228,6 +228,42 @@ local servers = {
 		},
 	},
 
+	harper_ls = {
+		cmd = { "harper-ls", "--stdio" }, -- Native API prefers explicit stdio
+		filetypes = {
+			"markdown",
+			"python",
+			"rust",
+			"javascript",
+			"typescript",
+			"go",
+			"json",
+			"toml",
+			"lua",
+			"tex",
+			"plaintex",
+		},
+		-- Use the native 'root_markers' instead of a custom 'root_dir' function
+		-- This is more stable in the 0.11 native API
+		root_markers = { ".git" },
+
+		-- If you want it to work in single files (like your marksman setup)
+		-- you can omit root_markers or set:
+		root_dir = vim.fn.getcwd(),
+
+		settings = {
+			["harper-ls"] = {
+				userDictPath = "", -- Ensure this is a string, not nil
+				ignoredLintsPath = "",
+				linters = {
+					SpellCheck = true,
+					SpelledNumbers = false,
+					SentenceCapitalization = true,
+				},
+			},
+		},
+	},
+
 	--hyprls = {
 	--cmd = { 'hyprls' },
 	--filetypes = { 'hyprlang', 'hyprland.conf' }, -- You don't need '*.hl' here; use actual filetypes
@@ -289,7 +325,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local opts = { buffer = ev.buf }
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+		vim.keymap.set("n", "K", function()
+			local winid = vim.diagnostic.open_float(nil, { scope = "cursor", focus = false })
+			if not winid then
+				vim.lsp.buf.hover()
+			end
+		end, opts)
 		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 		vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
 		vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
