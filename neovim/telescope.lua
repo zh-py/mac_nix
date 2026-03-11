@@ -1,44 +1,47 @@
-local builtin = require('telescope.builtin')
+local builtin = require("telescope.builtin")
 
-local pickers = require('telescope.pickers')
-local finders = require('telescope.finders')
-local conf = require('telescope.config').values
+local pickers = require("telescope.pickers")
+local finders = require("telescope.finders")
+local conf = require("telescope.config").values
 
 local function lsp_clients_picker()
-  local clients = vim.lsp.get_active_clients({ bufnr = 0 })
-  local entries = {}
-  for _, client in ipairs(clients) do
-    local fmt = string.format("%s (formatting: %s)",
-      client.name,
-      client.server_capabilities.documentFormattingProvider and "yes" or "no")
-    table.insert(entries, fmt)
-  end
+	local clients = vim.lsp.get_active_clients({ bufnr = 0 })
+	local entries = {}
+	for _, client in ipairs(clients) do
+		local fmt = string.format(
+			"%s (formatting: %s)",
+			client.name,
+			client.server_capabilities.documentFormattingProvider and "yes" or "no"
+		)
+		table.insert(entries, fmt)
+	end
 
-  pickers.new({}, {
-    prompt_title = "LSP Clients",
-    finder = finders.new_table(entries),
-    sorter = conf.generic_sorter({}),
-  }):find()
+	pickers
+		.new({}, {
+			prompt_title = "LSP Clients",
+			finder = finders.new_table(entries),
+			sorter = conf.generic_sorter({}),
+		})
+		:find()
 end
 
-vim.keymap.set('n', '<leader>lc', lsp_clients_picker, { desc = "List LSP Clients" })
+vim.keymap.set("n", "<leader>lc", lsp_clients_picker, { desc = "List LSP Clients" })
 
-
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-vim.keymap.set('n', '<leader>fr', builtin.oldfiles, {})
-vim.keymap.set('n', '<leader>fc', builtin.commands, {})
+vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {})
+vim.keymap.set("n", "<leader>fc", builtin.commands, {})
 vim.api.nvim_set_keymap(
 	"n",
 	"<space>fb",
 	":Telescope file_browser path=%:p:h select_buffer=true<CR>",
 	{ noremap = true }
 )
-require('telescope').setup {
+require("telescope").setup({
 	defaults = {
-		path_display = { "shorten" } -- or "truncate, smart"
+		path_display = { "shorten" }, -- or "truncate, smart"
 	},
 	extensions = {
 		file_browser = {
@@ -55,25 +58,25 @@ require('telescope').setup {
 			},
 		},
 	},
-	["ui-select"] = {
-		require("telescope.themes").get_dropdown {
-			-- even more opts
-		}
-		-- pseudo code / specification for writing custom displays, like the one
-		-- for "codeactions"
-		-- specific_opts = {
-		--   [kind] = {
-		--     make_indexed = function(items) -> indexed_items, width,
-		--     make_displayer = function(widths) -> displayer
-		--     make_display = function(displayer) -> function(e)
-		--     make_ordinal = function(e) -> string
-		--   },
-		--   -- for example to disable the custom builtin "codeactions" display
-		--      do the following
-		--   codeactions = false,
-		-- }
-	}
-	-- To get ui-select loaded and working with telescope, you need to call
-	-- load_extension, somewhere after setup function:
-}
-require("telescope").load_extension("ui-select")
+	--["ui-select"] = {
+	--require("telescope.themes").get_dropdown {
+	---- even more opts
+	--}
+	-- pseudo code / specification for writing custom displays, like the one
+	-- for "codeactions"
+	-- specific_opts = {
+	--   [kind] = {
+	--     make_indexed = function(items) -> indexed_items, width,
+	--     make_displayer = function(widths) -> displayer
+	--     make_display = function(displayer) -> function(e)
+	--     make_ordinal = function(e) -> string
+	--   },
+	--   -- for example to disable the custom builtin "codeactions" display
+	--      do the following
+	--   codeactions = false,
+	-- }
+})
+-- To get ui-select loaded and working with telescope, you need to call
+-- load_extension, somewhere after setup function:
+--}
+--require("telescope").load_extension("ui-select")
