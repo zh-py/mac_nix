@@ -309,6 +309,7 @@
     yaml-language-server
     harper
     hyprls
+    bash-language-server
     tree-sitter
     lazygit
     #poetry
@@ -421,6 +422,7 @@
         openpyxl
         pytest
         torch
+        #markitdown
       ]
     ))
   ];
@@ -803,7 +805,7 @@
   };
 
   programs.wofi = {
-    enable = true;
+    enable = false;
     settings = {
     };
   };
@@ -1039,7 +1041,10 @@
       claw() { docker exec -it openclaw-source-openclaw-gateway-1 openclaw "$@"; }
       cca() { rsync -avz -e "ssh -i /home/py/.ssh/thekey" "$@" py@192.168.1.2:/home/py/.openclaw/workspace-coding_agent/files/; }
       ch() { for f in "$@"; do rsync -avz -e "ssh -i /home/py/.ssh/thekey" py@192.168.1.2:/home/py/.openclaw/workspace-coding_agent/files/"$f" /home/py/Codes/; done; }
+      export NPM_PACKAGES="$HOME/.npm-global"
+      export PATH="$HOME/.npm-global/bin:$PATH"
     '';
+    #export UVX_PATH="/etc/profiles/per-user/py/bin/uv"
     shellAliases = {
       proxychains = "proxychains4";
       ll = "ls -l";
