@@ -247,7 +247,10 @@ local servers = {
 			"lua",
 			"tex",
 			"plaintex",
+			"txt",
+			"text",
 		},
+		single_file_support = true,
 		-- Use the native 'root_markers' instead of a custom 'root_dir' function
 		-- This is more stable in the 0.11 native API
 		root_markers = { ".git" },
@@ -276,6 +279,11 @@ local servers = {
 				ignore = { "hyprlock.conf", "hypridle.conf" },
 			},
 		},
+	},
+	taplo = {
+		cmd = { "taplo", "lsp", "stdio" },
+		filetypes = { "toml" },
+		root_markers = { ".git", "*.toml" },
 	},
 }
 

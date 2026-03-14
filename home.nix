@@ -310,6 +310,7 @@
     harper
     hyprls
     bash-language-server
+    taplo
     tree-sitter
     lazygit
     #poetry
