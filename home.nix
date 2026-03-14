@@ -314,6 +314,7 @@
     tree-sitter
     lazygit
     #poetry
+    uv
     texlab
     obsidian
     #notion-app
