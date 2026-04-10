@@ -250,6 +250,7 @@
     #claude-code
     #kilocode-cli
     opencode
+    codex
     cursor-cli
     pgcli
     visidata
@@ -859,6 +860,7 @@
 
   programs.git = {
     enable = true;
+    signing.format = null;
     settings = {
       user = {
         email = "pierrez1984@gmail.com";
@@ -1126,6 +1128,7 @@
     defaultEditor = true;
     viAlias = true;
     withPython3 = true;
+    withRuby = false;
     extraConfig = ''
       colorscheme gruvbox
       filetype plugin indent on
@@ -1336,7 +1339,8 @@
       #}
       {
         plugin = vimtex;
-        config = # vim
+        type = "viml";
+        config =
           ''
             "let g:vimtex_view_general_method='qpdfview'
             let g:vimtex_view_method = 'zathura_simple'
@@ -1359,7 +1363,8 @@
       markdown-preview-nvim
       {
         plugin = vim-markdown;
-        config = # vim
+        type = "viml";
+        config =
           ''
             let g:vim_markdown_folding_disabled = 1
             let g:vim_markdown_conceal = 0
