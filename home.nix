@@ -184,6 +184,9 @@
     remmina
     autossh
     eternal-terminal
+    iperf
+    #speedtest-cli
+    ookla-speedtest
 
     xclicker
     fusuma
@@ -191,6 +194,7 @@
     #opera
     google-chrome
     tor-browser
+    #brave
     #geary
     #thunderbird
     mailspring
@@ -223,7 +227,15 @@
     #pdfarranger
     #llpp
     qpdfview
-    poppler
+
+    scantailor-advanced
+    ocrmypdf
+    naps2
+    poppler-utils
+    tesseract
+    imagemagick
+    img2pdf
+
     gpick
     telegram-desktop
     #ventoy
@@ -256,6 +268,8 @@
     visidata
     openai-whisper
 
+    clock-rs
+    termdown
     #share
     openssl
     eza
@@ -1340,18 +1354,17 @@
       {
         plugin = vimtex;
         type = "viml";
-        config =
-          ''
-            "let g:vimtex_view_general_method='qpdfview'
-            let g:vimtex_view_method = 'zathura_simple'
-            "let g:vimtex_view_mupdf_send_keys = 'shift+h'
-            "let g:vimtex_view_general_options = '-reuse-instance u/pdf'
-            "let g:vimtex_view_general_viewer = 'okular'
-            "let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
-            "let g:vimtex_view_skim_activate=0
-            "let g:vimtex_view_skim_reading_bar=1
-            let g:vimtex_syntax_enabled=0
-          '';
+        config = ''
+          "let g:vimtex_view_general_method='qpdfview'
+          let g:vimtex_view_method = 'zathura_simple'
+          "let g:vimtex_view_mupdf_send_keys = 'shift+h'
+          "let g:vimtex_view_general_options = '-reuse-instance u/pdf'
+          "let g:vimtex_view_general_viewer = 'okular'
+          "let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+          "let g:vimtex_view_skim_activate=0
+          "let g:vimtex_view_skim_reading_bar=1
+          let g:vimtex_syntax_enabled=0
+        '';
       }
       #{
       #plugin = vim-latex-live-preview;
@@ -1364,14 +1377,13 @@
       {
         plugin = vim-markdown;
         type = "viml";
-        config =
-          ''
-            let g:vim_markdown_folding_disabled = 1
-            let g:vim_markdown_conceal = 0
-            let g:vim_markdown_frontmatter = 1
-            let g:vim_markdown_toml_frontmatter = 1
-            let g:vim_markdown_json_frontmatter = 1
-          '';
+        config = ''
+          let g:vim_markdown_folding_disabled = 1
+          let g:vim_markdown_conceal = 0
+          let g:vim_markdown_frontmatter = 1
+          let g:vim_markdown_toml_frontmatter = 1
+          let g:vim_markdown_json_frontmatter = 1
+        '';
       }
       {
         plugin = nvim-lastplace;
