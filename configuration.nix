@@ -83,7 +83,7 @@ in
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   hardware.enableRedistributableFirmware = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-59-6.18.22"
+    "broadcom-sta-6.30.223.271-59-6.18.32"
   ];
 
   # options: https://www.freedesktop.org/software/systemd/man/latest/logind.conf.html
@@ -341,14 +341,6 @@ in
 
   xdg.portal = {
     enable = true;
-    config = {
-      common = {
-        default = [
-          "*"
-        ];
-      };
-    };
-    #configPackages = [ pkgs.gnome-session ];
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
       kdePackages.xdg-desktop-portal-kde
@@ -1064,7 +1056,7 @@ in
     pulse.enable = true;
     alsa = {
       enable = true;
-      support32Bit = true;
+      support32Bit = false;
     };
     jack.enable = true;
     # use the example session manager (no others are packaged yet so this is enabled by default,
@@ -1296,6 +1288,7 @@ in
     jack2
     pavucontrol
     bluez-tools
+    iw
     #libcamera
     pulseaudioFull
     #jack_capture
@@ -1354,12 +1347,12 @@ in
     kdePackages.qtbase
     kdePackages.kglobalacceld
     kdePackages.kglobalaccel
-    libsForQt5.kglobalaccel
+    #libsForQt5.kglobalaccel
     kdePackages.qttools
     kdePackages.qtmultimedia
-    libsForQt5.ki18n
     libsForQt5.qt5ct
     kdePackages.ki18n
+    #libsForQt5.ki18n
     qt6.qtwayland
     qt5.qtwayland
     #kdePackages.qt6gtk2
@@ -1387,8 +1380,8 @@ in
     #fontmatrix
 
     lxqt.lxqt-wayland-session
-    wayfire # Wayland compositor
-    wlroots # Required for wayfire
+    #wayfire # Wayland compositor
+    #wlroots # Required for wayfire
 
     swayidle
     gparted
@@ -1444,6 +1437,9 @@ in
     kdePackages.qtsvg
     kdePackages.kio-fuse
     kdePackages.kio-extras
+    kdePackages.kio
+    #libsForQt5.kio
+    #libsForQt5.kinit
   ];
   environment.etc."xdg/menus/applications.menu".source =
     "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
@@ -1453,22 +1449,6 @@ in
     "/share/kservicetypes6"
   ]; # kde
   programs.dconf.enable = true; # for gnome packages outside of gnome
-  nixpkgs.overlays = [
-    (self: super: {
-      gnome = super.gnome.overrideScope (
-        gself: gsuper: {
-          nautilus = gsuper.nautilus.overrideAttrs (nsuper: {
-            buildInputs =
-              nsuper.buildInputs
-              ++ (with super.gst_all_1; [
-                gst-plugins-good
-                gst-plugins-bad
-              ]);
-          });
-        }
-      );
-    })
-  ];
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [

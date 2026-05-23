@@ -44,12 +44,14 @@
     [Desktop Entry]
     Name=Neovim (Alacritty)
     Comment=Launch Neovim in Alacritty terminal
-    Exec=alacritty -e nvim %U
+    Exec=bash -c 'alacritty -e nvim %F'
     Icon=utilities-terminal
     Type=Application
     Categories=Utility;TextEditor;
     Terminal=false
+    StartupNotify=false
     MimeType=text/plain;text/markdown;text/x-shellscript;text/x-python;text/x-csrc;text/x-c++src;application/x-subrip;
+    X-KDE-SingleMainWindow=true
   '';
 
   home.file.".local/share/applications/btop-foot.desktop".text = ''
@@ -336,7 +338,7 @@
     #aichat
     qbittorrent-enhanced
     spotify
-    spotdl
+    #spotdl
     deno # JavaScript and TypeScript
     #lrcget
     #yt-dlp
@@ -417,6 +419,9 @@
         jupyterlab-lsp
         python-lsp-server
         jedi-language-server
+        python-lsp-ruff
+        ruff
+        black
         qtconsole
         sympy
         scipy
@@ -430,10 +435,6 @@
         ipython
         pysnooper
         debugpy
-        python-lsp-server
-        python-lsp-ruff
-        ruff
-        black
         pynvim
         send2trash
         openpyxl
@@ -692,6 +693,8 @@
     size = 20;
     name = "rose-pine-hyprcursor";
     package = pkgs.rose-pine-hyprcursor;
+    #name = "bibata-cursors";
+    #package = pkgs.bibata-cursors;
     hyprcursor = {
       enable = true;
       size = 22;
@@ -800,7 +803,7 @@
       sponsorblock
       mpris
       thumbfast
-      #uosc
+      uosc
     ];
     #config = {
     #"script-opts" = "ytdl_hook-ytdl_path=/etc/profiles/per-user/py/bin/yt-dlp";
@@ -1142,6 +1145,7 @@
     defaultEditor = true;
     viAlias = true;
     withPython3 = true;
+    #extraPython3Packages = (_: [ ]);
     withRuby = false;
     extraConfig = ''
       colorscheme gruvbox
@@ -1178,7 +1182,8 @@
       autocmd Filetype python map! <silent> <A-r> <ESC> :w<CR>:terminal python3 % -m pdb<CR>:startinsert<CR>
       autocmd Filetype python map <silent> <F5> :w<CR>:terminal python3 % -m pdb<CR>:startinsert<CR>
       autocmd Filetype python map! <silent> <F5> <ESC> :w<CR>:terminal python3 % -m pdb<CR>:startinsert<CR>
-      autocmd FileType python map <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
+      "autocmd FileType python map <silent> <leader>b oimport ipdb; ipdb.set_trace()<esc>
+      autocmd FileType python map <silent> <leader>b oipdb.set_trace()<esc>
       autocmd FileType python map <silent> <leader>B obreakpoint()<esc>
       autocmd Filetype tex,latex map <A-r> :w <Enter> <localleader>lk<localleader>ll
       autocmd Filetype tex,latex map! <A-r> <ESC> :w <Enter> <localleader>lk<localleader>ll
@@ -1264,7 +1269,6 @@
       trouble-nvim
       vim-nix
       nerdcommenter
-      markdown-preview-nvim
       vim-bbye
       tmux-nvim
       #{
