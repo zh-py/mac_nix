@@ -418,7 +418,7 @@
         jupyter
         jupyterlab-lsp
         python-lsp-server
-        jedi-language-server
+        #jedi-language-server
         python-lsp-ruff
         ruff
         black
