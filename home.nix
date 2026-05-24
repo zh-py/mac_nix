@@ -697,7 +697,7 @@
     #package = pkgs.bibata-cursors;
     hyprcursor = {
       enable = true;
-      size = 22;
+      size = 20;
     };
   };
 
