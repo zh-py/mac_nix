@@ -5,20 +5,12 @@ local dmenu = "fuzzel"
 
 local SCR_DIR = os.getenv("HOME") .. "/Pictures/Screenshots"
 
-------------------
----- MONITORS ----
-------------------
-
 hl.monitor({
 	output = "",
 	mode = "preferred",
 	position = "auto",
 	scale = "auto",
 })
-
----------------------
----- AUTOSTART ----
----------------------
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprshell run")
@@ -41,31 +33,7 @@ hl.workspace_rule({ workspace = "4", on_created_empty = "foot -e btop" })
 hl.workspace_rule({ workspace = "w[tv1]s[false]", gaps_out = 0, gaps_in = 0 })
 hl.workspace_rule({ workspace = "f[1]s[false]", gaps_out = 0, gaps_in = 0 })
 
--------------------------------
----- ENVIRONMENT VARIABLES ----
--------------------------------
-
-hl.env(
-	"XDG_DATA_DIRS",
-	"/run/current-system/sw/share:/home/py/.nix-profile/share:" .. (os.getenv("XDG_DATA_DIRS") or "")
-)
-hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
-hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
-hl.env("GTK2_RC_FILES", os.getenv("HOME") .. "/.gtkrc-2.0")
---hl.env("HYPRCURSOR_THEME", "rose-pine-hyprcursor")
---hl.env("XCURSOR_SIZE", "24")
---hl.env("HYPRCURSOR_SIZE", "24")
-
-hl.env("XCURSOR_PATH", "/run/current-system/sw/share/icons:" .. (os.getenv("XCURSOR_PATH") or ""))
-hl.env("XCURSOR_THEME", "rose-pine-hyprcursor")
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_THEME", "rose-pine-hyprcursor")
-hl.env("HYPRCURSOR_SIZE", "24")
-
------------------------
----- LOOK AND FEEL ----
------------------------
 
 hl.config({
 	general = {
@@ -183,9 +151,9 @@ hl.device({
 local mainMod = "ALT"
 
 hl.bind(mainMod .. " + K", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + CTRL + F", hl.dsp.exec_cmd("hyprctl dispatch fullscreen"))
+hl.bind(mainMod .. " + CTRL + F", hl.dsp.window.fullscreen())
 hl.bind("META + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("hyprctl dispatch exit"))
+hl.bind(mainMod .. " + M", hl.dsp.exit())
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 
@@ -204,6 +172,11 @@ hl.bind("META + SHIFT + 7", hl.dsp.focus({ workspace = 7 }))
 hl.bind("META + SHIFT + 8", hl.dsp.focus({ workspace = 8 }))
 hl.bind("META + SHIFT + 9", hl.dsp.focus({ workspace = 9 }))
 hl.bind("META + SHIFT + 0", hl.dsp.focus({ workspace = 10 }))
+
+--hl.bind("META + SHIFT + RIGHT", hl.dsp.window.move({ workspace = "+1" }))
+--hl.bind("META + SHIFT + LEFT", hl.dsp.window.move({ workspace = "-1" }))
+hl.bind(mainMod .. " + SHIFT + RIGHT", hl.dsp.window.move({ workspace = "+1" }))
+hl.bind(mainMod .. " + SHIFT + LEFT", hl.dsp.window.move({ workspace = "-1" }))
 
 hl.bind(mainMod .. " + SHIFT + 1", hl.dsp.window.move({ workspace = 1 }))
 hl.bind(mainMod .. " + SHIFT + 2", hl.dsp.window.move({ workspace = 2 }))
